@@ -4,7 +4,7 @@ public class A001 {
 	public static void main(String[] args) {
 		System.out.println("Hello");
 	} //end main
-} // end class 
+} // end class  
 
 //한줄 변경 ctrl  + alt + j
 // 한줄 수석(설명글)

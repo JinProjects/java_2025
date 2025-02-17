@@ -9,5 +9,5 @@ public class A003 {
 		
 		System.out.println("A\nAB\nABC");
 	}
-
+ 
 }
