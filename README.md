@@ -7,4 +7,4 @@
 
 #### 2. 2025-02-18
 1. java 자료형
-![js](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=JavaScript&logoColor=white)
+
