@@ -166,9 +166,9 @@ public class Bank {
 	private static int accountChk(String id, String pw, int accountCnt, Account[] creAccount) {
 		boolean idFlag = false;
 		boolean pwFlag = false;
-		
+	
 		int num = 0;
-		for(int i=0; i<accountCnt; i++) {
+		for(int i=0; i<creAccount.length; i++) {
 			
 			if(creAccount[i] != null && creAccount[i].getId().equals(id)) {
 //				if(creAccount != null && creAccount[i].getId().equals(id)) {
@@ -195,57 +195,57 @@ public class Bank {
 			}
 	}
 }
- class Account {
-	String id;
-	String pw;
-	int age;
-	int money;
-	
-	public Account() {
-		// TODO Auto-generated constructor stub
-	}
-	public Account(String id, String pw, int age, int money) {
-		this.id	= id;
-		this.pw = pw;
-		this.age = age;
-		this.money = money;
-	}
-
-	@Override
-	public String toString() {
-		return "Account [id=\""+ id + "\", pw=\""+ pw + "\", age=\"" + age + "\", money=\""+money + "\"]";
-	}
-	
-	public String getId() {
-		return id;
-	}
-
-	public void setId(String id) {
-		this.id = id;
-	}
-
-	public String getPw() {
-		return pw;
-	}
-
-	public void setPw(String pw) {
-		this.pw = pw;
-	}
-
-	public int getAge() {
-		return age;
-	}
-
-	public void setAge(int age) {
-		this.age = age;
-	}
-
-	public int getMoney() {
-		return money;
-	}
-
-	public void setMoney(int money) {
-		this.money = money;
-	}
-	
-}
+// class Account {
+//	String id;
+//	String pw;
+//	int age;
+//	int money;
+//	
+//	public Account() {
+//		// TODO Auto-generated constructor stub
+//	}
+//	public Account(String id, String pw, int age, int money) {
+//		this.id	= id;
+//		this.pw = pw;
+//		this.age = age;
+//		this.money = money;
+//	}
+//
+//	@Override
+//	public String toString() {
+//		return "Account [id=\""+ id + "\", pw=\""+ pw + "\", age=\"" + age + "\", money=\""+money + "\"]";
+//	}
+//	
+//	public String getId() {
+//		return id;
+//	}
+//
+//	public void setId(String id) {
+//		this.id = id;
+//	}
+//
+//	public String getPw() {
+//		return pw;
+//	}
+//
+//	public void setPw(String pw) {
+//		this.pw = pw;
+//	}
+//
+//	public int getAge() {
+//		return age;
+//	}
+//
+//	public void setAge(int age) {
+//		this.age = age;
+//	}
+//
+//	public int getMoney() {
+//		return money;
+//	}
+//
+//	public void setMoney(int money) {
+//		this.money = money;
+//	}
+//	
+//}
