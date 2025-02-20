@@ -1,5 +1,6 @@
 package com.company.test;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class Bank {
@@ -16,6 +17,7 @@ public class Bank {
 		
 		
 		while(flag) {
+			System.out.println(Arrays.toString(creAccount));
 			System.out.println("=========BANK=========");
 			System.out.println("* 1.추가");
 			System.out.println("* 2.조회");
@@ -26,18 +28,17 @@ public class Bank {
 			System.out.print("입력>>> ");
 			select = sc.nextInt();
 			
-			if(select == 1) {
+			if(select == 1) {//추가
 				accountCnt = createAccount(creAccount,accountCnt);
-			}else if(select == 2) {
+			}else if(select == 2) {//조회
 				selectAccount(creAccount, accountCnt);
-			}else if(select == 3) {
-				//입금
+			}else if(select == 3) {//입금
 				deposit(creAccount,accountCnt);
-			}else if(select == 4) {
+			}else if(select == 4) {//출금
 				withdraw(creAccount,accountCnt);
-			}else if(select == 5) {
+			}else if(select == 5) {//삭제
 				accountCnt = delete(creAccount,accountCnt);
-			}else {
+			}else {//종료
 				System.exit(0);
 //				return;
 			}
@@ -45,6 +46,7 @@ public class Bank {
 		}
 		
 	} 
+	//삭제
 	private static int delete(Account[] creAccount, int accountCnt) {
 		Scanner sc = new Scanner(System.in);
 		System.out.print("id:");
@@ -57,19 +59,21 @@ public class Bank {
 		if(idPwChk > 0) {
 			System.out.println("계좌를 삭제하시겠습니까?(Y/N)");
 			String flag = sc.next();
-			Account tempAccount = null;
+//			Account tempAccount = null;
 			if(flag.charAt(0) == 'Y' || flag.charAt(0) == 'y') {
-				for(int i = idPwChk; i<creAccount.length-1; i++) {
-					creAccount[i-1] = creAccount[i];
-					creAccount[i] = creAccount[i+1];
-					creAccount[i+1] = tempAccount;
-				}
+//				for(int i = idPwChk; i<creAccount.length-1; i++) {
+//					creAccount[i-1] = creAccount[i];
+//					creAccount[i] = creAccount[i+1];
+//					creAccount[i+1] = tempAccount;
+					creAccount[idPwChk-1] = null;
+//				}
 			}else {
-				return accountCnt;
+				return idPwChk;
 			}
 		}
-		return --accountCnt;
+		return idPwChk;
 	}
+	//출금
 	private static void withdraw(Account[] creAccount, int accountCnt) {
 		Scanner sc = new Scanner(System.in);
 		System.out.print("id:");
@@ -88,10 +92,11 @@ public class Bank {
 			System.out.println("==출금완료");
 			System.out.println("잔액 : "+myMoney);
 			creAccount[idPwChk-1].setMoney(myMoney);
-		}
+		}else {
+			System.out.println("다시 확인해주세요.");		}
 		
 	}
-	
+	//입금
 	private static void deposit(Account[] creAccount, int accountCnt) {
 		Scanner sc = new Scanner(System.in);
 		System.out.print("id:");
@@ -113,7 +118,7 @@ public class Bank {
 			System.out.println("다시 확인해주세요.");
 		}
 	}
-
+	//조회
 	private static void selectAccount(Account[] creAccount, int accountCnt) {
 		boolean flag = true;
 		Scanner sc = new Scanner(System.in);
@@ -135,7 +140,7 @@ public class Bank {
 				flag = false;
 			}
 	}
-
+	//추가
 	public static int createAccount(Account[] creAccount,int accountCnt) {
 		Scanner sc = new Scanner(System.in);
 		System.out.print("아이디 입력 >");
@@ -161,6 +166,7 @@ public class Bank {
 	private static int accountChk(String id, String pw, int accountCnt, Account[] creAccount) {
 		boolean idFlag = false;
 		boolean pwFlag = false;
+		
 		int num = 0;
 		for(int i=0; i<accountCnt; i++) {
 			
@@ -195,6 +201,9 @@ public class Bank {
 	int age;
 	int money;
 	
+	public Account() {
+		// TODO Auto-generated constructor stub
+	}
 	public Account(String id, String pw, int age, int money) {
 		this.id	= id;
 		this.pw = pw;
@@ -202,6 +211,11 @@ public class Bank {
 		this.money = money;
 	}
 
+	@Override
+	public String toString() {
+		return "Account [id=\""+ id + "\", pw=\""+ pw + "\", age=\"" + age + "\", money=\""+money + "\"]";
+	}
+	
 	public String getId() {
 		return id;
 	}
