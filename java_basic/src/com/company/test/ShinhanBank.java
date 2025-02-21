@@ -8,6 +8,18 @@ public class ShinhanBank implements BankImpl{
 	Scanner sc = new Scanner(System.in);
 	
 	@Override
+	public void bankMenu() {
+		System.out.println("======신한은행======");
+		System.out.println("* 1.추가");
+		System.out.println("* 2.조회");
+		System.out.println("* 3.입금");
+		System.out.println("* 4.출금");
+		System.out.println("* 5.삭제");
+		System.out.println("* 9.종료");
+		System.out.print("입력>>> ");
+	}
+	
+	@Override
 	public void createAccount() {
 		Scanner sc = new Scanner(System.in);
 		
@@ -78,7 +90,9 @@ public class ShinhanBank implements BankImpl{
 			System.out.println("==출금완료");
 			System.out.println("잔액 : "+myMoney);
 			creAccount.get(idPwChk-1).setMoney(myMoney);
-		}		
+		}else {
+			System.out.println("다시 확인해주세요.");
+		}
 	}
 
 	@Override
