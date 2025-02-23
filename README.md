@@ -18,3 +18,5 @@
 1. java 반복문
 
 
+#### MINI PROJECT BANK
+https://youtu.be/oA_IkH8IxfE
