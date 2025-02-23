@@ -11,7 +11,7 @@ public class BankMain {
 			bank.bankMenu();
 			
 			int select = sc.nextInt();
-			if(select == 1) {
+		 	if(select == 1) {
 				bank.createAccount();
 			}else if(select == 2) {
 				bank.selectAccount();
@@ -22,6 +22,7 @@ public class BankMain {
 			}else if(select == 5) {
 				bank.delete();
 			}else{
+				System.out.println("종료기능입니다.");
 				System.exit(0);
 			}
 		}
