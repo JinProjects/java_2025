@@ -4,9 +4,9 @@ import java.util.ArrayList;
 
 public interface BankImpl_v2 {
 	void bankMenu();
-	ArrayList<Account> createAccount();
-	void selectAccount();
-	void deposit();
-	void withdraw();
-	void delete();
+	void createAccount(ArrayList<Account> creAccount);
+	void selectAccount(ArrayList<Account> creAccount);
+	void deposit(ArrayList<Account> creAccount);
+	void withdraw(ArrayList<Account> creAccount);
+	void delete(ArrayList<Account> creAccount);
 }

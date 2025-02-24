@@ -19,16 +19,16 @@ public class ShinhanBank_v2 implements BankImpl_v2{
 	}
 	
 	@Override
-	public ArrayList<Account> createAccount() {
-		ArrayList<Account> creAccount = new ArrayList<Account>();
+	public void createAccount(ArrayList<Account> creAccount) {
+//		ArrayList<Account> creAccount = new ArrayList<Account>();
 		Scanner sc = new Scanner(System.in);
 		
 		String str = inputAccount();
 		for(int i = 0; i < creAccount.size(); i++) {
 			if(creAccount.get(i).getId().equals(str.split("/")[0])) {
-			System.out.println(creAccount.get(i));
+//			System.out.println(creAccount.get(i));
 				System.out.println("이미 아이디가 존재합니다.");
-				return null;
+				return;
 			}
 		}
 		System.out.print("나이 입력:");
@@ -39,11 +39,10 @@ public class ShinhanBank_v2 implements BankImpl_v2{
 		Account newAccount = new Account(str.split("/")[0], str.split("/")[1], age, money);
 		creAccount.add(newAccount);
 		
-		return creAccount;
 	}
 
 	@Override
-	public void selectAccount() {
+	public void selectAccount(ArrayList<Account> creAccount) {
 		String str = inputAccount();
 		int idPwChk = accountChk(str.split("/")[0],str.split("/")[1],creAccount);
 		if( idPwChk > 0) {
@@ -58,7 +57,7 @@ public class ShinhanBank_v2 implements BankImpl_v2{
 	}
 
 	@Override
-	public void deposit() {
+	public void deposit(ArrayList<Account> creAccount) {
 		String str = inputAccount();
 		Scanner sc = new Scanner(System.in);
 		int idPwChk = accountChk(str.split("/")[0],str.split("/")[1], creAccount);
@@ -77,7 +76,7 @@ public class ShinhanBank_v2 implements BankImpl_v2{
 	}
 
 	@Override
-	public void withdraw() {
+	public void withdraw(ArrayList<Account> creAccount) {
 		Scanner sc = new Scanner(System.in);
 		String str = inputAccount();
 		
@@ -98,7 +97,7 @@ public class ShinhanBank_v2 implements BankImpl_v2{
 	}
 
 	@Override
-	public void delete() {
+	public void delete(ArrayList<Account> creAccount) {
 		Scanner sc = new Scanner(System.in);
 		String str = inputAccount();
 		String flag = "";
@@ -159,4 +158,5 @@ public class ShinhanBank_v2 implements BankImpl_v2{
 				return 0;
 			}
 	}
+
 }
