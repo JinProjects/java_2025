@@ -20,5 +20,5 @@
 
 #### MINI PROJECT BANK
 
-[![Video Label](https://i9.ytimg.com/vi/oA_IkH8IxfE/mqdefault.jpg?sqp=COjh7L0G-oaymwEmCMACELQB8quKqQMa8AEB-AG2BIAC8AKKAgwIABABGGUgZShlMA8=&rs=AOn4CLCSNMgnjkIkVqSFXNUrZvb8CNjLVQ)](https://youtu.be/oA_IkH8IxfE)
+[![Video Label](https://i.ytimg.com/vi/oA_IkH8IxfE/hqdefault.jpg?sqp=-oaymwFBCNACELwBSFryq4qpAzMIARUAAIhCGAHYAQHiAQoIGBACGAY4AUAB8AEB-AG2BIAC8AKKAgwIABABGGUgZShlMA8=&rs=AOn4CLBNFf5CmXDTk7w18eZH_a69TDXJTQ)](https://youtu.be/oA_IkH8IxfE)
 https://youtu.be/oA_IkH8IxfE
