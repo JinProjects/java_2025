@@ -61,7 +61,8 @@ public class MethodEx005 {
 //		}
 		if(avg >= 60) {
 			str = "불합격";
-		}else if(kor>=40||eng>=40||math>=40) {
+		}
+		if(kor>=40||eng>=40||math>=40) {
 			str = "재시험";
 		}
 		return str;
