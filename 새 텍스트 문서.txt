@@ -1,0 +1,78 @@
+1.  java?
+ 1) java?
+- 프로그래밍 언어
+- 사람이 작성한 코드를 ㅋ넘퓨터가 이해할 수 있는 명령을 작성하는 도구
+- 정부나 기업의 si (시스템 통합프로젝트) 가 대부분 자바로 구현
+- jvm (java virsual machine)
+  운영체제와 하드웨어에 관계없이 실행
+- OOP 
+
+2. OOP(Object Oriented Programming) 특징
+- 부품객체(class)를 조립해서 만들어가는 프로그래밍 기법
+
+part1) control ★
+   - 변수 / 자료형 / 제어문 ( if, switch, for, while, do while) / array / method
+part2) OOP 특징 ★ 면접문제
+   - class / static, final, modifier  / 상속 / abstract, interface / 예외처리
+part3) OOP 활용 
+   - collection (ArrayList) , Thread, lambda + Stream / io / network
+ 
+
+3. 설치
+1) java.sun.com 다운로드 받아서 설치
+2) java path 설정
+JAVA_HOME : C:\Program Files\Java\jdk-17
+path	    : %JAVA_HOME%\bin
+
+[내컴퓨터] - 오른쪽마우스 - 속성 - [고급시스템설정] - [환경변수설정[
+시스템변수 - [새로만들기]
+
+
+
+3) java 설치 확인
+[검색]  cmd
+---------------------------
+java -version
+---------------------------
+
+4. 설치 (2)  eclipse
+1) eclipse.org - 다운로드 - java EE
+2) 작업환경 (workspace) - D:\java_2025 
+* [window] - [preferences] - java
+* [window] - [preferences] - [검색 : enc]
+
+5. 프로그램 작성 (프로그램 동작)
+1) 소스파일(개발자) - 컴파일(번역) - 바이트코드(컴퓨터)
+      .java                                         .class
+     A001.java   --javac A001.java --   A001.class
+2)
+
+* 자바프로젝트 : File - new - java project
+ ■프로젝트이름 / ■JRE - JavaSE-17
+*    패키지 : 프로젝트 - src - 오른쪽마우스 - new - package 
+	com.회사명.프로젝트명.작업단위
+	예) com.company.java001
+*      자바파일(부품객체) : 패키지 - 오른쪽마우스 - new - class
+     - 클래스명은 대문자
+
+public class A001 {
+	public static void main(String[] args) {
+		System.out.println("Hello");
+	} //end main
+} // end class 
+
+//한줄 변경 ctrl  + alt + j
+// 한줄 수석(설명글)
+/* 3번째 줄 : public class A001 { 
+ 		public 아무데서나 접근가능 /	class	부품객체 / A001	클래스이름
+   4번째 줄 : jvm 구동시작점
+   	public static void main(String[] args) {
+	public 아무데서나 접근가능 / static 메모리상 사용가능 / 
+	void main(String[] args) 전원버튼 jvm이 찾는 메서드
+   5번째 줄 : System.out.println("Hello");
+   	System (운영체제) out ( cmd ) println(출력)
+ */
+
+6. git연결
+1) 폴더만들기 - D:\java_2025
+2) source tree
