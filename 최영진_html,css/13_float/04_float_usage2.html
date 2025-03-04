@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>float 레이아웃2</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        .wrap{
+            background-color: lightcoral;
+            width: 90%;
+            max-width: 1000px;
+            margin: auto;
+            padding: 30px;
+        }
+        .box {
+            width: 300px;
+            height: 300px;
+            border: 5px solid grey;
+        }
+        .left{
+            background-color: red;
+            float: left;
+        }
+        .right{
+            background-color: blue;
+            float: right;
+        }
+        .wrap::after{
+            content: "";
+            display: block;
+            clear: both;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <div class="box left">red</div>
+        <div class="box right">blue</div>
+    </div>
+</body>
+</html>

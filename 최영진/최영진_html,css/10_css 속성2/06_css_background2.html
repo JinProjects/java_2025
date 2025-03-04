@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>배경 이미지 크기</title>
+    <!-- 
+        배경 이미지 크기
+        - contain : 요소 안에 배경 이미지가 다 들어오도록 이미지를 확대, 축소
+        - cover : 요소 안에 배경 이미지가 한쪽이 채워질때까지 확대
+    -->
+        <style>
+            .box {
+                width: 500px;
+                height: 500px;
+                border: 5px solid grey;
+                display: inline-block;
+                background: url("images/bg3.jpg");
+                background-repeat: no-repeat;
+            }
+            .box2 {
+                background-size: contain;
+            }
+            .box3 {
+                background-size: cover;
+            }
+            .box4 {
+                background-size: 100%;
+            }
+            .box5 {
+                background-size: 100% 100%;
+            }
+
+        </style>
+</head>
+<body>
+    <div class="wrap">
+        <div class="box box1"></div>
+        <div class="box box2"></div>
+        <div class="box box3"></div>
+        <div class="box box4"></div>
+        <div class="box box5"></div>
+    </div>
+</body>
+</html>

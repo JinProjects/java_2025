@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>float 레이아웃3</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <style>
+        *{
+            /* padding값과 margin값을 없앤다 */
+            /* box-sizing: border-box; */
+        }
+        .wrap {
+            width: 1000px;
+            margin: auto;
+            border: 5px solid black;
+        }
+        .header {
+            background-color: orange;
+            height: 100px;
+            /* margin-bottom: 10px; */
+        }
+        .main{
+            margin: 10px 0;
+            /* height: 300px; */
+            /* margin: auto; */
+        }
+        .nav, .section, .aside{
+            height: 300px;
+        }
+        .main .nav {
+            background-color: blueviolet;
+            float: left;
+            margin-right: 10px;
+            width: 250px;
+        }
+        .main .section {
+            background-color: brown;
+            float: left;
+            width: 470px;
+            /*width: calc(100% - 440px) */
+            margin-right: 10px;
+        }
+        .main .aside {
+            background-color: beige;
+            float: right;
+            width: 250px;
+        }
+        .main::after{
+            content:"";
+            display: block;
+            clear: both;
+        }
+        footer{
+            background-color: cadetblue;
+            height: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <header class="header">
+            <h1>site logo</h1>
+        </header>
+        <main class="main">
+            <nav class="nav">메인메뉴 영역</nav>
+            <section class="section">메인 콘텐츠 영역</section>
+            <aside class="aside">바로가기 메뉴 영역</aside>
+        </main>
+        <footer class="footer">&copy;copyright</footer>
+    </div>
+</body>
+</html>

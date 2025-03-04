@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>for 반복문</title>
+    <style>
+        p.syntax {
+            white-space: pre;
+        }
+    </style>
+</head>
+<body>
+    <h1>for 반복문</h1>
+    <hr><hr>
+    <p class="syntax">
+        for(초기식; 조건식; 증감식) {
+            실행할 문장;
+        }
+    </p>
+    <ol>
+        <li>초기식</li>
+        <li>조건식 확인</li>
+        <li>조건식 결과가 true면 { }안에 있는 문장 수행</li>
+        <li>증감식</li>
+        <li>2, 3, 4 반복하다가</li>
+        <li>조건식 결과가 false면 반복문 빠져 나옴</li>
+    </ol>
+    <button id="forLoop">hello1 부터 hello5까지 출력하기</button>
+    <script>
+        document.getElementById("forLoop").onclick = function(){
+            for(let i=1; i<=5; i++){
+                console.log(`hello${i}`);
+            }
+        }
+        </script>
+    <button id="forLoop1">hello5 부터 hello10까지 출력하기</button>
+    <script>
+        document.getElementById("forLoop1").onclick = function(){
+            for(let i=5; i<=10; i++){
+                console.log(`hello${i}`);
+            }
+        }
+    </script>
+    <button id="forLoop2">1,3,5,7,9 출력하기</button>
+    <script>
+        document.getElementById("forLoop2").onclick = function(){
+        for(let i=1; i<=10; i++){
+            if(i%2==1){
+                console.log(`${i}`);
+            }
+        }
+    }
+    </script>
+    <button id="forLoop3">hello10부터 hello1까지</button>
+    <script>
+        document.getElementById("forLoop3").onclick = function(){
+            for(let i=10; i>=1; i--){
+                console.log(`hello${i}`);
+            }
+        }
+    </script>
+    <button id="forLoop4">1부터 10까지 합</button>
+    <script>
+        document.getElementById("forLoop4").onclick = function (e){
+            let sum = 0;
+            for(let i = 1; i<=10; i++){
+                sum += i;
+            }
+            console.log(sum);
+        }
+    </script>
+    <button id="forLoop5">1, 100, 50, 200, -100, 1000, 50의 합을 출력</button>
+    <script>
+        document.getElementById("forLoop5").onclick = function(){
+            let array = [1, 100, 50, 200, -100, 1000, 50];
+            let sum = 0;
+            for(let i=0; i<array.length; i++){
+                sum += array[i];
+            }
+            console.log(sum);
+        }
+    </script>
+    <hr>
+    <h1>중첩 for문</h1>
+    <hr><hr>
+    <p>for문 안에 또 다시 for문을 중첩할 수 있다.</p>
+    <p class="syntax">
+        for(초기식1; 조건식1; 증감식1){
+            for(초기식2; 조건식2; 증감식2){
+                실행할 문장;
+            }
+        }
+    </p>
+    <ol type="A">
+        <li>초기식1</li>
+        <li>조건식1 확인</li>
+        <li>조건식1 결과가 true면 { } 문장 수행
+            <ol type="a">
+                <li>초기식2</li>
+                <li>조건식2 확인</li>
+                <li>조건식2 결과가 true면 { } 문장 수행</li>
+                <li>증감식2</li>
+                <li>b, c, d 반복하다가</li>
+                <li>조건식2 결과가 false면 안쪽에 있는 반복문 빠져 나옴</li>
+            </ol>
+        </li>
+        <li>증감식1</li>
+        <li>B, C, D 반복하다가</li>
+        <li>조건식1 결과가 false면 바깥쪽에 있는 반복문 빠져 나옴</li>
+    </ol>
+    <button id="gugudan">구구단</button>
+    <script>
+        document.getElementById("gugudan").onclick = function(){
+            for(let i=2; i<10; i++){
+                document.write(`<h1>${i}단</h1>`);
+                for(let j=1; j<10; j++){
+                    document.write(`${i} x ${j} = ${i*j}<br>`);
+                }
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>함수 연습</title>
+</head>
+<body>
+  <script>
+    // let item1 = 5000 * 2;
+    // let item2 = 12000 * 1;
+    // let item3 = 3000 * 4;
+
+    /**
+     * calcTotalPrice(){
+     * - 필요한 매개변수 : 단가 * 수량
+     * - 총 가격 = 단가 * 수량
+     * 
+     * let item1 = calcTotalPrice();
+     * 
+     * }
+    */
+
+    function calcTotalPrice(price, qty){
+      let total = price * qty;
+      return total;
+    }
+    let item1 = calcTotalPrice(5000, 2);
+    let item2 = calcTotalPrice(12000, 1);
+    let item3 = calcTotalPrice(3000, 2);
+
+    console.log(`상품1 총 가격 : ${item1}원`);
+    console.log(`상품2 총 가격 : ${item2}원`);
+    console.log(`상품3 총 가격 : ${item3}원`);
+
+    /**
+     * 변수명
+     * item1Discount : 10% 할인
+     * item2Discount : 5% 할인
+     * item3Discount : 20% 할인
+     * 
+     * 할인율이 적용된 함수
+        function calcFinalPrice(){
+
+        }
+     * 
+     * 필요한 변수 : 단가, 수량, 할인율
+     * 
+     * - 총 가격 = 단가 * 수량 
+     * - 할인율 = 총 가격 * (1-할인율 / 100)
+    */
+    //할인율이 적용된 함수
+    function calcFinalPrice(price, qty, disRate){
+      let total = price * qty;
+      let dcntPrice = total * (1-disRate/100);
+
+      // let total = (price * qty) * (1-disRate/100);
+      return dcntPrice; 
+    }
+
+    let item1Discount = calcFinalPrice(5000,2,10);
+    let item2Discount = calcFinalPrice(12000,1,5);
+    let item3Discount = calcFinalPrice(3000,2,20);
+
+    console.log(`상품 결제 1 할인 된 가격 : ${item1Discount}`);
+    console.log(`상품 결제 2 할인 된 가격 : ${item2Discount}`);
+    console.log(`상품 결제 3 할인 된 가격 : ${item3Discount}`);
+
+    function test(){
+      return 5+3;
+    }
+    console.log(test());
+  </script>
+</body>
+</html>

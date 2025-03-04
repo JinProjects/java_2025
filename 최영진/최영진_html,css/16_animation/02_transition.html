@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>transition</title>
+    <style>
+        /* 
+            transition 전환 : 속성값을 변경할 떄
+            duration 초 입력 
+
+        */
+        .wrap {
+            margin: 10px 200px;
+        }
+        .box {
+            width: 50px;
+            height: 100px;
+            margin: 20px;
+        }
+        .box1 {
+            background-color: yellow;
+            transition-duration: 2s;
+        }
+        .box1:hover{
+            background-color: red;
+            width: 200px;
+        }
+        .box2 {
+            background-color: blue;
+            transition-duration: 0.5s;
+            transition-delay: 0.2s;
+        }
+        .box2:hover{
+            width: 300px;
+        }
+        .box3 {
+            background-color: purple;
+            transition-duration: 3s;
+            /* transition-property: transform, background-color; */
+        }
+        .box3:hover {
+            width: 300px;
+            background-color: yellow;
+            transform: translateX(-20px);
+            border: 5px solid red;
+        }
+        .box4, .box5, .box6{
+            background-color: red;
+            transition-duration: 2s;
+            transition-delay: 0.5s;
+        }
+        .box4 {
+            transition-timing-function: ease-in;
+        }
+        .box5 {
+            transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        .box6 {
+            transition-timing-function: linear;
+        }
+        .box4:hover, .box5:hover, .box6:hover{
+            width: 300px;
+        }
+        .box7 {
+            background-color: green;
+            /* 변환속도, 딜레이 */
+            transition: 0.4s 0.2s ease-in;
+            /* transition-property: width; */
+        }
+        .box7:hover {
+            width: 300px;
+            background-color: purple;
+
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <h2>transition-duration</h2>
+        <div class="box box1"></div>
+        
+        <h2>transition-delay, transition-property</h2>
+        <div class="box box2"></div>
+        <div class="box box3"></div>
+
+        <h2>transition-timing-function</h2>
+        <div class="box box4"></div>
+        <div class="box box5"></div>
+        <div class="box box6"></div>
+        
+        <h2>transition</h2>
+        <div class="box box7"></div>
+    </div>
+</body>
+</html>

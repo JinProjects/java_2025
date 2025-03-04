@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>함수</title>
+    <style>
+        p.syntax {
+            white-space: pre;
+        }
+    </style>
+</head>
+<body>
+    <h1>함수란?</h1>
+    <hr><hr>
+    <ul>
+        <li>함수는 어떤 일련의 작업을 수행하는 여러 명령어의 집합</li>
+        <li>프로그램 상에서 자주 사용하는 기능을 함수로 만들어 사용하면 같은 코드 내용을 여러 번 작성할 필요가 없다.</li>
+        <li>사용하는 기능을 함수로 만들어 사용하면 프로그램 정리가 간결하고 기능별로 정리할 수 있다.</li>
+    </ul>
+    <h2>함수 선언 및 호출</h2>
+    <dl>
+        <dt>함수 선언</dt>
+        <dd>예약어 function을 사용하고 { } 안에 실행할 명령어를 작성</dd>
+        <dd>함수는 선언하는 것만으로는 실행되지 않고 호출해야 한다.</dd>
+        <dt>함수 호출(함수 실행)</dt>
+        <dd>함수명()</dd>
+        <dd>함수 선언과 함수 호출 순서는 상관없다.</dd>
+        <dd>함수 선언할 때 함수명은 식별자의 규칙에 맞추어 작성한다.</dd>
+    </dl>
+    <p class="syntax">
+        // 함수 선언
+        function 함수명() {
+            명령;
+        }
+
+        // 함수 호출
+        함수명();
+    </p>
+    <script>
+        //호이스팅 : 선언하기 전에 실행했는데 잘 됨
+        addNum();
+        function addNum(){
+            let num1 = 2;
+            let num2 = 3;
+            let sum = num1 + num2;
+            
+            console.log(sum);
+        }
+        //함수 호출(실행)
+        addNum();
+    </script>
+    <hr>
+    <h2>매개변수와 인수</h2>
+    <dl>
+        <dt>매개변수(parameter)</dt>
+        <dd>함수 선언 시 외부에서 값을 받아 줄 변수</dd>
+        <dd>매개변수는 선언된 함수 안에서만 사용한다.</dd>
+        <dd>매개 변수를 여러 개 사용할 때는 매개변수 이름 사이에 쉼표(,)를 찍어 나열한다.</dd>
+        <dd>매개 변수에 기본값을 지정할 수 있다.</dd>
+        <dt>인수(argument)</dt>
+        <dd>매개변수가 있는 함수를 호출할 때 함수로 넘기는 실제 값</dd>
+    </dl>
+    <script>
+        //함수 선언
+        function addNumParameter(num1, num2){
+            let sum = num1 + num2;
+            console.log(sum);
+        }
+        //함수 호출
+        addNumParameter(2,3);
+        addNumParameter(5,6);
+        addNumParameter(100,1000);
+    </script>
+    <script>
+        /**
+         * greet함수 선언하고 호출하기
+         * 입력한 이름을 포함하여 함수를 호출하면 콘솔창에 다음과 같이 출력됨
+         * 
+         * 예를 들면
+         * 함수 호출 : greet('민수');
+         * 콘솔 창 출력 : 안녕하세요. 민수님!! 힘내세요.....
+         * 
+         */
+        // let name = prompt("이름을 입력하세요.");
+        function greet(name){
+            console.log(`안녕하세요. ${name}님!! 힘내세요.....`);
+        }
+        greet('민수');
+        greet('로제');
+        greet('제니');
+
+        /**
+         * 함수 호출 : introduce('민수', 25);
+         * 콘솔 창 출력 : 민수님 25세입니다.
+         */
+
+        function introduce(name, age){
+            console.log(`${name}님 ${age}세입니다.`);
+        }
+        introduce('민수', 25);
+        introduce('로제', 29);
+        introduce('제니', 30);
+
+    </script>
+    <script>
+        // 기본값이 있는 매개변수
+        function introduceDefault(name,age = 20,country = "한국"){
+            console.log(`${name}님은 ${age}살이며 ${country}에서 왔습니다.`);
+        }
+        introduceDefault("지수",25,"한국");
+        introduceDefault("민수");
+        //introducedefault("태호", "일본"); 순서를 바꾸지 못 한다
+
+        
+    </script>
+    <h2>return</h2>
+    <ul>
+        <li>return 문은 함수 실행의 결과값을 함수 호출 위치로 반환</li>
+        <li>return을 만나면 함수는 즉시 종료</li>
+        <li>반환값을 변수에 저장하여 다른 연산에 활용할 수 있다.</li>
+        <li>return 문이 없는 함수는 보통 화면에 값을 출력하거나 특정 동작을 수행하는 데 사용된다.</li> 
+        <li>return을 만나는 순간 함수는 즉시 종료된다.</li>
+    </ul>
+    <script>
+        function addReturn(a, b) {
+            let sum = a + b;
+            // console.log(sum);
+            return sum
+        }
+
+        let sum = addReturn(5, 3);
+        console.log(sum);
+        
+        // return을 만나면 함수 종료
+        function sayHello(name){
+            let result = console.log(`안녕하세요. ${name}`);
+            return result;
+            console.log("점심 맛있게 드세요!!");
+        };
+        sayHello("지수");
+    </script>
+</body>
+</html>

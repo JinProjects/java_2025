@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>그리드 만들기</title>
+    <style>
+        .wrap {
+            width: 90%;
+            max-width: 1200px;
+            min-width: 600px;
+            border: 5px solid orange;
+            margin: auto;
+        }
+        .box1 {
+            background-color: red;
+        }
+        .box2 {
+            background-color: blue;
+        }
+        .box3 {
+            background-color: green;
+        }
+        .box4 {
+            background-color: purple;
+        }
+        .box5 {
+            background-color: brown;
+        }
+        .grid-wrapping {
+            display: grid;
+            /* grid-template-columns: 200px 200px 200px;
+            grid-template-rows: 100px 100px; */
+            /* 
+                fr : fraction
+                - 비율
+                - 남은 여백이 있으면 그것을 모두 유연하게 채울 때 사용하면 편리한 단위
+
+                repeat(개수, 단위)
+                - 단위를 개수만큼 반복
+
+            */
+            grid-template-columns: repeat(5,1fr);
+            grid-template-rows: repeat(2,100px);
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <h1>grid</h1>
+        <hr><hr> 
+        <div class="grid-wrapping">                   
+            <div class="box box1">1</div>
+            <div class="box box2">2</div>
+            <div class="box box3">3</div>
+            <div class="box box4">4</div>
+            <div class="box box5">5</div>
+        </div>
+    </div>
+</body>
+</html>

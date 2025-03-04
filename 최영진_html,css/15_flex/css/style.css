@@ -1,0 +1,19 @@
+@charset "UTF-8";
+
+.wrap {
+  width: 90%;
+  max-width: 1200px;
+  min-width: 600px;
+  border: 5px solid gray;
+  margin: auto;
+}
+
+.box1 {
+  background-color: yellow;
+}
+.box2 {
+  background-color: red;
+}
+.box3 {
+  background-color: green;
+}

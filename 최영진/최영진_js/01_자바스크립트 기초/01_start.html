@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트란?</title>
+</head>
+<body>
+    <h1 id="title" style="color: red;">자바스크립트</h1>
+    <hr><hr>
+    <dl>
+        <dt>역할</dt>
+        <dd>프론트엔드 영역에서 웹 문서에 동작 부여</dd>
+        <dd>html 요소의 조작과 변경을 담당</dd>
+        <dt>특징</dt>
+        <dd>인터프리터 방식</dd>
+        <dd>객체 지향 프로그래밍 언어
+            <ul>
+                <li>객체.메소드();</li>
+                <li>객체.속성;</li>
+                <li>객체.속성 = "속성값";</li>
+            </ul>
+        </dd>
+        <dt>객체, 메소드, 속성이란?</dt>
+        <dd>
+            <dl>
+                <dt>객체</dt>
+                <dd>객체는 명령을 수행하는 주체</dd>
+                <dt>메소드( )</dt>
+                <dd>객체가 수행하는 행동</dd>
+                <dd>메소드에는 괄호( )가 붙는다.</dd>
+                <dt>속성</dt>
+                <dd>객체의 특징</dd>
+                <dd>
+                    <dl>
+                        <dt>객체.속성</dt>
+                        <dd>객체 속성의 값을 가져올 때 사용</dd>
+                        <dt>객체.속성 = "속성값"</dt>
+                        <dd>객체 속성에 값을 지정할 때 사용</dd>
+                        <dd>'='은 대입의 의미이다.</dd>
+                    </dl>
+                </dd>
+            </dl>
+        </dd>
+    </dl>
+
+    <hr><hr>
+        
+    <!-- 내부스크립트 : 문서안에 스크립트코드 작성 -->
+    <script>
+        // 한 줄 주석
+        /**
+            여러 줄 주석
+        */
+       /**
+        * 윈도우의 콘솔 객체.출력하기(문서의 #title 객체의 글자색 출력)
+        * 
+        */
+       window.console.log(document.getElementById("title").style.color);
+       // 문서의 #title 객체의 글자색 blue로 변경
+       document.getElementById("title").style.color = "blue";
+    </script>
+    <!-- 외부스크립트 -->
+     <script src="js/script.js"></script>
+</body>
+</html>

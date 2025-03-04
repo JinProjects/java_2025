@@ -1,0 +1,67 @@
+@charset "UTF-8";
+
+@import url(reset.css);
+
+* {
+  box-sizing: border-box;
+}
+
+.container {
+  width: 50%;
+  min-width: 600px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+}
+
+.container h1 {
+  font-size: 3em;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-bottom: 50px;
+}
+
+.tab-menu{
+  display: flex;
+  /* 왼쪽부터  */
+  justify-content: flex-start;
+}
+
+.tab-menu li {
+  border: 1px solid #999;
+  width: 200px;
+  padding: 15px 20px;
+  cursor: pointer;
+  border-radius: 20px 20px 0 0;
+  border-bottom: 0 none;
+}
+
+.section {
+  padding: 20px;
+  display: none;
+  min-height: 300px;
+}
+
+.tab-contents {
+  border: 1px solid #000;
+}
+
+.section h2 {
+  font-size: 2em;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.section p {
+  line-height: 1.6;
+}
+/* active  */
+.tab-menu li.active{
+  background-color: rgba(0, 0, 0, 0.5);
+  font-weight: bold;
+}
+.section.active {
+  background-color: rgba(0, 0, 0, 0.2);
+  display: block;
+}

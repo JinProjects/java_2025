@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>position</title>
+    <style>
+        .wrap{
+            width: 300px;
+            border: 5px solid gray;
+            margin: 50px;
+            float: left;
+            position: relative;
+        }
+        h1 {
+            border-bottom: 2px solid grey;
+        }
+        .box {
+            width: 200px;
+            height: 200px;
+            opacity: 0.4;
+        }
+        .box1 {
+            background-color: yellow;
+        }
+        .box2 {
+            background-color: red;
+        }
+        .box3 {
+            background-color: blue;
+        }
+        .box4 {
+            background-color: green;
+        }
+        /* relative */
+        .wrap1 .box2{
+            /* static은 고정 */
+            /* position: static;
+            top: 100px; */
+            position: relative;
+            /* left: 100px; */
+            /* top: 100px; */
+            right: 100px;
+            bottom: 100px;
+        }
+        /* absolute */
+    
+        .wrap2 .box2 {
+            /* 다른 층으로 이동 */
+            position: absolute;
+            left: 100px;
+            top: 100px;
+            background-color: lime;
+        }
+        .box-wrap {
+            border: 3px solid blue;
+            height: 100px;
+            position: relative;
+        }
+        /* fixed : viewport 기준*/
+        .wrap3 {
+            position: relative;
+        }
+        .wrap3 .box2{
+            position: fixed;
+            /* left: 100px; */
+            /* top: 100px; */
+            right: 0;
+            bottom: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap wrap1">
+        <h1>position : relative</h1>
+        <div class="box box1">wrap1 box1</div>
+        <div class="box box2">wrap1 box2</div>
+        <div class="box box3">wrap1 box3</div>
+        <div class="box box4">wrap1 box4</div>
+    </div>
+    <div class="wrap wrap2">
+        <h1>position : absolute</h1>
+        <div class="box box1">wrap2 box1</div>
+        <div class="box-wrap">
+            <div class="box box2">wrap2 box2</div>
+        </div>
+        <div class="box box3">wrap2 box3</div>
+        <div class="box box4">wrap2 box4</div>
+    </div>
+    <div class="wrap wrap3">
+        <h1>position : fixed</h1>
+        <div class="box box1">wrap3 box1</div>
+        <div class="box box2">wrap3 box2</div>
+        <div class="box box3">wrap3 box3</div>
+        <div class="box box4">wrap3 box4</div>
+    </div>
+</body>
+</html>

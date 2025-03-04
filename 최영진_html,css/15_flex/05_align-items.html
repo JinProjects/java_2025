@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>교차축 방향 배치</title>
+    <!-- 
+        stretch : 아이템을 확장해서 배치. 아이템 높이가 auto일때 기본값.
+
+        flex-start : 아이템을 플렉서블 박스 교차축의 시작점 배치. 아이템 높이가 있을 때 기본값
+        center : 아이템을 플렉서블 박스 교차축의 중앙 배치
+        flex-end : 아이템을 플렉서블 박스 교차축의 끝점 배치
+
+        baseline : 교차축 시작점에 배치되는 아이템의 글자 베이스라인에 맞춰 배치  
+    -->
+        <style>
+            .flex-wrapping{
+                display: flex;
+                justify-content: center;
+                height: 500px;
+                background-color: #eee;
+                align-items: baseline;
+            }
+            .box {
+                /* 부모의 width를 따라감 stretch속성 */
+                width: 100px;
+                /* height: 100px; */
+            }
+            .box2 {
+                font-size: 30px;
+            }
+        </style>
+</head>
+<body>
+    <div class="wrap">
+        <h1>align-items</h1>
+        <hr><hr> 
+        <div class="flex-wrapping">                   
+            <div class="box box1">1</div>
+            <div class="box box2">2</div>
+            <div class="box box3">3</div>
+        </div>
+    </div>
+</body>
+</html>

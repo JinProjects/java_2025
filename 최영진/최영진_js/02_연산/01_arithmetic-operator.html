@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>산술 연산자</title>
+</head>
+<body>
+    <h1>산술 연산자</h1>
+    <p>숫자형 데이터를 계산하도록 약속된 기호들</p>
+    <hr><hr>
+    <ul>
+        <li>+ : 더하기</li>
+        <li>- : 빼기</li>
+        <li>* : 곱하기</li>
+        <li>/ : 나누기</li>
+        <li>% : 나머지</li>
+    </ul>
+
+    <p>더하기 연산자는 문자 결합에 이용된다.</p>
+    <ul>
+        <li>문자 + 문자</li>
+        <li>문자 + 숫자</li>
+        <li>더하기 연산자를 제외한 산술 연산자는 숫자 우선</li>
+    </ul>
+    <script>
+        let num1 = 10;
+        let num2 = 3;
+        let str1 = "학교종이";
+        let str2 = "10";
+        let str3 = 1;
+        
+        console.log(str3);
+        console.log(typeof str3);
+        
+        console.log(num1+num2);
+        console.log(num1 - num2);
+        console.log(num1 * num2);
+        console.log(num1 / num2);
+        console.log(num1 % num2);
+        console.log("---------------------")
+
+        // 더하기 연산자는 문자 결합에 이용
+        console.log(str1 + str2);
+        console.log(`${str1} ${str2}`);
+        console.log(num1 + str2);
+
+        console.log(num1 + Number(str2));
+        console.log(num1 + Number(str3));
+        // 더하기를 제외한 나머지 연산자는 자동으로 숫자로 변환한다.
+        console.log(num1 % str3);
+        console.log(20 - str3)
+        console.log(num1 * str3);
+        
+        console.log(num1 * str1);
+        console.log(num1 % str3);
+
+        /**
+         * 사용자에게 태어난 년도를 입력받은 후 
+         * 나이를 계산하고 콘솔창에 다음과 같이 출력
+         * 
+         * 2025년 현재
+         * 당신의 나이는 **세입니다.
+         * - 태어난 년도
+         * - 나이 년도(생략 가능)
+        */
+
+        const currentYear = 2025;
+        let yourBirth = prompt("당신의 태어난 년도를 입력하세요.");
+
+        console.log(`당신의 나이는 ${currentYear - yourBirth}세 입니다.`);
+    </script>
+</body>
+</html>

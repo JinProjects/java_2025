@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM 요소 접근 예제</title>
+</head>
+<body>
+
+    <h1 id="title">DOM 요소 접근 예제</h1>
+    
+    <p class="description">이 문장은 클래스 선택자로 선택됩니다.</p>
+    <p class="description">이것도 같은 클래스입니다.</p>
+
+    <ul id="itemList">
+        <li>항목 1</li>
+        <li>항목 2</li>
+        <li>항목 3</li>
+    </ul>
+    <script>
+        // 아이디 접근
+        const title = document.getElementById("title");
+        console.log(`아이디 : `,title);
+        // 클래스 접근
+        const description = document.getElementsByClassName("description");
+        console.log(`클래스 : `, description);
+
+        //querySelector 사용
+        const list = document.querySelector("#itemList");
+        console.log(list);
+
+        // querySelector 사용
+        const firstItem = document.querySelector("#itemList li")
+        console.log(firstItem);
+
+        // querySelectorAll 사용
+        const allItems = document.querySelectorAll("#itemList li");
+        console.log(`querySelectAll : `,allItems);
+    </script>
+</body>
+</html>

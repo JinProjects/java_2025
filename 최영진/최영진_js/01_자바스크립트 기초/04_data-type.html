@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 자료형</title>
+</head>
+<body>
+    <h1>자료형</h1>
+    <hr><hr>
+    <ul>
+        <li>숫자형(number)
+            <ul>
+                <li>따옴표 없이 숫자로만 표기</li>
+                <li>계산 작업이 가능한 정수와 실수</li>
+            </ul>
+        </li>
+        <li>문자열(string)
+            <ul>
+                <li>작은 따옴표 또는 큰 따옴표에 둘러싸여 있음</li>
+                <li>숫자도 따옴표로 묶으면 문자로 인식됨</li>
+            </ul>
+        </li>
+        <li>논리형(boolean)
+            <ul>
+                <li>true와 false 2가지 값만 있음</li>
+                <li>프로그래밍에서 true는 1, false는 0</li>
+            </ul>
+        </li>
+        <li>undefined
+            <ul>
+                <li>자료형이 지정되지 않았을 때의 상태</li>
+                <li>변수 선언만 하고 값을 할당하지 않으면 변수는 undefined 상태</li>
+            </ul>
+        </li>
+        <li>null
+            <ul>
+                <li>값이 비어있음</li>
+                <li>어떤 값이 의도적으로 비어있음을 의미</li>
+                <li>개발자가 명시적으로 없는 값으로 초기화할 때 사용</li>
+            </ul>
+        </li>
+        <li>오브젝트 타입으로 배열, 객체, 함수가 있다.</li>
+    </ul>
+    <script>
+        //숫자형
+        let age = 20;
+        let temperature = -10;
+        const currentYear = 2025;
+        const PI = 3.14;
+        //변수 age의 자료형을 출력
+        console.log(typeof age);
+
+        // 문자열
+        const bts = "방탄소년단";
+        let stringNum = '100';
+
+        // 콘솔창에 bts 자료형 출력
+        console.log(typeof bts) 
+        // 콘솔창에 stringNum 자료형 출력
+        console.log(typeof stringNum)
+        
+        let flower = "'봄' 벗꽃 / 여름 수국";
+        console.log(flower);
+        
+        /**
+         * 이스케이프 문자
+         * 1) 문자열 안에서 줄바꿈 -> \n
+         * 2) tab -> \t
+         * 3) 따옴표 -> \"
+         * 4) 백슬래시를 string으로 표한하고 싶다면 -> \\
+         */ 
+        let string1 = "조인성\n공유";
+        console.log(string1);
+        let string2 = "조인성\t공유";
+        console.log(string2);
+        let string3 = "조인성 \"공유\"";
+        console.log(string3);
+        let string4 = "조인성 \\공유\\";
+        console.log(string4);
+        // ` (백틱)
+        let food = `'설' 떡국`;
+        console.log(food)
+        let string5 = `"${string2}"는 한국 배우입니다.`;
+        console.log(string5);
+        
+        /**
+         * name 변수에 당신의 이름 할당(문자열)
+         * classRoom 변수에 703 할당(숫자형)
+         * 
+         * 콘솔 창 출력 : 홍길동님 703호 강의실로 입장하세요.
+        */
+        let name = "최영진";
+        let classRoom = 703;
+        
+        console.log(`${name}님 ${classRoom}호 강의실로 입장하세요.`);
+        // 논리형(Boolean)
+        const isTrue = true;
+        const isFalse = false;
+
+        console.log(isTrue);
+        console.log(isFalse);
+
+        const isTrueNum = 1;
+        //Boolean() : 숫자 자료형을 Boolean자료형으로 변환
+        console.log(Boolean(isTrueNum));
+        // 0을 할당하는 변수 선언 -> Boolean()로 자료형 변환
+        const isFalseNum = 0;
+        console.log(Boolean(isFalseNum));
+
+        //자료형 변환
+        const str1 = "100";
+        const str2 = "123.45";
+        const str3 = "홍길동";
+        const str4 = true;
+
+        console.log(typeof Number(str1));
+        console.log(typeof parseFloat(str2));
+        console.log(typeof parseInt(str3));
+        
+        /**
+         * 숫자 자료형 변환 함수
+         * Number() : 문자열과 논리형 값을 숫자로 변환
+         * parseInt() : 문자열을 정수 숫자로 변환
+         * parseFloat() : 문자열을 실수 숫자로 변환
+         * 
+         * NaN (Not a Number) : 숫자가 아님
+        */
+        console.log(`Number(str1)는 ${Number(str4)}`);
+        console.log(`parseInt(str1)는 ${parseInt(str1)}`);
+        console.log(`Number(str2)는 ${Number(str2)}`);
+        console.log(`parseInt(str2)는 ${parseInt(str2)}`);
+        console.log(`parseFloat(str2)는 ${parseFloat(str4)}`);
+        console.log("--------------------------------------")
+
+        //undefined
+        let init;
+        consloe.log(init)
+        //null
+        let isNull = null;
+        
+    </script>
+</body>
+</html>

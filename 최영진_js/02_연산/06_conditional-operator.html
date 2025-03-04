@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>삼항 조건 연산자</title>
+</head>
+<body>
+    <h1>삼항 조건 연산자</h1>
+    <hr><hr>
+    <p>조건식 ? true일 때 실행되는 코드 : false일 때 실행되는 코드 </p>
+    
+    <hr>
+    <button id="age-check">나이 판단</button>
+    <script>
+        /**
+         * 입력받은 나이가 13세 이상이면 "성인 요금" 출력, 
+         * 그렇지 않으면 "청소년 요금" 출력
+         * 
+         * ----------------------------
+         * 
+         * 입력받은 나이가 13세를 초과하면 "성인 요금",
+         * 13세 이하면 "청소년 요금",
+         * 8세 이하면 "유아 요금"
+        */
+    //    document.getElementById("age-check").onclick = function() {
+    //        let yourAge = prompt("나이를 입력해주세요.");
+    //         (yourAge >= 13?console.log("성인 요금"):console.log("청소년 요금"));
+    //     }
+        
+        document.getElementById("age-check").onclick = function(){
+            let yourAge = prompt("나이를 입력해주세요.");
+            (yourAge > 13 ? console.log("성인 요금") : 
+            yourAge <= 8 ? console.log("유아 요금"):console.log("청소년 요금"));
+        }
+
+        // var result = 1 && 15;
+        // console.log(result);
+
+    </script>
+
+    <hr>
+    <button id="even-check">짝수 판단하기</button>
+    <script>
+        /**
+         * 입력받은 숫자가 짝수면 "짝수입니다.",
+         * 짝수가 아니면 "짝수가 아닙니다."
+         document.getElementById("even-check").onclick = function(){
+             let num =prompt("숫자를 입력하세요.");
+             console.log((num%2===0?"짝수입니다.":"짝수가 아닙니다."));
+         }
+        */
+       /**
+        * 
+        * 입력받은 숫자가 문자이거나 빈 공백이면 "잘못 입력하셨습니다."
+        * 입력받은 숫자가 짝수일 떄 "짝수입니다."
+        * 둘 다 아니면 "홀수입니다."
+       */
+        document.getElementById("even-check").onclick = function(){
+            let num = prompt("숫자를 입력해주세요.");
+            console.log( isNaN(num) || (num.trim() === "") ? "잘못입력하셨습니다.":
+                            num%2==0?"짝수입니다.":"거짓입니다.");
+        }
+
+       /**
+        * 프롬프트 창에서 
+        * 기본 입력값은 문자열 자료형
+        * 입력값 없이 확인 버튼을 누르면 " "(빈공백)이 입력 된다.
+        * 취소 버튼을 누르면 null 입력
+        * 
+        * 문자열의 앞뒤에 있는 빈 공백을 지우는 메서드 trim()
+        * isFloat()
+        * isNaN() : 숫자가 아닐 때 true, 숫자이면 false
+        * 
+        let output = prompt("숫자를 입력하세요.");
+        console.log(`${output.trim()} 출력`); //       12345        
+       */
+
+    </script>
+</body>
+</html>

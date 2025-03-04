@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>박스모델 속성</title>
+    <!-- 
+        박스모델 속성
+        - width, height, border, padding, margin
+        - 블록 레벨 요소는 박스 모델 속성이 모두 적용된다.
+        - 인라인 레벨 요소는 박스 모델 속성 중 
+            margin-left, maring-right, padding, border만 적용된다.
+        - img 요소는 인라인 요소이지만 예외입니다.
+        - display 속성으로 변경할 수 있다.
+
+    -->
+        <style>
+            .wrap {
+                width : 1000px;
+                margin: auto;
+                border: 2px solid red;
+                padding: 50px;
+            }
+            h1, h2 {
+                background-color: yellow;
+                width: 300px;
+                /* height: 50px; */
+                /* line-height: 50px; */
+                /* text-align: center; */
+                /* vertical-align: middle; */
+                padding: 50px 0;
+                border: 5px solid red;
+                margin: 50px;
+                /* 블럭상태인 요소를 인라인으로 변경 */
+                /* display: inline-block; */
+                display: inline;
+            }
+            
+            a{
+                background-color: pink;
+                border: 3px solid red;
+                /* 인라인 요소는 width, height 적용 안됨 */
+                width: 100px;
+                height: 50px;
+                padding: 50px;
+                /* 인라인 요소는 margin의 height적용 안됨 */
+                margin: 20px;
+                display: block;
+            }
+            img {
+                border: 3px solid red;
+                width: 50px;
+                height: 100px;
+                padding: 20px;
+                margin: 20px;
+            }
+        </style>
+</head>
+<body>
+    <div class="wrap">
+        <h1>CSS</h1>
+        <h2>CSS 장점</h2>
+        <hr><hr>
+        <section class="contents">
+            <p>
+                <a href="#">menu1</a><a href="#">menu2</a><a href="#">menu3</a>
+                CSS(Cascading Style Sheets)는 웹 페이지의 스타일과 레이아웃을 설계하는 데 사용되는 스타일 언어입니다. HTML로 작성된 구조에 색상, 글꼴, 간격, 배경과 같은 시각적 요소를 추가하여 웹 페이지를 더욱 매력적이고 사용자가 접근하기 쉽게 만듭니다. CSS는 웹 디자인에서 필수적인 요소로, HTML로 콘텐츠를 정의하고 CSS로 이를 꾸미는 방식으로 역할을 나누어 효율적인 개발 환경을 제공합니다. CSS는 간단한 텍스트 스타일 변경부터 복잡한 애니메이션 구현까지 다양한 기능을 지원합니다.
+            </p>
+            <p>     
+                <img src="images/cat1.png" alt="">
+                <img src="images/cat2.png" alt="">
+                <img src="images/cat3.png" alt="">        
+                CSS는 디자인 요소를 효율적으로 제어할 수 있는 다양한 기능을 제공합니다. 클래스와 아이디를 사용하여 특정 요소를 타겟팅하거나, 미디어 쿼리를 활용해 디바이스 화면 크기에 따라 스타일을 조정하는 반응형 디자인을 구현할 수 있습니다. 또한, CSS는 유지보수가 용이합니다. 동일한 스타일을 여러 페이지에 적용할 수 있어 개발 시간을 단축하고, 변경 사항이 발생해도 스타일 시트를 수정하기만 하면 전체 웹 사이트에 즉시 반영됩니다. 이러한 점은 특히 큰 프로젝트에서 생산성을 크게 향상시킵니다.
+            </p>
+        </section>            
+    </div>
+</body>
+</html>

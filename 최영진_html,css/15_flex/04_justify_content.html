@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>주축 방향 배치</title>
+    <!-- 
+        flex-start : 기본값. 아이템을 플렉서블 박스 주축의 시작점 배치
+        center : 아이템을 플렉서블 박스 주축의 중앙 배치
+        flex-end : 아이템을 플렉서블 박스 주축의 끝점 배치
+
+        플렉서블 박스에 여백이 있을 경우
+        space-between : 처음 아이템과 마지막 아이템은 양쪽 끝, 나머지 아이템은 동일 간격
+        space-around : 처음 아이템과 마지막 아이템의 양 옆만 나머지 아이템 간격의 절반
+        space-evenly : 아이템들 모두 동일 간격
+    -->
+        <style>
+            /* 주축이 가로 */
+            .flex-wrapping1 {
+                display: flex;
+                justify-content: space-between;
+            }
+            .flex-wrapping1 .box {
+                height: 300px;
+                width: 200px;
+            }
+
+            /* 주축이 세로 */
+            .flex-wrapping2 {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                height: 500px;
+            }
+            .flex-wrapping2 .box {
+                height: 100px;
+            }
+        </style>
+</head>
+<body>
+    <div class="wrap">
+        <h1>justify-content</h1>
+        <hr><hr> 
+        <div class="flex-wrapping1">                   
+            <div class="box box1">1</div>
+            <div class="box box2">2</div>
+            <div class="box box3">3</div>
+        </div>
+        <hr><hr>
+        <div class="flex-wrapping2">                   
+            <div class="box box1">1</div>
+            <div class="box box2">2</div>
+            <div class="box box3">3</div>
+        </div>
+    </div>
+</body>
+</html>

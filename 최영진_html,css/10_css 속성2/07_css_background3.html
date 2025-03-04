@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>그라데이션</title>
+    <style>
+        .box {
+            width: 500px;
+            height: 500px;
+            border: 5px solid gray;
+            display: inline-block;
+        }
+        .box1 {
+            /* background-image: linear-gradient(red,green,yellow,blue,white); */
+            background-image: linear-gradient(90deg,red 0%,red 10%,orange 20%, green 40%,yellow 60%, yellow 70%, blue 100%);
+            /* background-image: linear-gradient(to right, red 0%, orange 10%, orange 30%, yellow 50%, yellow 70%, green 90%, green 100%); */
+            /* background-image: radial-gradient(red,green,yellow); */
+            
+        }
+        .box2 {
+            width: 1000px;
+            background-image: radial-gradient(ellipse at top, red 0%, orange 30%, green 50%, blue 70%);
+        }
+        .box3 {
+            background-image: repeating-linear-gradient(red 5%, red 15%, green 25%,green 40%);
+        }
+        .box4 {
+            background-image: repeating-radial-gradient(circle at center, red 0%, orange 20%, yellow 30%, green 40%, blue 50%);
+        }
+        .box5 {
+            background-image: repeating-linear-gradient(to right, red 0%, orange 10%, yellow 20% );
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <div class="box box1"></div>
+        <div class="box box2"></div>
+        <div class="box box3"></div>
+        <div class="box box4"></div>
+        <div class="box box5"></div>
+    </div>
+</body>
+</html>

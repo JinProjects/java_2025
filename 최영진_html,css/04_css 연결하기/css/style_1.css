@@ -1,0 +1,11 @@
+/* 한글을 사용하기 위해 */
+@charset "UTF-8"; 
+/* import css파일은 UTF-8 코드를 안넣어도 된다. */
+@import url(style_2.css);
+
+p {
+  color: hsla(125, 100%, 50%, 1);
+}
+span {
+  background-color: yellow;
+}

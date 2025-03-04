@@ -1,0 +1,55 @@
+@charset "utf-8";
+
+@import url("reset.css");
+
+* {
+    box-sizing: border-box;
+}
+.wrap {
+    width: 80%;
+    max-width: 1300px;
+    margin: auto;
+    border: 5px solid gray;
+    display: flex;
+    flex-direction: column;
+}
+.header {
+    background-color: crimson;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.site-title {
+    padding: 30px;
+}
+.menu {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    text-align: center;
+}
+.menu li {
+    padding: 20px;
+    /* border: 1px solid red; */
+}
+.main {
+    padding: 10px;
+}
+.card-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: minmax(200px, auto);
+    gap: 10px;
+    margin-top: 30px;
+}
+.card-item {
+    border: 1px solid gray;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px;
+}
+.footer {
+    background-color: gray;
+    padding: 30px;
+    text-align: center;
+}

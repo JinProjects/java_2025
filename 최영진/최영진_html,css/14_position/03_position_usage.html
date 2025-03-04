@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>position 활용</title>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+
+        .wrap {
+            width: 600px;
+            margin: auto;
+            padding: 20px;
+            border: 5px solid gray;
+            position: relative;
+        }
+        .logo {
+            background-color: gray;
+            border-radius: 0 50% 50% 0;
+            height: 50px;
+            width: 50px;
+            position: absolute;
+            right: -50px;
+            bottom: -5px;
+            text-align: center;
+            /* height값과 동일하게 설정하면 중앙정렬 */
+            line-height: 50px; 
+            /* padding-top: 10px; */
+            color: #fff;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quisquam quis dolorem sapiente dolorum libero quod repellendus voluptatum, tempora quasi obcaecati unde provident iusto corporis, ipsam laudantium. Amet distinctio maxime omnis possimus, quis aut tenetur consectetur alias totam nam, minima obcaecati laudantium debitis reiciendis quasi eius incidunt illum a molestiae veritatis! Labore aliquid quis magnam nobis laboriosam, similique obcaecati in nisi deleniti a, unde repellat sequi dolor ratione! Voluptates beatae eos veniam veritatis necessitatibus inventore temporibus, dicta, iste odit placeat, dignissimos sit architecto omnis similique vitae ab porro eius in officiis! Eveniet beatae numquam dolore, exercitationem ut quasi provident ea doloribus?
+        <div class="logo">a</div>
+    </div>
+</body>
+</html>

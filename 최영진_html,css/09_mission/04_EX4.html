@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>04_EX4-최영진</title>
+    <style>
+        .list {
+            font-size: 45px;
+        }
+        .main {
+            width: 600px;
+            margin: auto;
+            /* padding: 20px;
+            border: 1px solid red; */
+        }
+        .main h1 {
+            background-color: lightgray;
+        }
+        .main .list dt{
+            color: red;
+            /* border: 1px solid red; */
+            /* list-style-position: outside;
+            list-style-type: circle; */
+        }
+        .main .list dt span{
+            color: coral;
+            font-size: 0.7em;
+            vertical-align: sub;
+        }
+        .main .list2 dt span{
+            /* display: inline-block; */
+            /* position: absolute; */
+            vertical-align: top;
+            color: coral;
+            font-size: 0.7em;
+            /* border: 1px solid red; */
+            
+        }
+
+        .main .list dd{
+            /* list-style-position: outside;
+            list-style-type: circle; */
+            color: cadetblue;
+            font-size: 0.6em;
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <h1>화학 기호</h1>
+        <dl class="list">
+            <dt>H<span>2</span>O</dt>
+            <dd>물</dd>
+            <dt>CO<span>2</span></dt>
+            <dd>이산화탄소</dd>
+        </dl>
+        <h1>승수 계산</h1>
+        <dl class="list list2">
+            <!-- <dt>2<div class="dec"><span>3</span></div></dt> -->
+            <dt>2<span>3</span></dt>
+            <dd>8</dd>
+            <dt>1<span>100</span></dt>
+            <dd>1</dd>
+        </dl>
+    </div>
+</body>
+</html>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 간단한 입출력</title>
+</head>
+<body>
+    <h1>간단한 입출력 방법</h1>
+    <hr><hr>
+    <h2>알림 창 출력</h2>
+    <ul>
+        <li>window.alert();</li>
+        <li>웹 브라우저에서 알림 창을 열어 메시지 표시</li>
+        <li>window 객체는 브라우저의 최상위 객체이며 생략 가능하다.</li>
+    </ul>
+    <button id="btnAlert">알림 창</button>
+    <script>
+        /**
+         * 문서의 #brtAlert를 클릭하면 함수 호출 {
+         *  윈도우 객체.알림창()
+         * }
+        */
+       document.getElementById("btnAlert").onclick = function(){
+            alert("Hello");
+       }
+    </script>
+    <h2>확인 창에서 입력받기</h2>
+    <ul>
+        <li>window.confirm();</li>
+        <li>사용자가 [확인] 또는 [취소] 버튼 중에서 직접 클릭할 수 있다.</li>
+        <li>선택한 결과에 맞게 프로그램이 동작한다.</li>
+        <li>window 객체는 브라우저의 최상위 객체이며 생략 가능하다.</li>
+    </ul>
+    <button id="btnConfirm">확인창</button>
+    <script>
+        /**
+         * 문서 객체의 #btnConfirm 객체를 클릭하면 함수 호출 {
+         *  윈도우 객체.확인창
+         * }
+         * [확인] 누르면 true
+         * [취소] 누르면 false
+         */
+        document.getElementById("btnConfirm").onclick = function(){
+           let answer = confirm("자바스크립트 할 만 한가요?");
+           alert(answer);
+        };
+    </script>
+    <h2>프롬프트 창에서 입력받기</h2>
+    <ul>
+        <li>window.prompt(메시지) 또는 window.prompt(메시지, 기본값);</li>
+        <li>텍스트 필드가 있는 작은 창.</li>
+        <li>텍스트 필드 안에 입력받은 내용을 프로그램에 사용할 수 있다.</li>
+        <li>window 객체는 브라우저의 최상위 객체이며 생략 가능하다.</li>
+    </ul>
+        <button id="btnPrompt">프롬프트 창</button>
+       <script>
+        /**
+         *  문서의 #btnPrompt를 클릭하면 함수 호출 {
+         *  프롬프트 창("메시지","기본값");
+         * }
+         * 
+         */
+        document.getElementById("btnPrompt").onclick = function(){
+            let answer2 = prompt("당신이 좋아하는 색깔은?","파랑");
+            alert(answer2);
+        }
+       </script>
+    <h2>웹 브라우저 화면에 출력</h2>
+    <ul>
+        <li>document.write();</li>
+        <li>document 객체는 HTML 문서이며 write() 메소드는 body 요소 안에 쓴다.</li>
+        <li>HTML 태그도 함께 사용할 수 있다.</li>
+    </ul>
+    <button id="btnWrite">문서에 출력</button>
+    <script>
+        document.getElementById("btnWrite").onclick = function(){
+            document.write("<h1>안녕하세요.</h1>");
+            document.write("<hr><hr>");
+        }
+        
+    </script>
+    <h2>콘솔 창 출력</h2>
+    <ul>
+        <li>window.console.log();</li>
+        <li>브라우저의 콘솔 창에 출력한다.</li>
+        <li>콘솔 창에서 소스 코드의 오류를 발견하거나 변수값을 확인할 수도 있다.</li>
+        <li>window 객체는 브라우저의 최상위 객체이며 생략 가능하다.</li>
+    </ul>
+    <button id="btnConsole">콘솔 창 출력</button>
+    <script>
+        /**
+         *  문서의 btnConsole을 클릭하면 함수 호출 {
+         *  콘솔창에 출력("<h1>안녕하세요</h1>")
+         * }; 
+         */
+        document.getElementById("btnConsole").onclick = function(){
+            console.log("<h1>안녕하세요</h1>")
+        }
+    </script>
+</body>
+</html>

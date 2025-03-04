@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>플렉서블 박스 만들기</title>
+    <style>
+        .wrap {
+            width: 90%;
+            max-width: 1200px;
+            min-width: 600px;
+            border: 5px solid gray;
+            margin: auto;
+        }
+        .box1 {
+            background-color: yellow;
+        }
+        .box2 {
+            background-color: red;
+        }
+        .box3 {
+            background-color: green;
+        }
+        /* 플렉스 속성은 부모에게 적용시킨다. */
+        .flex-wrapping {
+            display: flex;
+            /* flex-direction: column; */
+        }
+        .box {
+            height: 100px;
+            width: 500px;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <h1>flex</h1>
+        <hr><hr> 
+        <div class="flex-wrapping">
+            <div class="box box1">1</div>
+            <div class="box box2">2</div>
+            <div class="box box3">3</div>
+        </div>
+    </div>
+</body>
+</html>

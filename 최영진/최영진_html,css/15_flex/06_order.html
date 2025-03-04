@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>순서 변경</title>
+    <style>
+        .flex-wrapping {
+            display: flex;
+        }
+        .box {
+            height:200px;
+            width: 50%;
+        }
+        .box1 {
+            order: 2;
+        }
+        .box2{
+            order: 3;
+        }
+        .box3 {
+            order: 1;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <h1>order</h1>
+        <hr><hr> 
+        <div class="flex-wrapping">                   
+            <div class="box box1">1</div>
+            <div class="box box2">2</div>
+            <div class="box box3">3</div>
+        </div>
+    </div>
+</body>
+</html>

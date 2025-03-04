@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>float 해결</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <!-- 
+        float 해결 방법
+        - 부모 요소에 height 속성 지정
+        - 부모 요소에 ::after 사용하여 clear 속성 지정
+    -->
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        body{
+            line-height: 1.8;
+        }
+        .wrap{
+            width: 800px;
+            margin: auto;
+            border: 5px solid gray;
+        }
+        .header {
+            background-color: lightblue;
+            /* height: 0px; */
+        }
+        .header h1, .header ul {
+            /* background-color: orange;
+            border: 2px solid red; */
+        }
+
+        .header h1 {
+            /* float: left; */
+        }
+        .header ul {
+            /* float: right; */
+        }
+        .header li {
+            /* display: inline-block; */
+            /* margin-left: 50px; */
+        }
+        .nav {
+            background-color: lightcoral;
+            /* float: left; */
+        }
+        .section {
+            background-color: antiquewhite;
+            /* float: right; */
+            width: 80%;
+        }
+        .footer{
+            /* background-color: gray; */
+            /* clear: both; */
+        }
+        /* nav ul {
+            clear: both;
+            background-color: red;
+        } */
+         /* .main::after{
+            content: "";
+            display: block;
+            clear: both;
+         } */
+         .main {
+            background-color: blueviolet;
+         }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <header class="header">
+            <h1>로고</h1>
+            <ul>
+                <li><a href="#">로그인</a></li>
+                <li><a href="#">회원가입</a></li>
+            </ul>
+        </header>
+        <!-- E: header -->
+        <main class="main">
+            <nav class="nav">
+                <ul>
+                    <li><a href="#">menu1</a></li>
+                    <li><a href="#">menu2</a></li>
+                    <li><a href="#">menu3</a></li>
+                </ul>
+            </nav>
+            <!-- E: nav -->
+            <section class="section">
+                <h2>영화 장르</h2>
+                <section>
+                    <h3>animation</h3>
+                    <p>
+                        그림, 인형, 그림자 또는 움직이지 않는 물체를 스톱 모션으로 찍어 프레임별로 촬영하는 기법. 이로써 정상적으로 영사했을 때 피사체가 움직이는 것처럼 보이게 된다. 
+                        각 프레임은 대상의 미세하고 점진적인 변화를 담고 있어 초당 24프레임의 규정 속도로 차례대로 스크린에 투사하면 대상물은 움직이거나 살아 있는 것처럼 보인다.</p>
+                </section>
+                <section>
+                    <h3>fantasy</h3>
+                    <p>
+                        초현실적인 인물과 사건을 그리는 영화. 우리가 사는 세상과는 다른 세계, 물리학과 생물학의 일반 법칙이 적용되지 않는 세계를 창조해낸다.
+                        이런 영화의 흥행은 비현실적인 것을 관객에게 사실적으로 보이게 하는 영화 제작진의 실력 여부에 따라 그 결과가 좌우된다.
+                        산문으로 된 이야기는 상상의 여지를 많이 남겨 두지만, 영화는 우리의 상상력이 일으키는 환상을 우리 눈앞에서 만들어낸다.</p>
+                </section>
+            </section>
+            <!-- E: section -->  
+        </main>
+        <!-- E: main -->
+        <footer class="footer">
+            &copy;copyright
+        </footer>
+        <!-- E: footer -->
+    </div>
+</body>
+</html>
