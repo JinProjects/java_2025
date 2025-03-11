@@ -1,10 +1,11 @@
-package com.company.test;
+package com.company.bank;
 
-class Account {
-	String id;
-	String pw;
-	int age;
-	int money;
+public class Account {
+	private String id;
+	private String pw;
+	private int age;
+	private int money;
+	static String Company = "(주)회사";
 	
  //기본생성자 ##
  public Account(){}

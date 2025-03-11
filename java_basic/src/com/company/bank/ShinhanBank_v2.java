@@ -1,11 +1,10 @@
-package com.company.test;
+package com.company.bank;
 
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class ShinhanBank implements BankImpl{
-	ArrayList<Account> creAccount = new ArrayList<Account>();
-	Scanner sc = new Scanner(System.in);
+public class ShinhanBank_v2 implements BankImpl_v2{
+//	ArrayList<Account> creAccount = new ArrayList<Account>();
 	
 	@Override
 	public void bankMenu() {
@@ -20,13 +19,14 @@ public class ShinhanBank implements BankImpl{
 	}
 	
 	@Override
-	public void createAccount() {
+	public void createAccount(ArrayList<Account> creAccount) {
+//		ArrayList<Account> creAccount = new ArrayList<Account>();
 		Scanner sc = new Scanner(System.in);
 		
 		String str = inputAccount();
 		for(int i = 0; i < creAccount.size(); i++) {
 			if(creAccount.get(i).getId().equals(str.split("/")[0])) {
-			System.out.println(creAccount.get(i));
+//			System.out.println(creAccount.get(i));
 				System.out.println("이미 아이디가 존재합니다.");
 				return;
 			}
@@ -38,10 +38,11 @@ public class ShinhanBank implements BankImpl{
 		
 		Account newAccount = new Account(str.split("/")[0], str.split("/")[1], age, money);
 		creAccount.add(newAccount);
+		
 	}
 
 	@Override
-	public void selectAccount() {
+	public void selectAccount(ArrayList<Account> creAccount) {
 		String str = inputAccount();
 		int idPwChk = accountChk(str.split("/")[0],str.split("/")[1],creAccount);
 		if( idPwChk > 0) {
@@ -56,7 +57,7 @@ public class ShinhanBank implements BankImpl{
 	}
 
 	@Override
-	public void deposit() {
+	public void deposit(ArrayList<Account> creAccount) {
 		String str = inputAccount();
 		Scanner sc = new Scanner(System.in);
 		int idPwChk = accountChk(str.split("/")[0],str.split("/")[1], creAccount);
@@ -75,7 +76,7 @@ public class ShinhanBank implements BankImpl{
 	}
 
 	@Override
-	public void withdraw() {
+	public void withdraw(ArrayList<Account> creAccount) {
 		Scanner sc = new Scanner(System.in);
 		String str = inputAccount();
 		
@@ -96,7 +97,7 @@ public class ShinhanBank implements BankImpl{
 	}
 
 	@Override
-	public void delete() {
+	public void delete(ArrayList<Account> creAccount) {
 		Scanner sc = new Scanner(System.in);
 		String str = inputAccount();
 		String flag = "";
@@ -157,4 +158,5 @@ public class ShinhanBank implements BankImpl{
 				return 0;
 			}
 	}
+
 }

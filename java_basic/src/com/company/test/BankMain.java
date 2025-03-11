@@ -2,6 +2,8 @@ package com.company.test;
 
 import java.util.Scanner;
 
+import com.company.bank.ShinhanBank;
+
 public class BankMain {
 	public static void main(String[] args) {
 		BankImpl bank = new ShinhanBank();

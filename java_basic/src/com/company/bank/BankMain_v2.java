@@ -1,4 +1,4 @@
-package com.company.test;
+package com.company.bank;
 
 import java.util.ArrayList;
 import java.util.Scanner;
