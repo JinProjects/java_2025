@@ -9,12 +9,13 @@ import com.company.bank.controller.Deposit;
 import com.company.bank.controller.Input;
 import com.company.bank.controller.Show;
 import com.company.bank.controller.Withdraw;
+import com.company.bank.dto.Account;
 
 public class Menu {
 	public void exec() {
+		ArrayList<Account> creAccount = new ArrayList<Account>();
 		Scanner sc = new Scanner(System.in);
 		Bank_Controller bCtrl = null;
-		ArrayList<Account> creAccount = new ArrayList<Account>();
 		while(true){
 			bankMenu();
 			int select = sc.nextInt();

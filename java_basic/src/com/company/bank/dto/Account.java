@@ -1,4 +1,4 @@
-package com.company.bank;
+package com.company.bank.dto;
 
 public class Account {
 	private String id;

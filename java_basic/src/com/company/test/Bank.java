@@ -3,7 +3,7 @@ package com.company.test;
 import java.util.Arrays;
 import java.util.Scanner;
 
-import com.company.bank.Account;
+import com.company.bank.dto.Account;
 
 public class Bank {
 	public static void main(String[] args) {

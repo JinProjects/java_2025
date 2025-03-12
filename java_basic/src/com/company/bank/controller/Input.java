@@ -3,14 +3,13 @@ package com.company.bank.controller;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-import com.company.bank.Account;
-import com.company.bank.Common;
+import com.company.bank.common.Common;
+import com.company.bank.dto.Account;
 //계정 생성
 public class Input implements Bank_Controller{
-	ArrayList<Account> creAccount = new ArrayList<Account>();
 	
 	@Override
-	public void exec(ArrayList<Account> users) {
+	public void exec(ArrayList<Account> creAccount) {
 		Common com = new Common();
 		Scanner sc = new Scanner(System.in);
 		

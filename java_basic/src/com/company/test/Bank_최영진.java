@@ -3,7 +3,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Scanner;
 
-import com.company.bank.Account;
+import com.company.bank.dto.Account;
 
 
 public class Bank_최영진 {

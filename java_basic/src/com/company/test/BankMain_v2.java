@@ -1,7 +1,9 @@
-package com.company.bank;
+package com.company.test;
 
 import java.util.ArrayList;
 import java.util.Scanner;
+
+import com.company.bank.dto.Account;
 
 public class BankMain_v2 {
 	public static void main(String[] args) {

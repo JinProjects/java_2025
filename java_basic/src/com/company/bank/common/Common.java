@@ -1,7 +1,9 @@
-package com.company.bank;
+package com.company.bank.common;
 
 import java.util.ArrayList;
 import java.util.Scanner;
+
+import com.company.bank.dto.Account;
 
 public class Common {
 	

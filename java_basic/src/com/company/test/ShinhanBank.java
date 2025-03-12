@@ -1,9 +1,9 @@
-package com.company.bank;
+package com.company.test;
 
 import java.util.ArrayList;
 import java.util.Scanner;
 
-import com.company.test.BankImpl;
+import com.company.bank.dto.Account;
 
 public class ShinhanBank implements BankImpl{
 	ArrayList<Account> creAccount = new ArrayList<Account>();
