@@ -1,0 +1,362 @@
+■1. Mysql Why?
+1. DBMS(Database Management System) ★
+- 데이터베이스 관리 시스템
+
+2. Database
+- Data + base
+- 1.데이터(값) 2.정보(의미부여)
+- 0도, 486, 1004(천사)
+
+Q. 데이터 / 정보구분
+1-1. 데이터 - 1년동안 월간 우산 판매량을 조사 했습니다.
+1-2. 정보 - 이 조사표를 가지고 처리해서 우산은 겨울보다 여름에 잘 팔린다는 결과를 얻었습니다.
+
+3.Database 
+-oracle(유료), mysql, mssql
+
+
+4. Setting
+- 버젼확인
+- mysql ver 8.0.41
+- https://dev.mysql.com/
+  > Download >  Mysql Community Server
+
+5.설치확인
+5-1 접속
+----------------------------------
+mysql -uroot -p
+----------------------------------
+
+- 설정의미 -u 유저/ -p 패스워드
+
+5-2. 설정확인
+----------------------------------
+status
+----------------------------------
+
+■1. Mysql Why?
+1. RDBMS(Relational Database Management System) ★
+- 관계형 데이터베이스 관리 시스템
+- 테이블 관계
+
+2. RDBMS 구성요소 ★
+- 개체( Entity : Table )
+- 관계( Relational : 외래키 )
+- 속성( Attribute : 필드 )
+
+3. 데이터베이스언어 ★
+ 1) 정의어(DDL) - create, alter, drop - CAD
+ 2) 조작어(DML) - insert, select, update, delete - CRUD
+ 3) 제어어(DCL) - grant, revoke
+
+4. 실습
+4-1. Database  실습
+----------------------------------
+mysql>  -- database 확인
+mysql>  show databases;
+
+mysql> -- db (저장보관소) 가방만들기
+mysql> create  database test1; 
+
+mysql> -- db 삭제 -- 복구안됨.
+mysql> drop  database  test1; 
+----------------------------------
+
+4-2. 연습 
+1. db명 : test , mbasic , db501 3개 db만들기
+2. db만들어진것 확인
+3. db501 삭제 
+
+
+----------------------------------
+create database test;
+create database mbasic;
+create database db501;
+
+show databases;
+drop database db501;
+----------------------------------
+
+5. TABLE ★
+- 저장소안에 분류표 
+----------------------------------
+create table 테이블명(
+  필드1 자료형 속성,
+  필드2 자료형 속성
+);
+----------------------------------
+자료형
+   1) 숫자 - int, double
+   2) 문자 - char 고정문자열 - y/n / varchar 가변형문자열 / text 제한없음
+   3) 날짜 - date, datetime, timestamp
+속성
+  필수입력 - not null 
+  숫자자동증가 - auto_increment
+  기본키     - primary key
+5-0. 데이터베이스 저장소 선택
+use mbasic; 
+
+5-1. 테이블 만들기
+create table t1(
+  name varchar(100) not null,
+  age int
+);
+
+5-2. 테이블들 확인
+show tables;
+
+5-3. 테이블구조 확인
+desc t1;
+
+5-4. auto_increment, primary key
+
+create table t2(
+  no int not null auto_increment primary key,
+  name varchar(100) not null,
+  age int 
+);
+
+
+q001) 
+create table coffee(
+  cno int(11) not null auto_increment primary key,
+  cname varchar(50) not null,
+  cprice int(11) not null
+)
+
+q002)
+create table milk(
+  mno int(11) not null auto_increment primary key,
+  mname varchar(50) not null,
+  mprice int(11) not null,
+  mnum int(11) not null,
+  mtotal int(11) not null
+);
+
+q003)
+create table score(
+  sno int(11) not null auto_increment primary key,
+  sname varchar(20) not null,
+  sjava int(11) not null,
+  sjsp int(11) not null,
+  sspring int(11) not null,
+  sproject int(11) not null,
+  sstotal int(11),
+  ssavg int(11),
+  semail varchar(50)
+);
+
+q004)
+create table emp(
+  empno int(11) not null auto_increment primary key,
+  ename varchar(20),
+  job varchar(20),
+  mgr int(11),
+  hiredate date,
+  sal int(11),
+  comm int(11),
+  deptno int(11)
+);
+
+create table dept(
+  deptno int(11) not null auto_increment primary key,
+  dname varchar(20) not null,
+  loc varchar(20) not null
+);
+
+create table salgrade(
+  grade int(11) not null auto_increment primary key,
+  losal int(11),
+  hisal int(11)
+);
+
+정리문제2 Mysql
+
+Q1. rdb? 관계형데이터베이스(Relational Database)
+   -테이블간 관계(외래키) 설정하여 데이터를 조회하는 시스템
+   
+Q2. mysql에 접속하는 코드는? 
+       mysql -u root -p
+       아이디 root/ 비번 1234
+Q3. database 만들기 db명
+     create database db1;
+      show databases;
+
+Q4. use db1;     
+Q5. db1 안에 테이블만들기 : userinfos
+
+create table userinfos(
+  no int not null auto_increment primary key,
+  name varchar(100) not null,
+  age int
+);
+desc userinfos;
+show tables;
+
+alter table 테이블명 (add, drop, modify, change, rename)
+
+Q6. alter table userinfos modify age int not null;
+
+Q7. alter table userinfos modify name varchar(50) not null;
+     alter table userinfos change name name varchar(50) not null;
+
+Q8. alter table userinfos add email varchar(50);
+
+Q9. alter table userinfos drop email;
+
+Q10. alter table userinfos rename userinfo;
+
+
+▷QUESTION1.  다음 빈칸을 채우시오
+1. RDBMS 는
+     (RDBMS :Relational DataBase Management System) 
+      *   관계형   데이터베이스   관리   시스템이라고 하며 
+      *  테이블(table) 들의   테이블들의 관계를 나타냅니다. 
+      *  사전정의된 관계로 데이터를 구성하는 정보모음을 말합니다.
+
+2. 테이블  - 테이블은  (#1.    행     #2.  열      )로 이뤄져 있습니다.  
+     1) (#3.   열       )- 분류속성을 의미
+         데이터의 종류, 특성,상태등을 정의하며  필드, 속성이라고도 합니다. 
+     2) (#4.    행   )- 관계된 데이터묶음
+         튜플, 레코드라고 합니다.  
+
+▷QUESTION2.  관계형데이터모델핵심구성요소를 적고 설명하시오.
+  - 테이블(개체, 엔터티) 
+  - 관계  (Relationship : 연관관계, 외래키 )
+  - 속성  (Attribute, 필드, 열)
+
+▷QUESTION3.  스키마의 정의 및 세가지 종류를 적으시오.
+  -외부스키마 = 사용자뷰
+  -개념스키마 = 전체적인 뷰
+  -내부스키마 = 저장스키마
+
+
+▷QUESTION4. 데이터베이스 설계단계  다음 빈칸을 채우시오
+1.  (#1.  개념적설계    )  - 요구사항 분석 후 개념적 스키마 생성 
+                       ( 개체-관계 다이어그램 - ERD )   
+2. (#2.  논리적설계   )  - ERD를  이용하여  
+                      데이터베이스 스키마(테이블 구조도)를 설계
+3. (#3.  물리적설계   )  - DBMS가 제공하는 
+                      물리적구조에 테이블 저장 구조 설계
+                                   ( MYSQL, ORACLE,,,,)
+
+▷QUESTION5. 다음 빈칸을 채우시오
+데이터베이스 언어(Database Language)
+- 데이터베이스를     구축하고 이용하기 위한 사용되는 언어입니다.
+- 데이터 정의 언어, 데이터 조작 언어, 데이터 제어 언어로 구분됩니다.
+1.  데이터 정의 언어
+ - DDL (DATA DEFINITION LANGUAGE) 
+-  데이터베이스객체(테이블, 뷰, 인덱스....)의 구조를 정의
+-  종류 (#1.  create                , #2.    alter              ,   #3.  drop                )
+
+2.  데이터 조작 언어
+- DML (DATA MANIPULATION LANGUAGE) 
+-  실제 데이터를 조작하는 언어
+-  종류 (#4.      insert       , #5.    select        , #6.   update           , #7.  delete       )
+
+3.  데이터 제어 언어
+-  DCL (DATA CONTROL LANGUAGE) 
+-  데이터베이스 사용자의 권한을 제어
+-  종류 (#8.   grant      , #9.    revoke         ) 
+
+
+■ 3.key
+1. key? 튜블(행, 레코드, 항명의 정보)들을 구분할 수 있는 기준필드(행, 속성)
+---------------------------------------------
+   no  name   age  email                       부서번호
+---------------------------------------------
+    2, second, 10   second22@gmail.com   1
+    3, second, 10   second33@gmail.com   1
+
+2. 후보키 - 기본키로 사용할 수 있는 속성 no, email
+3. 기본키 - 후보키들 중에서 선택한 주키(main key) -> no
+4. 대체키 - 후보키들 중에서 선택이 안된 키 -> email
+5. 외래키 - 테이블과 테이블을 연결해주는 속성  cno
+6. 슈퍼키 - 속성 + 속성 집합으로 구성된 키       no, name
+
+
+
+   [company]
+---------------------------------------------
+번호(no)  부서     	       지역  
+---------------------------------------------
+1	백엔드개발부   부평 
+2	프론트개발부   부평 
+
+
+■ 4. alter
+1. alter
+- 데이터 정의 : create, alter, drop
+- 문법
+  alter table 테이블명 add (추가)       필드명 자료형 속성
+                           drop (삭제)      필드명
+ 		   modify(필드수정)  수정필드명 자료형 속성
+		   change (필드수정)  수정할필드명 새로넣을 필드명 자료형 속성
+		   rename     새로운 테이블명 
+         		   
+
+2.
+
+create table userinfo(
+  no int not null auto_increment primary key,
+  name varchar(100) not null,
+  age int not null
+);
+
+
+4-3
+1. 이메일필드 email varchar(50)
+  alter table userinfo add email varchar(50);
+
+2. 이메일필드 수정 - 자료형
+  alter table userinfo modify email varchar(100) not null;
+
+3. 이메일 이름
+  alter table userinfo change email uemail varchar(100) not null;
+
+4. 이메일 삭제
+  alter table drop uemail;
+
+5. 테이블명 변경
+  alter table userinfo rename userinfo_alter;
+  alter table 테이블명 add (추가)       필드명 자료형 속성
+                           drop (삭제)      필드명
+ 		   modify(필드수정)  수정필드명 자료형 속성
+		   change (필드수정)  수정할필드명 새로넣을 필드명 자료형 속성
+		   rename     새로운 테이블명 
+
+
+create table alter_coffee(
+  cno int,
+  cname varchar(20),
+  cprice int
+);
+
+q001.
+alter table alter_coffee modify cno int not null
+alter table alter_coffee modify cname varchar(20) not null
+alter table alter_coffee modify cprice int not null
+
+q002.
+alter table alter_coffee add cgift char(10);
+
+q003.
+alter table alter_coffee modify cgift cname char(10)
+
+q004.
+alter table alter_coffee drop ccoupon;
+
+q005.
+alter table alter_coffee modify cno int after cprice;
+
+q006.
+alter table alter_coffee modify cno int first;
+
+q007.
+alter table alter_coffee add primary key(cno);
+
+q008.
+alter table alter_coffee rename alter_coffee2;
+
+q009.
+alter table alter_coffee2 modify cno int auto_increment;
