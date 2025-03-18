@@ -35,3 +35,45 @@ q2. WS 정적서버 apache
      WAS 동적서버 apache + tomcat
 
 q3. action / method / name
+
+■2.JSP
+1. JSP 기본요소
+- HTML + JAVA
+
+1) 스크립트립 : <% %> 자바코드가 들어가는 곳
+2) 지시자      : <%@ %> 
+3) 주석         : <%-- --%>
+4) 표현         : <%=    %> 출력
+5) 선언	      : <%!     %> 선언
+
+2. form
+ 서버쪽으로 정보전달
+  action="요청처리"	method="요청처리방식" (get,post)
+  name = "데이터보관이름" (db 필드명과 같음)
+
+3. 쿼리스트링
+https://www.google.com/search?q=apple&name=sally
+
+-url 뒤에 입력데이터를 함께 제공하는 데이터 전달방법
+-get방식 
+
+- 클라이언트[#] ↔ 서버
+4. request.getParameter("name값");
+- 클라이언트 ↔ 서버[#]
+-repueqt.getParameter("p");
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

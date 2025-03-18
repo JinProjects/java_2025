@@ -1,0 +1,62 @@
+JAVA 정리문제
+
+Q1. 생성자
+1. 초기화
+2. 클래스 생성
+3. 없다
+4. 같다
+
+Q2. 생성자 오버로딩 / 상속
+
+기본생성자인 경우에만 상속한 부모클래스의 
+생성자를 호출한다.
+
+Q3. 기본값 → 명시적초기화 → 초기화블록 → 생성자
+ 
+Q4. 
+
+class A{
+  int a; 인스턴스 변수 - heap area - new O - this 각각
+  static String company; 클래스 변수 - method area - new X - 공유 A.company
+ 
+  void method(){ int a=0;  지역변수
+		System.out.println(a);}
+  static void show(){ System.out.println(this.a);} 인스턴스변수
+
+  public A() {  }
+  public A(int a) { this.a = a; } 인스턴스변수 = 지역변수
+}
+
+정리문제 2 mysql
+
+Q1. create table userinfo(
+  no int not null auto_increment primary key,
+  name varchar(100) not null,
+  age int not null
+);
+
+insert into userinfo values( 1, 'first', 11);
+insert into userinfo values( 2, 'second', 22);
+insert into userinfo values( 3, 'third', 33);
+insert into userinfo values( 4, 'fourth', 44);
+insert into userinfo values( 5, 'fifth', 55);
+Q2. 
+update userinfo set age= 55 where no=5;
+
+Q3.
+delete from userinfo where no=5 and name = 'fifth';
+
+Q4
+select * from userinfo;
+
+
+정리문제 3 JSP
+
+Q1.
+
+String search = request.getParameter("para");
+
+Q2.
+Class.forName("com.mysql.cj.jdbc.Driver");
+Connection conn = DriverManager.getConnection(
+			"jdbc:mysql://loacalhost:3307/mbasic","root","1234");
