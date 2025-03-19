@@ -1,31 +1,38 @@
 package com.company.bank.dto;
 
 public class Account {
+	private int no;
 	private String id;
 	private String pw;
-	private int age;
-	private int money;
-	static String Company = "(주)회사";
+//	private int age;
+	private int balance;
+	private String bdate;
+	private String ip;
+	public static String Company = "(주)회사";
 	
  //기본생성자 ##
  public Account(){}
+ 
+ public Account(String id, String pw, int balance) {
+	super();
+	this.id = id;
+	this.pw = pw;
+	this.balance = balance;
+}
 
- // toString 상태확인 ##
-	public Account(String id, String pw, int age, int money) {
-		this.id	= id;
-		this.pw = pw;
-		this.age = age;
-		this.money = money;
-	}
+// toString 상태확인 ##
+ 	
+	 @Override
+	 public String toString() {
+		 return "Account [no=" + no + ", id=" + id + ", pw=" + pw + ", balance=" + balance + ", bdate=" + bdate + ", ip="
+				 + ip + "]";
+	 }
 
-	@Override
-	public String toString() {
-		return "Account [id=" + id + ", pw=" + pw + ", age=" + age + ", money=" + money + "]";
-	}
 	
 	public String getId() {
 		return id;
 	}
+
 
 	public void setId(String id) {
 		this.id = id;
@@ -39,20 +46,36 @@ public class Account {
 		this.pw = pw;
 	}
 
-	public int getAge() {
-		return age;
+	public int getNo() {
+		return no;
 	}
 
-	public void setAge(int age) {
-		this.age = age;
+	public void setNo(int no) {
+		this.no = no;
 	}
 
-	public int getMoney() {
-		return money;
+	public int getBalance() {
+		return balance;
 	}
 
-	public void setMoney(int money) {
-		this.money = money;
+	public void setBalance(int balance) {
+		this.balance = balance;
+	}
+
+	public String getBdate() {
+		return bdate;
+	}
+
+	public void setBdate(String bdate) {
+		this.bdate = bdate;
+	}
+
+	public String getIp() {
+		return ip;
+	}
+
+	public void setIp(String ip) {
+		this.ip = ip;
 	}
 	
 }
