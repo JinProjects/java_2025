@@ -33,7 +33,6 @@
 				e.printStackTrace();
 			}
 		%>
-		
 	</div>
 </body>
 </html>

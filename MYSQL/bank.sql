@@ -9,5 +9,9 @@ create table bank(
 select * from bank where id = 'a';
 insert into bank (id, pass, balance, ip)values('a','1111',23,'111.11.11');
 select * from bank;
-delete from bank where no;
+delete from bank where no=2;
 drop table bank;
+update bank set balance=20 where id='a';
+
+
+select * from emp where mgr is not null and job in('MANAGER','CLERK') and ename not like '_L%';
