@@ -325,19 +325,19 @@ FROM select_emp;
 
 #------------------------------
 #q1.
-select sum(sal) from select_emp;
+select sum(sal) 급여합계 from select_emp;
 
 #q2.
-select sum(comm) from select_emp;
+select sum(comm) 추가수당 from select_emp;
 
 #q3.
 select sum(distinct sal), sum(all sal), sum(sal) from select_emp;
 
 #q4.
-select count(*) from select_emp;
+select count(*) '데이터갯수' from select_emp;
 
 #q5.
-select count(*) from select_emp
+select count(*) '부서30 직원수' from select_emp
 where deptno = 30;
 
 #q6.
@@ -345,18 +345,18 @@ select count(distinct sal), count(all sal), count(sal)
 from select_emp;
 
 #q7
-select count(comm) from select_emp;
+select count(comm) '추가수당을 받는 사원수'  from select_emp;
 
 #q8
-select count(*) from select_emp
+select count(*) '추가수당을 받는 사원수' from select_emp
 where comm is not null;
 
 #q9
-select max(sal) from select_emp
+select max(sal) '부서10 최대급여' from select_emp
 where deptno = 10;
 
 #q10
-select min(sal) from select_emp
+select min(sal) '부서10 최소급여' from select_emp
 where deptno = 10;
 
 

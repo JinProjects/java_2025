@@ -3,7 +3,7 @@ package com.company.bank.controller;
 import java.util.ArrayList;
 
 import com.company.bank.common.Common;
-import com.company.bank.dao.ShowDAO;
+import com.company.bank.dao.BDAO;
 import com.company.bank.dto.Account;
 
 public class Show implements Bank_Controller{
@@ -14,10 +14,8 @@ public class Show implements Bank_Controller{
 		String str = com.inputAccount();
 		Account account = new Account();
 		
-		
-		ShowDAO showDAO = new ShowDAO();
-		account = showDAO.selectAccount(str);
-		
+		BDAO bDAO = new BDAO();
+		account = bDAO.selectAccount(str);
 		
 		if(account.getNo()!=0) {
 			System.out.println("===계좌조회");

@@ -3,7 +3,7 @@ package com.company.bank.controller;
 import java.util.ArrayList;
 
 import com.company.bank.common.Common;
-import com.company.bank.dao.DepositDAO;
+import com.company.bank.dao.BDAO;
 import com.company.bank.dto.Account;
 
 public class Deposit implements Bank_Controller{
@@ -14,8 +14,8 @@ public class Deposit implements Bank_Controller{
 		
 		try {
 			Account account = new Account();
-			DepositDAO depositDAO = new DepositDAO();
-			account = depositDAO.depositDAO(str);
+			BDAO bDAO = new BDAO();
+			account = bDAO.depositDAO(str);
 			
 			if(account.getNo() != 0) {
 				System.out.println("=======");
