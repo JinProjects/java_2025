@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>가상 클래스 선택자</title>
+    <!-- 
+        :link - 방문하지 않은 링크에 스타일 적용
+        :visited - 방문한 링크에 스타일 적용
+        :hover - 마우스 포인터를 올릴 때 스타일 적용
+        :focus - 포커싱 된 요소에 스타일 적용
+        :active - 활성화 되었을 때 스타일 적용
+
+        순서대로 적용해야 한다.
+    -->
+        <style>
+            .wrap li {
+                margin: 20px;
+                border: 1px solid red;
+                display: inline-block;
+                border-radius: 20%;
+            }
+            a {
+                color: orange;
+                text-decoration: none;
+                display: block;
+                padding: 20px;
+                border-radius: 20%;
+            }
+            a:link, a:visited {
+                color: green;
+            }
+            a:hover{
+                background-color: yellow;
+                text-decoration: underline;
+            }
+            a:focus {
+                background-color: red;
+                color: white;
+                outline: 0 none;
+            }
+            a:active {
+                background-color: aqua;
+            }
+        </style>
+</head>
+<body>
+    <div class="wrap">
+        <h1>가상 클래스 선택자</h1>
+        <hr><hr>
+        <ul>
+            <li><a href="#">menu1</a></li>
+            <li><a href="#">menu2</a></li>
+            <li><a href="#">menu3</a></li>
+            <li><a href="#">menu4</a></li>
+            <li><a href="#">menu5</a></li>
+        </ul>
+    </div>
+</body>
+</html>

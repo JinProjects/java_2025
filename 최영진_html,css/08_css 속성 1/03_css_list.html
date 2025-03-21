@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>목록 관련 스타일</title>
+    <style>
+        .wrap {
+            width: 800px;
+            margin: auto;
+        }
+        .list li {
+            border: 1px solid red;
+        }
+        .list1 li {
+            background-color: pink;
+            /* inside와 outside를 많이 사용 */
+            list-style-position: inside;
+            list-style-type: circle;
+        }
+        .list2 li {
+            background-color: yellow;
+            list-style: none;
+            list-style-image: url("images/pin.png");
+            
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <h1>Cascading Style Sheet</h1>
+        <hr><hr>
+        <ul class="list list1">
+            <li>list1</li>
+            <li>list2</li>
+            <li class="select">list3</li>
+            <li>list4</li>
+            <li>list5</li>
+        </ul>
+        <ol class="list list2" start="3">
+            <li>list1</li>
+            <li>list2</li>
+            <li>list3</li>
+            <li>list4</li>
+            <li>list5</li>
+        </ol>
+    </div>
+</body>
+</html>

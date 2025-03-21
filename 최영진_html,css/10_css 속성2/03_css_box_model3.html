@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>박스모델 단축 속성</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        .wrap{
+            background-color: yellow;
+            width: 80%;
+            max-width: 1000px;
+            min-width: 600px;
+            margin: auto;
+        }
+        .title{
+            background-color: grey;
+        }
+        .box1 {
+            border: 1px solid red;
+            /* margin-left: 50px;
+            margin-right: 30px;
+            margin-top: 100px;
+            margin-bottom: 20px; */
+            margin: 100px 30px 20px 50px;
+            /* padding-right: 50px;
+            padding-left: 50px;
+            padding-top: 10px;
+            padding-bottom: 20px; */
+            padding: 10px 50px 20px;
+            
+            border-width: 10px;
+            border-style: double;
+            border-color: green;
+            border-top-color: blue;
+            border-right-width: 20px;
+            border-bottom-style: dashed;
+
+        }
+        .box2 {
+            background-color: orangered;
+            margin: 50px 200px;
+            padding: 50px 10px;
+            /* border-top-left-radius: 0px;
+            border-top-right-radius: 100px;
+            border-bottom-left-radius: 100px;
+            border-bottom-right-radius: 0px; */
+            border-radius: 0px 100px;
+        }
+        .footer{
+            background-color: grey;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <h1 class="title">CSS Box Model</h1>
+        <div class="box1">margin, padding, border 단축속성</div>
+        <div class="box2">border-radius 단축속성</div>
+        <footer class="footer">&copy; copyright</footer>
+    </div>    
+</body>
+</html>

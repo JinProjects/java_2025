@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>플렉스 아이템 방향</title>
+    <!-- 
+        row : 기본값. 왼쪽에서 오른쪽
+        row-reverse : 오른쪽에서 왼쪽
+        column : 위에서 아래로
+        column-reverse : 아래에서 위로
+    -->
+    <style>
+        .flex-wrapping {
+            display : flex;
+            flex-direction: row;
+            }
+        .box{
+            height: 100px;
+            width: 50%;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <h1>flex-direction</h1>
+        <hr><hr> 
+        <div class="flex-wrapping">
+            <div class="box box1">1</div>
+            <div class="box box2">2</div>
+            <div class="box box3">3</div>
+        </div>
+    </div>
+</body>
+</html>

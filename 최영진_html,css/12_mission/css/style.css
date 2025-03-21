@@ -1,0 +1,181 @@
+@charset "UTF-8";
+
+/* 초기화 */
+@import url(reset.css);
+/* 웹 아이콘 */
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css');
+/* 웹 폰트 */
+@font-face {
+  font-family: 'GowunDodum-Regular';
+  src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/GowunDodum-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+* {
+  /* box-sizing: border-box; */
+  margin-bottom: 10px;
+  line-height: 20px;
+  /* background-color: bisque; */
+  /* font-family: 'GowunDodum-Regular'; */
+}
+.wrap {
+  /* border: 5px solid gray; */
+  width: 700px;
+  margin: 0 auto;
+  font-family: 'GowunDodum-Regular';
+}
+body {
+  background-color: bisque;
+}
+section {
+  margin-bottom: 20px;
+}
+nav {
+  margin-bottom: 20px;
+}
+header{
+  /* margin: 0 auto; */
+  margin-bottom: 50px;
+}
+footer{
+  text-align: center;
+}
+.title::before{
+  content: "\e4c6";
+  font-family: fontawesome;
+  font-size: 48px;
+  color: beige;
+  /* margin-bottom: 150px; */
+  /* display: inline; */
+  margin-top: 50px;
+}
+.title{
+  height: 130px;
+  background-color: lightcoral;
+  width: 600px;
+  
+  margin: 50px auto;
+  padding-top: 50px;
+  border-radius: 30px;
+}
+#sub1 {
+  color: brown;
+}
+#sub2 {
+  color: bisque;
+}
+#sub2::before{
+  /* content: "\f03a";
+  font-family: fontawesomne; */
+}
+.content1-wrap{
+  /* margin: 0 10px; */
+  
+  /* border: 1px solid red; */
+}
+.content1{
+  position: relative;
+  display: inline-block;
+  margin: 0 auto;
+}
+
+.content1 .desc p{
+  /* color: red; */
+  width: 300px;
+  margin-right: 50px;
+  text-align: justify;
+  text-indent: 10px;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 22px;
+}
+.content1 .desc{
+  display: inline-block;
+}
+.content1 .img{
+  display: inline-block;
+  /* border-radius: ; */
+}
+h1 {
+  font-size: 48px;
+  font-weight: bold;
+  text-align: center;
+  display: inline-block;
+}
+h2 {
+  font-size: 32px;
+  margin-bottom: 20px;
+}
+h3 {
+  font-size: 18px;
+}
+p {
+  margin: 10px;
+  line-height: 18px;
+}
+nav {
+  margin: 50px 0;
+  
+}
+nav ul li{
+  /* margin: 20px; */
+  font-size: 24px;
+  margin-left: 50px;
+  display: inline-block;
+  list-style: none;
+  background-color: lightcoral;
+  /* padding: 30px; */
+  border-radius: 30px;
+}
+nav ul li a {
+  color: brown;
+  text-decoration: none;
+  display: block;
+  padding: 30px;
+}
+main h2 {
+  color: brown;
+  background-color: burlywood;
+  
+}
+.image {
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+}
+
+main section{
+  margin-top: 50px;
+}
+main dt {
+  font-size: 18px;
+  margin: 10px 0;
+}
+dd {
+  text-indent: 10px;
+}
+ul li {
+  text-indent: 10px;
+  list-style: none;
+}
+.warning p{
+  /* color: red; */
+  text-indent: 10px;
+}
+
+.menu-list::before{
+  content: "\f03a";
+  font-family: fontawesome;
+  padding-right: 5px;
+}
+.menu-warning::before{
+  content: "\f714";
+  font-family: fontawesome;
+  padding-right: 5px;
+}
+.menu-ingredient::before{
+  content: "\f787";
+  font-family: fontawesome;
+  padding-right: 5px;
+}

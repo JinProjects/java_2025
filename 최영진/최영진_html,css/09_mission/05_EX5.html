@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>05_EX5-최영진</title>
+    <style>
+        nav > ul{
+            list-style-type: upper-roman;
+            color: orangered;
+            font-size: 24px;
+            line-height: 2em;
+            font-weight: bold;
+        }
+        .list > li > ul > li {
+            font-weight: bold;
+            color: blue;
+        }
+        a {
+            text-decoration-line: none;
+            color: lightseagreen;
+            font-weight: bold;
+        }
+        li:nth-child(2){
+            text-transform: capitalize;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul class="list">
+            <li><a href="#">HTML 소개</a></li>
+            <li><a href="#">cascading style sheet 소개</a>
+                <ul>
+                    <li><a href="#">CSS 장점</a></li>
+                    <li><a href="#">CSS 작성 시 주의할 점</a></li>
+                    <li><a href="#">CSS 속성 알아보기</a></li>
+                </ul>
+            </li>
+            <li><a href="#">웹 표준 작업</a></li>
+            <li><a href="#">CSS 장점</a></li>
+            <li><a href="#">웹 접근성이란</a></li>
+        </ul>
+    </nav>
+</body>
+</html>

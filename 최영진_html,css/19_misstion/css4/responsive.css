@@ -1,0 +1,32 @@
+@charset "utf-8";
+
+/* 태블릿 */
+@media screen and (max-width : 768px) {
+    .header {
+        flex-direction: column;
+    }
+    .navi {
+        width: 100%;
+    }
+    .menu {
+        background-color: gray;
+    }
+    .card-list {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* 모바일 */
+@media screen and (max-width : 320px) {
+    .menu li {
+        font-size: 0.9em;
+        padding: 20px 15px;
+    }
+    .card-list {
+        grid-template-columns: repeat(1, 1fr);
+        grid-auto-rows: minmax(100px, auto);
+    }
+    .card-item {
+        padding: 20px;
+    }
+}

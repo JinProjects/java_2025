@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>플렉스 아이템 여러 줄 배치</title>
+    <!-- 
+        nowrap : 기본값. 플렉스 아이템 한 줄로 배치
+        wrap : 플렉스 아이템 여러 줄 배치
+        wrap-reverse : 플렉스 아이템 여러 줄 배치하되, 역방향
+    -->
+        <style>
+            .flex-wrapping {
+                display : flex;
+                flex-direction: row;
+                
+                flex-wrap: wrap;
+                
+            }
+            .box{
+                height: 200px;
+                width: 50%;
+            }
+        </style>
+</head>
+<body>
+    <div class="wrap">
+        <h1>flex-wrap</h1>
+        <hr><hr> 
+        <div class="flex-wrapping">                   
+            <div class="box box1">1</div>
+            <div class="box box2">2</div>
+            <div class="box box3">3</div>
+        </div>
+    </div>
+</body>
+</html>

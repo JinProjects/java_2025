@@ -1,0 +1,36 @@
+@charset "UTF-8";
+
+/* 
+  데스크탑 css를 작성하면서
+  반응형이 필요한 부분은 바로 미디어쿼리에 작성하자
+*/
+
+/* 태블릿 768px*/
+
+@media screen and (max-width:768px) {
+ .main {
+  flex-wrap: wrap;
+ }
+ .grid-wrapping {
+  grid-template-columns: repeat(2, 1fr);
+ }
+ .aside {
+  width: 100%;
+  padding: 30px;
+ }
+}
+
+/* 모바일 320px*/
+
+@media all and (max-width: 320px) {
+  .nav {
+    width: 100px;
+    padding: 30px;
+  }
+  .grid-wrapping {
+    grid-template-columns: repeat(1,1fr);
+  }
+  .aside {
+    display: none;
+  }
+}

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>그리드 최소값과 최대값</title>
+    <style>
+        .wrap {
+            width: 90%;
+            max-width: 1200px;
+            min-width: 600px;
+            border: 5px solid orange;
+            margin: auto;
+        }
+        .box {
+            border: 2px solid black;
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 10px;
+        }
+        .grid-wrapping{
+            display: grid;
+            grid-template-columns: repeat(3,1fr);
+            grid-template-rows: repeat(3, minmax(300px,auto));
+            gap: 10px;
+            padding: 10px;
+
+            /* 
+                minmax(최소높이, auto) 
+                - rows와 관련
+                -최소값과 최대값과 설정, 인자가 두개 : minmax(최소값, 최대값) 
+                -최소 높이를 지정한 후 그것보다 콘텐츠 양이 많으면 콘텐츠 높이 만큼
+                height가 조정되고 콘텐츠 양이 적으면 최소 높이 만큼 height가 조정된다.
+            */
+
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <h1>minmax()</h1>
+        <hr><hr> 
+        <div class="grid-wrapping">                   
+            <div class="box box1">
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nisi, eum necessitatibus! Sit officiis iure dicta illo? Asperiores natus ea magnam perferendis sequi ut, vitae sint dolores quis iste hic non neque dolore earum cumque quaerat itaque odio accusamus quidem voluptatibus commodi voluptas impedit quibusdam? Sint architecto quas excepturi amet voluptate?
+            </div>
+            <div class="box box2"></div>
+            <div class="box box3"></div>
+            <div class="box box4"></div>
+            <div class="box box5">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Et eligendi aspernatur distinctio laborum atque eveniet minus quae perspiciatis illo cumque?
+            </div>
+            <div class="box box6"></div>
+            <div class="box box7">
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Rerum aut labore aliquam recusandae ducimus doloremque numquam fuga maxime dolores, dignissimos laudantium dolorem inventore quia libero laborum non neque quas! Quidem ipsam error voluptatum repellat molestias, adipisci mollitia fuga molestiae facere, officia vitae pariatur explicabo. Sed, provident! Mollitia veniam, non delectus sed cum exercitationem amet veritatis doloribus rerum, atque vel facilis. Sapiente recusandae eveniet, aliquam odit pariatur cum dolor amet vel.
+            </div>
+            <div class="box box8"></div>
+            <div class="box box9">
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laudantium, tempora.
+            </div>
+        </div>
+    </div>
+</body>
+</html>

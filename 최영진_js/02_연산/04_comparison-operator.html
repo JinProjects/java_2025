@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>비교 연산자</title>
+</head>
+<body>
+    <h1>비교 연산자</h1>
+    <p>2개의 값을 비교해서 참이나 거짓으로 결과를 반환</p>
+    <hr><hr>
+    <ul>
+        <li>a >= b : a가 b보다 크거나 같다.</li>
+        <li>a <= b : a가 b보다 작거나 같다.</li>
+        <li>a > b : a가 b보다 크다.</li>
+        <li>a < b : a가 b보다 작다.</li>
+        <li>a == b : a와 b가 같다.</li>
+        <li>a === b : a가 b가 같고 자료형도 같다.</li>
+        <li>a != b : a와 b가 다르다.</li>
+        <li>a !== b : a와 b가 다르거나 자료형이 다르다.</li>
+    </ul>
+    <script>
+        let num = 10; //number
+        let str = "10"; //string
+        
+        // a와 b가 같고 자료형은 다르지만 true
+        console.log(`10 = "10" : ${num == str}`) //true
+        // a와 b가 같고 자료형까지 같아야 true
+        console.log(`10 = "10" : ${num === str}`) //false
+        console.log(`10 != "10" : ${num != str}`)// false
+        console.log(`10 !== "10" : ${num !== str}`)// true
+        
+    </script>
+</body>
+</html>

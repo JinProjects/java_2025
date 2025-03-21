@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>대입 연산자와 할당 연산자</title>
+</head>
+<body>
+    <h1>대입 연산자와 할당 연산자</h1>
+    <hr><hr>
+    <ul>
+        <li>a = b : a에 b를 대입한다.</li>
+        <li>a += b (a = a + b) : 기존 a에 b를 더해서 a에 대입한다.</li>
+        <li>a -= b (a = a - b) : 기존 a에 b를 빼서 a에 대입한다.</li>
+        <li>a *= b (a = a * b) : 기존 a에 b를 곱해서 a에 대입한다.</li>
+        <li>a /= b (a = a / b) : 기존 a에 b를 나누어서 a에 대입한다.</li>
+        <li>a %= b (a = a % b) : 기존 a에 b를 나눈 나머지를 a에 대입한다.</li>
+    </ul>
+    <script>
+        let num1 = 10;
+        let num2 = 3;
+
+        console.log(`num1 : ${num1}`);
+        console.log(`num2 : ${num2}`);
+
+        num1 = num2;
+        console.log(`num1 : ${num1}`); // 3
+        num1 += num2;
+        console.log(`num1 : ${num1}`); // 6
+        num1 -= num2;
+        console.log(`num1 : ${num1}`) // 3
+        num1 *= num2;
+        console.log(`num1 : ${num1}`) // 9
+        num1 /= num2;
+        console.log(`num1 : ${num1}`); // 3
+        num1 %= num2;
+        console.log(`num1 : ${num1}`) // 0
+    </script>
+</body>
+</html>

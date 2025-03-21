@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>css 애니메이션 활용2</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    ul, li {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+    .wrap {
+      background-color: green;
+      width: 1200px;
+      padding: 50px;
+
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    .flex-wrapping ul {
+      display: flex;
+      justify-content: space-between;
+    }
+    .flex-wrapping a {
+      text-decoration: none;
+      font-size: 30px;
+      background-color: black;
+      color: #fff;
+      padding: 30px;
+      display: block;
+      position: relative;
+    }
+    .flex-wrapping a::before{
+      content: "";
+      background-color: rgba(255, 255, 255, 0.5);
+      display: block;
+      width: 0;
+      height: 100%;
+      position: absolute;
+      left: 50%;
+      top: 0;
+      transition: 0.3s;
+      transform: translateX(-50%);
+    }
+    .flex-wrapping a:hover::before{
+      width: 100%;
+      
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <h1>Hover Effect</h1>
+    <div class="flex-wrapping">
+      <ul>
+        <li><a href="#">Menu Hover Effect</a></li>
+        <li><a href="#">Menu Hover Effect</a></li>
+        <li><a href="#">Menu Hover Effect</a></li>
+      </ul>
+    </div>
+  </div>
+</body>
+</html>

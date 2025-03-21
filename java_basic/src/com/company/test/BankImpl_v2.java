@@ -2,6 +2,8 @@ package com.company.test;
 
 import java.util.ArrayList;
 
+import com.company.bank.dto.Account;
+
 public interface BankImpl_v2 {
 	void bankMenu();
 	void createAccount(ArrayList<Account> creAccount);

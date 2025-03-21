@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/response.css">
+  <title>평가 - 최영진</title>
+</head>
+<body>
+  <div class="wrap">
+    <header class="header">
+      <div class="logo">
+        <span>ImageGallery</span>
+      </div>
+      <nav class="navi">
+        <ul class="menu">
+          <li><a href="#">로그인</a></li>
+          <li><a href="#">회원가입</a></li>
+          <li><a href="#">고객센터</a></li>
+        </ul>
+      </nav>
+    </header>
+    <!-- E : header -->
+     <main class="main">
+        <div id="content" class="content">
+        </div>
+        <!-- E : content -->
+      </main>
+     <footer class="footer">
+        <span>&copy;copyright</span>
+     </footer>
+     <!-- E: footer -->
+  </div>
+  <!-- E : wrap -->
+</body>
+<script>
+  const div1 = document.getElementById("content");
+  const imgNameArr = [`image1`,`image2`,`image3`,`image4`,`image5`,`image6`,`image7`];
+  // 이미지파일 불러오기
+  imgNameArr.forEach((e, i)=> {
+    const creDiv = document.createElement("div");
+    // const creImg = document.createElement("img");
+    const img = new Image();
+    creDiv.classList.add("image");
+    img.src = `img/${e}.png`;
+    div1.appendChild(creDiv);
+    creDiv.appendChild(img);
+  }) 
+  // 이미지 클릭 alert창 띄우기
+  const imgArr = document.querySelectorAll("#content .image");
+  imgArr.forEach((e, i) => {
+    imgArr[i].addEventListener('click',function(){
+
+       alert(`${imgArr.length-i}번째 이미지를 클릭하셨습니다.`);
+    })
+  });
+  console.log(imgArr);
+</script>
+</html>

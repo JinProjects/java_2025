@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>변수의 범위</title>
+</head>
+<body>
+    <h1>변수의 범위</h1>
+    <ul>
+        <li>변수의 Scope(스코프, 유효 범위) 란 변수가 어디까지 접근할 수 있는지를 결정하는 개념</li>
+        <li>자바스크립트에서는 변수가 선언된 위치에 따라 접근 가능한 범위가 달라진다.</li>
+    </ul>
+    <hr><hr>
+    <h2>전역변수</h2>
+    <ul>
+        <li>함수나 블록({ }) 외부에서 선언된 변수</li>
+        <li>프로그램 전체에서 접근 가능 (어디서든 사용 가능)</li>
+        <li>하지만 전역 변수 사용은 되도록 최소한으로 사용하는 것이 좋음 (예기치 않은 변경 위험 때문)</li>
+    </ul>
+    <script>
+        //전역 변수 
+        const globalVar = "나는 전역변수";
+
+        function testFunc(){
+            // 함수 내부
+            console.log(globalVar);
+        }
+        testFunc(); //호출
+        console.log(globalVar);
+    </script>
+    <h2>지역 변수</h2>
+    <ul>
+        <li>함수 또는 블록({ }) 내부에서 선언된 변수</li>
+        <li>함수 또는 블록({ }) 안에서만 사용 가능. 즉, 함수 또는 블록({ }) 바깥에서는 접근할 수 없음</li>
+        <li>따라서 같은 이름의 변수를 다른 함수 또는 블록({ })에서 중복 선언 가능</li>
+    </ul>
+    <script>
+        function testFunc1(){
+            const localVar = "나는 지역변수";
+            console.log(localVar);
+        }
+        testFunc1();
+        console.log(localVar);
+    </script>
+    <h2>블록 스코프 let과 const</h2>
+    <ul>
+        <li>let과 const는 블록 스코프(Block Scope)를 가짐!</li>
+        <li>즉, { } 내부에서 선언되면 해당 블록 안에서만 사용 가능.</li>
+        <li>블록 내부에서 선언된 let과 const는 바깥에서 접근할 수 없음.</li>
+        <li>if문, for문, while문, 함수 내부 등 블록({ })을 벗어나면 사용 불가</li>
+    </ul>
+    <script>
+        if(true){
+            let blockVar = "나는 블록 범위안에서만 사용할 수 있는 변수야";
+            console.log(blockVar);
+        }
+        console.log(blockVar)
+    </script>
+    <hr><hr>
+    <h2>정리</h2>
+    <ul>
+        <li>전역 변수 (let, const) → 함수 바깥에서 선언하면 어디서든 사용 가능 (지양해야 함!)</li>
+        <li>지역 변수 (let, const) → 함수 내부나 블록 {} 안에서 선언되면 그 범위 내에서만 사용 가능 (권장!)</li>
+        <li>블록 스코프 → let, const는 {} 안에서 선언되면 바깥에서 접근 불가</li>
+        <li>가능하면 const를 우선 사용하고, 필요할 때만 let을 사용하는 것이 좋다!</li>
+    </ul>
+</body>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>break와 continue</title>
+    <style>
+        p.syntax {
+            white-space: pre;
+        }
+    </style>
+</head>
+<body>
+    <h1>break 문</h1>
+    <hr><hr>
+    <p>
+        switch 조건문에서 break가 사용되지만<br>
+        반복문에서 break는 가장 가까운 반복문을 빠져 나가기 위해 사용된다.
+    </p>
+    <button id="breakEx1">1부터 10까지 숫자 중 5까지만 출력하기</button>
+    <script>
+        document.getElementById("breakEx1").onclick =function(){
+            for(let i=1; i<=10; i++){
+                console.log(i); // i 출력
+                if(i === 5){
+                    break;
+                }
+            }
+        }
+    </script>
+    <hr>
+    <button id="breakEx2">1부터 10까지 숫자 중 3,4,5만 출력</button>
+    <script>
+        document.getElementById("breakEx2").onclick = function(){
+            for(let i=1; i<=10; i++){
+                if(i>2){
+                    console.log(i);
+                }
+                if(i>=5){
+                    break;
+                }
+                
+            }
+        }
+    </script>
+    <hr>
+    <h1>continue 문</h1>
+    <hr><hr>
+    <p>
+        continue 문은 반복문에서만 사용할 수 있다.<br>
+        반복문을 사용하다가 continue를 만나면<br>
+        continue문 아래의 내용은 실행하지 않고(즉, 현재 반복 작업을 건너띄고)<br>
+        반복문의 맨 앞으로 되돌아가 반복을 수행한다.
+    </p>
+    <button id="continueEx1">1부터 10까지 짝수만 출력하기</button>
+    <script>
+        document.getElementById("continueEx1").onclick = function(){
+            for(let i=0; i<=10; i++){
+                if(i%2!==0){
+                    continue;
+                }
+                console.log(i);
+            }
+        }
+    </script>
+    <hr>
+    <button id="continueEx2">1부터 10까지 홀수의 합 구하기</button>
+    <script>
+        document.getElementById("continueEx2").onclick = function(){
+            let sum = 0;
+            for(let i = 1; i<=10; i++){
+                if(i%2==0){
+                    continue;
+                }
+                sum += i;
+            }
+            console.log(`1부터 10까지 홀수의 합 : ${sum}`);
+        }
+    </script>
+</body>
+</html>

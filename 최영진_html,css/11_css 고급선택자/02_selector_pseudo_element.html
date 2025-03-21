@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>가상 요소 선택자</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <!-- 
+        지정한 요소 앞 뒤에 스타일 추가
+        - content 속성과 함께 사용
+    -->
+        <style>
+            .wrap {
+                width: 600px;
+                margin: auto;
+                border: 5px solid gray;
+                padding: 20px;
+            }
+            .wrap::after {
+                content: "copyright";
+                font-size: 30px;
+                color: red;
+                background-color: blueviolet;
+                display: block;
+                margin-top: 30px;
+                padding: 10px;
+
+            }
+            .box::before {
+                content: "Hello";
+                font-size: 30px;
+                background-color: red;
+            }
+            .box::after {
+                content: "bye";
+                font-size: 30px;
+                background-color: orange;
+            }
+            h1::before {
+                content: "\f015 : ";
+                font-family: fontawesome;
+                font-size: 30px;
+                color: red;
+            }
+        </style>
+</head>
+<body>
+    <div class="wrap">
+        <h1><!--<i class="fa-solid fa-house"></i>-->가상 요소 선택자</h1>
+        <hr><hr>
+        <div class="box box1">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi, sit in. Autem quam nostrum, facilis asperiores voluptatibus quaerat at, obcaecati omnis, amet quisquam ut blanditiis doloribus inventore? Corporis, consectetur reprehenderit.
+        </div>
+        <div class="box box2">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos, qui doloribus quos possimus commodi laudantium quis modi tenetur totam assumenda ipsa expedita consequatur repudiandae sint facere deleniti blanditiis molestias error.
+        </div>
+    </div>
+</body>
+</html>

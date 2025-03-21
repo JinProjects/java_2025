@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>마진 겹침 현상</title>
+    <!-- 
+        마진 겹침 현상1
+        - 블록 요소가 세로로 놓이면
+        - margin-top과 margin-bottom의 값이 합쳐지는 것이 아니라
+        - 두 값 중 큰 값으로 겹쳐진다.
+
+        마진 겹침 현상2
+        - 블록 요소 안에 블록 요소가 포함되는 경우
+        - 자식 블록 요소의 margin-top과 margin-bottom은
+        - 부모 블록 요쇼 밖으로 겹쳐진다.
+        - 해결 : 부모 블록 요소에 border-width 또는 padding을 부여한다.
+
+    -->
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+            }
+            .wrap {
+                width: 1000px;
+                margin: auto;
+                padding-top: 0.1px;
+            }
+            .box1 {
+                background-color: yellow;
+                /* 
+                    마진 겹침 현상 해결 코드
+                    부모 영역에 padding 또는 border에 0.1px 이상 넣으면 해결된다.
+                 */
+                padding: 0.1px;
+                /* border-bottom: 0.1px solid yellow; */
+            }
+            li {
+                list-style: none;
+                border: 1px solid red;
+            }
+            .list{
+                margin: 30px 50px;
+            }
+            .list2 {
+                margin-top: 40px;
+            }
+            .parent {
+                background-color: pink;
+                padding-top: 0.1px;
+                border-bottom: 0.1px solid pink;
+            }
+            .child {
+                background-color: aqua;
+                margin: 50px;
+            }
+
+        </style>
+</head>
+<body>
+    <div class="wrap">
+        <h1 class="title">마진 겹침 현상</h1>
+        <ul class="box1">
+            <li class="list list1">list1</li>
+            <li class="list list2">list2</li>
+            <li class="list list3">list3</li>
+            <li class="list list4">list4</li>
+            <li class="list list5">list5</li>
+        </ul>
+        <div class="box2 parent">
+            <p class="child">paragraph</p>
+        </div>
+    </div> 
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    ul, li {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+    .wrap {
+      width: 800px;
+      padding: 50px;
+      background-color: blanchedalmond;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%,-50%);
+    }
+    .flex-wrapping ul{
+      display: flex;
+      justify-content: space-between;
+    }
+    .flex-wrapping a {
+      text-decoration: none;
+      background-color: aqua;
+      padding: 20px;
+      display: block;
+      position: relative;
+      
+    }
+    a::before{
+      content: "";
+      background-color: rgba(255, 255, 255, 0.5);
+      display: block;
+      /* 애니메이션 효과를 주기위해 width를 0으로 설정 */
+      width: 0;
+
+      height: 100%;
+      position: absolute;
+      left: 50%;
+      top: 0;
+
+      transition: 0.3s;
+      transform: translateX(-50%);
+    }
+    a:hover::before{
+      width: 100%;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <h1>Hover Effect</h1>
+    <div class="flex-wrapping">
+      <ul>
+        <li><a href="">Menu Hover Effect</a></li>
+        <li><a href="">Menu Hover Effect</a></li>
+        <li><a href="">Menu Hover Effect</a></li>
+      </ul>
+    </div>
+  </div>
+</body>
+</html>

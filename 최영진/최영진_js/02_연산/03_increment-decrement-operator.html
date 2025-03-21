@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>증감 연산자</title>
+</head>
+<body>
+    <h1>증감 연산자</h1>
+    <p>변수를 사용하기 전후에 변수에 1만큼 증가시키거나 감소시킨다.</p>
+    <hr><hr>
+    <ul>
+        <li>후위 증감 : 연산식을 먼저 실행한 후 a에 1을 증가시키거나 감소시킨다.
+            <ul>
+                <li>a++</li>
+                <li>a--</li>
+            </ul>
+        </li>
+        <li>전위 증감 : a에 1을 증가시키거나 감소시킨 후 연산식을 실행한다.
+            <ul>
+                <li>++a</li>
+                <li>--a</li>
+            </ul>
+        </li>
+    </ul>
+    <script>
+        let num1 = 10;
+        console.log(`num : ${num1}`);
+        console.log(`num : ${num1++}`);
+        console.log(`num : ${num1++}`);
+        console.log(`num : ${num1}`);
+        
+        let num2 = 10;
+        console.log(`num : ${num2}`); // 10
+        console.log(`num : ${++num2}`); // 11
+        console.log(`num : ${++num2}`); // 12
+        console.log(`num : ${num2}`); // 12
+
+    </script>
+</body>
+</html>

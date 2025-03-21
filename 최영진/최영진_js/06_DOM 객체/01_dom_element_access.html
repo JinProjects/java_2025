@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM 요소에 접근하기</title>
+    <style>
+        p.syntax {
+            white-space: pre;
+        }
+    </style>
+</head>
+<body>
+    <h1>DOM(Document Object Model)이란?</h1>
+    <p>DOM(문서 객체 모델, Document Object Model)은 웹 페이지의 HTML을 자바스크립트에서 조작할 수 있도록 객체 형태로 변환한 것.</p>
+    <ul>
+        <li>웹 문서를 자바스크립트에서 조작할 수 있도록 객체 형태로 변환한 모델</li>
+        <li>HTML 문서를 트리(Tree) 구조의 노드(Node) 객체로 표현</li>
+        <li>자바스크립트를 사용하여 HTML, CSS, 이벤트 등을 변경 가능</li>           
+    </ul>
+
+    <hr><hr>
+    <h2>DOM 구조</h2>
+    <p>DOM은 트리(Tree) 형태의 계층적 구조로 되어 있다.</p>
+    <dl>
+        <dt>Document</dt>
+        <dd>HTML 문서 전체를 나타내는 객체 (document)</dd>
+        <dt>Element 노드</dt>
+        <dd>HTML 태그 하나하나를 객체로 표현 (div, p, a 등)</dd>
+        <dt>Attribute 노드</dt>
+        <dd>태그의 속성을 나타내는 객체 (class, id 등)</dd>
+        <dt>Text 노드</dt>
+        <dd>HTML 태그 내부의 텍스트 (Hello, World! 등)</dd>
+    </dl>
+    
+    <hr>
+    <h2>DOM 요소 선택하기</h2>
+    <dl>
+        <dt>아이디 접근 : getElementById()</dt>
+        <dd>id 값으로 요소 선택</dd>
+        <dd>무조건 하나만 선택</dd>
+        <dd>예 : document.getElementById("title")</dd>
+
+        <dt>요소명 접근 : getElementsByTagName()</dt>
+        <dd>태그 이름으로 여러 요소 선택</dd>
+        <dd>배열로 선택</dd>
+        <dd>예 : document.getElementsByTagName("p")</dd>
+        
+        <dt>클래스명 접근 : getElementsByClassName()</dt>
+        <dd>클래스 값으로 여러 요소 선택</dd>
+        <dd>배열로 선택</dd>
+        <dd>예 : document.getElementsByClassName("box")</dd>
+        
+        <dt>css 선택자 접근 : querySelector("css 선택자")</dt>
+        <dd>CSS 선택자 방식으로 요소 선택</dd>
+        <dd>여러 개가 있어도 첫 번째만 선택</dd>
+        <dd>예 : document.querySelector(".box")</dd>
+
+        <dt>같은 css 선택자 모두 접근 : querySelectorAll("css 선택자")</dt>
+        <dd>CSS 선택자 방식으로 여러 요소 선택</dd>
+        <dd>배열로 선택</dd>
+        <dd>예 : document.querySelectorAll(".box")</dd>
+    </dl>
+</body>
+</html>

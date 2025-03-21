@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>블록요소와 인라인요소</title>
+</head>
+<body>
+  <!-- 
+    블록요소 
+      - 기본적으로 한 줄 전체를 차지한다.
+      - 따라서 강제적으로 줄이 바뀐다.
+      - 대부분은 위 아래 공백을 포함하고 있다.
+  -->
+  <h1 style="border:  1px solid red;">title1</h1>
+  <h1>title2</h1>
+  <h1>title3</h1>
+  <hr>
+  <!-- 
+    인라인요소
+      - 하나의 단락 안에 일부로서 존재한다.
+      - 줄이 바뀌지 않는다.
+      - 컨텐츠 만큼의 영역을 가진다.
+  -->
+  <a href="#" style="border: 1px solid red;">link1</a>
+  <a href="#">link2</a>
+  <a href="#">link3</a>
+  <hr>
+  <!-- 
+    - 블럭 요소는 텍스트와 인라인 요소를 포함할 수 있고
+     또 다른 블럭요소를 포함하는 것은 경우에 따라 다르다.
+    - 인라인 요소는 텍스트와 인라인 요소만을 포함할 수 있고
+     블럭 요소는 포함할 수 없다.
+    - HTML5에서는 예외적으로 a 요소는 블록 요소를 포함할 수 있다.
+  -->
+    <!-- 
+    <h1>
+      <p>블록요소 h1은 블록요소 p를 포함할 수 없다.</p>
+    </h1> 
+    -->
+    <ul>
+      <li>list1</li>
+      <li>list2</li>
+      <li>list3</li>
+    </ul>
+    <ol>
+      <li>list1</li>
+      <li>list2</li>
+      <li>list3</li>
+    </ol>
+    <dl>
+      <dt>용어</dt>
+      <dd>스파게티</dd>
+      <dd>
+        <h2>피자</h2>
+        <ul>
+          <li>토마토피자</li>
+          <li>불고기피자</li>
+        </ul>
+      </dd>
+    </dl>
+    <!-- 
+    <em>
+      <h1>글자를 기울이는 태그</h1>
+    </em> 
+    -->
+  <h1><em>글자를 기울이는 태그</em></h1>
+  <a href="#">
+    <h1>제목</h1>
+    <p>a요소만 예외적으로 블록 요소를 감쌀 수 있다.</p>
+  </a>
+  </body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>플렉스 아이템 크기</title>
+    <link rel="stylesheet" href="css/box-setting.css">
+    <link rel="stylesheet" href="css/style.css">
+    <!-- 
+        flex : [flex-grow] [flex-shrink] [flex-basis];
+        - flex-grow : 플렉서블 박스에 여백이 있을 경우 플렉스 아이템의 크기를 늘린다.
+        - flex-shrink : 플렉서블 박스보다 플렉스 아이템의 크기가 넘칠 경우 플렉스 아이템의 크기를 줄인다.
+        - flex-basis : 플렉스 아이템의 크기 결정. 기본값은 auto(플렉스 아이템이 기본적으로 가지고 있는 크기 기준).
+    -->
+        <style>
+            .wrap {
+                display: flex;
+            }
+            .box {
+                height: 300px;
+            }
+            .wrap1 .box{
+                width: 100px;
+            }
+            /* 
+                flex-grow : 남는 여백을 없애기 위한 속성
+            */
+            .wrap1 .box1 {
+                width: 500px;
+                flex: 1 1 auto;
+            }
+            .wrap1 .box2 {
+                flex: 3 1 auto;
+            }
+            .wrap1 .box3 {
+                flex: 2 1 auto;
+            }
+            /* flex-shrink */
+            .wrap2 .box {
+                width: 500px;
+                
+            }
+            .wrap2 .box1 {
+                width: 700px;
+                flex: 1 3 auto;
+            }
+            .wrap2 .box2 {
+                flex: 1 1 auto;
+            }
+            .wrap2 .box3 {
+                flex: 1 2 auto;
+            }
+        </style>
+</head>
+<body>
+    <h1>[flex-grow][flex-shrink][flex-basis]</h1>
+    <hr><hr>
+    <div class="wrap wrap1">
+		<div class="box box1">1</div>
+		<div class="box box2">2</div>
+		<div class="box box3">3</div>
+	</div>
+    <hr><hr>
+    <div class="wrap wrap2">
+		<div class="box box1">1</div>
+		<div class="box box2">2</div>
+		<div class="box box3">3</div>
+	</div>
+</body>
+</html>

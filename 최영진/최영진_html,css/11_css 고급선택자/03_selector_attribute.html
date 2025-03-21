@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>속성 선택자</title>
+    <!-- 
+        html 요소의 속성을 참조하여 선택
+        - 태그[속성] : 특정 속성을 가진 태그
+        - 태그[속성="속성값"] : 특정 속성값을 가진 태그
+
+        - 태그[속성~="속성값"] : 지정한 글자 뒤에 공백 포함
+        - 태그[속성|="속성값"] : 지정한 글자 뒤에 하이픈(-) 포함
+
+        - 태그[속성^="속성값"] : 지정한 글자로 시작
+        - 태그[속성$="속성값"] : 지정한 글자로 끝
+        - 태그[속성*="속성값"] : 지정한 글자 포함
+    -->
+        <style>
+            /* a[title] {background-color: yellow;} */
+            /* a[title="fantasy"] { background-color: orange;} */
+            /* a[class~="fantasy"] {background-color: red;} */
+            /* a[class|="fantasy"] {background-color: blue; color: white;} */
+            /* a[class^="d"] {background-color: yellow;} */
+            /* a[class$="e"] {background-color: blueviolet;} */
+            a[class*="ma"] {font-weight: bold; font-style: italic;}
+        </style>
+</head>
+<body>
+    <div class="wrap">
+        <h1>속성 선택자</h1>
+        <hr><hr>
+        <ul>
+            <li><a href="#" class="ani movie" title="animation">애니메이션 영화</a></li>
+            <li><a href="#" class="fantasy movie" title="fantasy">판타지 영화</a></li>
+            <li><a href="#" class="fantasy-romantic movie">로맨틱 판타지 영화</a></li>
+            <li><a href="#" class="document">다큐멘터리</a></li>
+            <li><a href="#" class="drama">드라마</a></li>
+        </ul>
+    </div>
+</body>
+</html>

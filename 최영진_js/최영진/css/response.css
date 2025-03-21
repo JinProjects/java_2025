@@ -1,0 +1,13 @@
+@charset "UTF-8";
+
+@media screen and (max-width:802px) {
+  .header {
+    flex-direction: column;
+  }
+  
+}
+@media screen and (max-width:390px) {
+  .header{
+    font-size: 17px;
+  }
+}

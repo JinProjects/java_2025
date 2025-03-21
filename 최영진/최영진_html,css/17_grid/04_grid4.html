@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>그리드 자동 채우기</title>
+    <style>
+        .wrap {
+            width: 90%;
+            max-width: 1200px;
+            min-width: 600px;
+            border: 5px solid orange;
+            margin: auto;
+        }
+        .box {
+            border: 2px solid black;
+            background-color: #eee;
+        }
+        .grid-wrapping {
+            display: grid;
+            gap: 10px;
+            padding: 10px;
+            /* 
+                auto-fill 과 auto-fit 
+                    - repeat()안에서 auto-fill은 
+                    column 개수를 미리 정하지 않고 설정된 너비가
+                    허용하는 최대한 셀을 채운다.
+                    - repeat()안에서 auto-fit은
+                    개수가 모자를 경우 남는 여백을 채운다.
+                    [결론]
+                        - 그리드 아이템의 개수가 모자르지 않으면
+                        auto-fill과 auto-fit은 차이가 없다
+                        - 개수가 모자르면 auto-fill은 여백이 남고, auto-fit은 남는 여백을 채운다.
+            */
+            grid-template-columns: repeat(auto-fill,minmax(20%, auto));
+            
+        }         
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <h1>auto-fill & auto-fit</h1>
+        <hr><hr> 
+        <div class="grid-wrapping">                   
+            <div class="box box1">1</div>
+            <div class="box box2">2</div>
+            <div class="box box3">3</div>
+            <div class="box box4">4</div>
+            <div class="box box5">5</div>
+            <div class="box box6">6</div>
+            <div class="box box7">7</div>
+            <div class="box box8">8</div>
+            <div class="box box9">9</div>
+            <div class="box box10">10</div>
+        </div>
+    </div>
+</body>
+</html>

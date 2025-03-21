@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>논리 연산자</title>
+</head>
+<body>
+    <h1>논리 연산자</h1>
+    <p>true, false 자체가 피연산자</p>
+    <hr><hr>
+    <ul>
+        <li>and 연산(&&) : 피연산자 모두가 true일 경우에만 true 반환</li>
+        <li>or 연산(||) : 피연산자 중 하나만 true여도 true 반환</li>
+        <li>not 연산(!) : 피연산자의 반대값을 반환</li>
+    </ul>
+    <script>
+        let num1 = 20;
+        let num2 = -20;
+        let num3 = 100;
+        let num4 = -100;
+
+        let isTrue = 1;
+        let isFalse = 0;
+
+        console.log(`isTrue : ${isTrue}`);
+        console.log(`isTrue : ${!isTrue}`);
+
+        /**
+         * 다음 연산의 결과가 false이다.
+         * num1과 num3, num2와 num4를 비교하여 최종 결과가 
+         * true로 반환될 수 있는 연산을 만들어 보세요
+        */
+
+       console.log(`(20 > 100) && (-20 > -100) : ${(num1 > num2) && (num3 > num4)}`);
+       console.log(`(20 > 100) || (-20 > -100) : ${(num1 > num2) || (num3 > num4)}`);
+       console.log(`(20 > 100) && (-20 > -100) : ${!(!(num1 > num2) && !(num3 > num4))}`);
+       console.log(`(20 > 100) && (-20 > -100) : ${!((num1 > num2) && !(num3 > num4))}`);
+       console.log(`(20 > 100) && (-20 > -100) : ${!(!(num1 > num2) && (num3 > num4))}`);
+       console.log(`(20 > 100) && (-20 > -100) : ${(num1 > num2) && (num3 > num4) || (num3 > num4) }`);
+       console.log(`(20 > 100) && (-20 > -100) : ${(num1 > num2) && (num3 > num4)}`);
+       
+        let k = 5;
+        let l = 4;
+       let j = k && l;
+       console.log(j)
+    </script>
+</body>
+</html>

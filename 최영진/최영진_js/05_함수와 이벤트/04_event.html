@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이벤트</title>
+    <style>
+        p.syntax {
+            white-space: pre;
+        }
+    </style>
+</head>
+<body>
+    <h1>이벤트</h1>
+    <ul>
+        <li>사용자의 동작이나 웹 페이지의 변화를 감지하여 특정 코드를 실행하는 기능</li>
+        <li>자주 사용되는 대표적인 이벤트
+            <dl>
+                <dt>마우스 이벤트</dt>
+                <dd>click, dblclick, mouseover, mouseout, mousemove</dd>
+                <dt>키보드 이벤트</dt>
+                <dd>keydown, keyup, keypress</dd>
+                <dt>폼 이벤트</dt>
+                <dd>submit, change, focus, blur</dd>
+                <dt>윈도우 이벤트</dt>
+                <dd>load, resize, scroll, unload</dd>
+            </dl>
+        </li>
+    </ul>
+
+    <hr><hr>
+    <h1>이벤트 등록 방법</h1>
+    <h2>HTML 태그에서 직접 이벤트 등록 (비추천)</h2>
+    <ul>
+        <li>HTML과 JavaScript가 혼합. 웹 표준에 어긋남</li>
+        <li>하나의 요소에 여러 개의 이벤트 핸들러 추가 불가능</li>
+    </ul>
+    <button onclick="alert(`버튼이 클릭되었습니다.`)">클릭하세요</button>
+    <h2>JavaScript에서 element.onclick 사용</h2>
+    <ul>
+        <li>JavaScript에서 onclick, onmouseover 등 직접 할당</li>
+        <li>여러 개의 이벤트 추가 불가</li>
+        <li>기존 이벤트가 덮어쓰기 됨</li>
+    </ul>
+    <button id="myBtn1">클릭하세요</button>
+    <script>
+        // 이벤트가 덮어쓰기가 됨
+        document.getElementById("myBtn1").onclick = function(){
+            alert("버튼이 클릭됨");
+        }
+        document.getElementById("myBtn1").onclick = function(){
+            console.log("버튼이 클릭되었습니다.");
+        }
+        
+    </script>
+    <h2>addEventListener() 사용 (가장 추천!)</h2>
+    <ul>
+        <li>addEventListener()를 사용하여 이벤트 등록</li>
+        <li>여러 개의 이벤트 추가 가능</li>
+        <li>이벤트 제거(removeEventListener) 가능</li>
+    </ul>
+    <button id="myBtn2">클릭하세요</button>
+    <script>
+        // 덮어쓰기가 안되고 중복 동작이 됨 
+        const btn2 = document.getElementById("myBtn2");
+        btn2.addEventListener("click",function(){
+            console.log('클릭')
+            btn2.removeEventListener("click", arguments.callee);
+        });
+        
+        // function logMsgAndRemove(){
+        //     console.log("버튼이 클릭되었습니다.");
+        //     btn2.removeEventListener("click",logMsgAndRemove);
+        // }
+        // btn2.addEventListener("click",logMsgAndRemove);
+
+        btn2.addEventListener("click",function(){
+            btn2.style.backgroundColor = "red";
+            btn2.style.fontWeight = "bold";
+            btn2.style.color = "#fff";
+        })
+    </script>
+</body>
+</html>

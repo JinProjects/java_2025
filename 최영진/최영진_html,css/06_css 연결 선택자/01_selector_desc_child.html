@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>후손 선택자와 자식 선택자</title>
+	<style>
+		p {
+			font-size: 30px;
+		}
+		/* 후손 선택자 */
+		.parent {
+			background-color: yellow;
+		}
+		.child {
+			background-color: pink;
+		}
+		/* 후손선택자 */
+		.parent p{
+			border: 2px solid red;
+		}
+		.parent > p {
+			color: red;
+			font-weight: bold;
+		}
+	</style>
+</head>
+<body>
+	<h1>연결 선택자</h1>
+	<div class="box">
+		<h2>후손 선택자와 자식 선택자</h2>
+		<div class="parent">
+			<p>parent 클래스를 기준으로 이 단락은 후손이며 자식이다.</p>
+			<div class="child">
+				<p>parent 클래스를 기준으로 이 단락은 후손이지만 자식은 아니다.</p>
+			</div>
+		</div>
+		<p>copyright</p>
+	</div>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>입장객수에 따른 필요 줄 수 구하기</title>
+</head>
+<body>
+  <script>
+    /**
+     * 입장객 수와 한 줄에 몇 명씩 앉을 것인지 입력받고
+     * 총 몇 줄이 필요한지 계산하기
+     * 
+     * 
+     * 입장객 수 : memNum에 입력받기
+     * 한 줄에 앉은 사람 수는 colNum에 입력받기
+     * 
+     * 
+     * 예) 입장객 수 56명, 한 줄에 앉을 사람 수 5
+     * 콘솔 창에 "11.2줄이 필요합니다."
+    */
+
+    const memNum = prompt("입장객 수 입력");
+    const colNum = prompt("한 줄에 앉을 사람 수");
+
+    console.log(`${memNum/colNum}줄이 필요합니다.`);
+    
+  </script>
+</body>
+</html>
