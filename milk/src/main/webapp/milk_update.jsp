@@ -26,9 +26,10 @@
 			out.println("<script>alert('수정실패!'); location.href='milk.jsp'; </script>");
 		}
 	}catch(Exception e){
-		
+		e.printStackTrace();
 	}finally{
-		
+		if(pstmt != null){pstmt.close();}
+		if(conn != null){conn.close();}
 	}
 	
 %>

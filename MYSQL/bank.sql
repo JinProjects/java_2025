@@ -13,5 +13,4 @@ delete from bank where no=2;
 drop table bank;
 update bank set balance=20 where id='a';
 
-
 select * from emp where mgr is not null and job in('MANAGER','CLERK') and ename not like '_L%';

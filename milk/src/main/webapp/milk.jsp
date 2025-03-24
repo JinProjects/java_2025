@@ -34,7 +34,6 @@
 		
 		<%@page import="java.sql.*"%>
 		<%
-		// select * from milk; - PreparedStatement  
 		Connection conn = null;  PreparedStatement pstmt = null;  ResultSet rset = null;
 		try{
 			//1. 드라이버연동
@@ -61,17 +60,14 @@
 			//4. 결과물처리
 		}catch(Exception e){e.printStackTrace();
 		}
-		/* finally{
+		finally{
 			if(rset != null){  rset.close();}
 			if(pstmt != null){  pstmt.close();}
 			if(conn != null){  conn.close();}
-		} */
+		}
 		%>
-
 		    </tbody>
 		  </table>		
-		 
-		
 	</div>
 
 <!-- 주문현황 -표 -->
@@ -89,14 +85,20 @@
 	    </thead>
 	    <tbody>
 	    	<%
+	    	
 	    	try{
+	    		
+	    		Class.forName("com.mysql.cj.jdbc.Driver");
 	    		String sql = "select * from milk_order";
-	    		rset = pstmt.executeQuery(sql);
+				conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/mbasic","root","1234");
+				pstmt = conn.prepareStatement(sql);
+	    		rset = pstmt.executeQuery();
 	    		/* while(rset.next()){
 	    			int ono = rset.getInt("ono");
 	    			String oname = rset.getString("oname");
 	    			int onum = rset.getInt("onum");
 	    			String odate = rset.getString("odate"); */
+	    			
 	    			while(rset.next()){
 	    			out.println("<tr><td>"+rset.getInt("ono")
 	    						+"</td><td>"+rset.getString("oname")
@@ -114,9 +116,9 @@
 	      }
 	    	}catch(Exception e){e.printStackTrace();
 			}finally{
-				/* if(rset != null){  rset.close();}
+				if(rset != null){  rset.close();}
 				if(pstmt != null){  pstmt.close();}
-				if(conn != null){  conn.close();} */
+				if(conn != null){  conn.close();}
 			}
 	      %>
 	    </tbody>
@@ -139,11 +141,11 @@
 		      <div class="card-body">
 		        <form action="milk_insert.jsp" method="post" id="orderForm" onsubmit="return orderForm()">
 				  <div class="mb-3 mt-3">
-				    <label for="email" class="form-label">주문할 우유이름</label>
+				    <label for="ono_input" class="form-label">주문할 우유이름</label>
 				    <input type="text" class="form-control" id="ono_input" placeholder="주문할 우유이름을 적어주세요!" name="oname">
 				  </div>
 				  <div class="mb-3">
-				    <label for="pwd" class="form-label">주문할 우유갯수</label>
+				    <label for="onum_input" class="form-label">주문할 우유갯수</label>
 				    <input type="number" class="form-control" id="onum_input" placeholder="주문할 우유갯수를 적어주세요!" name="onum">
 				  </div>
 				  <div class="form-check mb-3">
@@ -162,10 +164,14 @@
 		  			let onum = document.querySelector('#onum_input');
 		  			
 		  			if(ono.value==''){
-						alert('빈칸입니다'); return false;
+						alert('빈칸입니다'); 
+						ono.focus();
+						return false;
 		  			}
 		  			if(onum.value==''){
-						alert('빈칸입니다'); return false;
+						alert('빈칸입니다');
+						onum.focus();
+						return false;
 		  			}
 		  		}
 		  </script>
@@ -203,13 +209,19 @@
 		  			let onum = document.querySelector('#onum_update');
 		  			
 		  			if(ono.value==''){
-						alert('빈칸입니다'); return false;
+						alert('빈칸입니다');
+						ono.focus();
+						return false;
 		  			}
 		  			if(oname.value==''){
-						alert('빈칸입니다'); return false;
+						alert('빈칸입니다'); 
+						oname.focus();
+						return false;
 		  			}
 		  			if(onum.value==''){
-						alert('빈칸입니다'); return false;
+						alert('빈칸입니다'); 
+						onum.focus();
+						return false;
 		  			}
 		  		}
 		  </script>
@@ -239,7 +251,9 @@
 		  			let ono = document.querySelector('#ono_delete');
 		  			
 		  			if(ono.value==''){
-						alert('빈칸입니다'); return false;
+						alert('빈칸입니다'); 
+						ono.focus();
+						return false;
 		  			}
 		  		}
 		  </script>

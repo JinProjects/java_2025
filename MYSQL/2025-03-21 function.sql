@@ -215,6 +215,9 @@ select date_add(now(),interval 5 month);
 select date_add(now(),interval 3-weekday(now()) day);
 
 
+
+
+
 #4. if / case
 -- if(조건, 참, 거짓)
 -- 다형식
