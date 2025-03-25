@@ -3,7 +3,7 @@ package bank.common;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-import com.company.bank.dto.Account;
+import bank.dto.Account;
 
 public class Common {
 	

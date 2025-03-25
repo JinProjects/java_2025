@@ -10,8 +10,9 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 import com.company.bank.DBConnection;
-import com.company.bank.common.Common;
-import com.company.bank.dto.Account;
+
+import bank.common.Common;
+import bank.dto.Account;
 
 public class BDAO {
 	
