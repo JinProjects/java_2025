@@ -4,8 +4,8 @@
 	<div class="container card my-5">
 		<div class="my-5"> <%=session.getAttribute("userId") %></div>
 		
-		<form action="jsp022_login_result.jsp" method="post" onsubmit="return checked()">
-		<%
+		<form action="<%=request.getContextPath() %>/user_login" method="post" onsubmit="return checked()">
+		<%-- <%
 			String cookie = request.getHeader("Cookie");
 			String sessionId = (String)session.getAttribute("userId");
 			if(sessionId!= null){
@@ -20,7 +20,7 @@
 					}
 				}
 			}else{
-		%>
+		%> --%>
 		<h3 class="alert alert-info">FORM-LOGIN</h3>
 		<p style="text-align:center;"><img alt="login" src="images/login.png" ></p>
 			<h3>LOGIN</h3>
@@ -40,7 +40,7 @@
 			<input type="submit" title="login 하러가기" class="btn btn-danger" id="check" name="remember">
 			<input type="submit" title="login 하러가기" class="btn btn-danger" id="chkCookie" name="remember" value="쿠키삭제">
 		</form>
-		<%} %>
+	<%-- 	<%} %> --%>
 	</div>
 	<!-- footer.jsp  -->
 	<!-- footer.jsp  -->

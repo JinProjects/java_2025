@@ -4,23 +4,8 @@
 	<div class="container card my-5">
 		<div class="my-5"> <%=session.getAttribute("userId") %></div>
 		
-		<form action="jsp022_login_result.jsp" method="post" onsubmit="return checked()">
-		<%
-			String cookie = request.getHeader("Cookie");
-			String sessionId = (String)session.getAttribute("userId");
-			if(sessionId!= null){
-				if(cookie != null){
-					Cookie[] cookies = request.getCookies();
-					for(Cookie c : cookies){
-						if(c.getName().equals("userId")){
-							%>
-							<%@ include file="jsp022_login_my.jsp" %>
-							<%
-						}; 
-					}
-				}
-			}else{
-		%>
+		<form action="<%=request.getContextPath() %>/userJoin" method="post" onsubmit="return checked()">
+		
 		<h3 class="alert alert-info">FORM-LOGIN</h3>
 		<p style="text-align:center;"><img alt="login" src="images/login.png" ></p>
 			<h3>LOGIN</h3>
@@ -38,9 +23,8 @@
 			</div>
 			<!-- <button class="btn btn-danger">검색</button> -->
 			<input type="submit" title="login 하러가기" class="btn btn-danger" id="check" name="remember">
-			<input type="submit" title="login 하러가기" class="btn btn-danger" id="chkCookie" name="remember" value="쿠키삭제">
+			<!-- <input type="submit" title="login 하러가기" class="btn btn-danger" id="chkCookie" name="remember" value="쿠키삭제"> -->
 		</form>
-		<%} %>
 	</div>
 	<!-- footer.jsp  -->
 	<!-- footer.jsp  -->
