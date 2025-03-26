@@ -10,28 +10,22 @@
     <welcome-file>default.htm</welcome-file>
   </welcome-file-list>
   
-<resource-ref>
-      <description>DB Connection</description>
-      <res-ref-name>jdbc/mbasic</res-ref-name>
-      <res-type>javax.sql.DataSource</res-type>
-      <res-auth>Container</res-auth>
-  </resource-ref>
-<!--   <error-page>
+  <error-page>
   	<error-code>404</error-code>
   	<location>/jsp019_error_404.jsp</location>
   </error-page>
+  
   <error-page>
   	<error-code>500</error-code>
   	<location>/jsp019_error_500.jsp</location>
-  </error-page> -->
-  
-  <!-- 배포 후 관리용으로 사용 -->
-  <!-- <servlet>
-  	<servlet-name>Servelt002</servlet-name>
-  	<servlet-class>jsp_basic.Servlet002</servlet-class>
-  </servlet>
-  <servlet-mapping>
-	<servlet-name>Servelt002</servlet-name>
-	<url-pattern>/Servelet002</url-pattern> 
-  </servlet-mapping> -->
+  </error-page>  
 </web-app>
+
+
+
+
+
+
+
+
+

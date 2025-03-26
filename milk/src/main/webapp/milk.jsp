@@ -1,3 +1,4 @@
+<%@page import="milk.dao.DBManager"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -31,16 +32,16 @@
 		    </thead>
 		    <tbody>  
 		
-		
 		<%@page import="java.sql.*"%>
 		<%
 		Connection conn = null;  PreparedStatement pstmt = null;  ResultSet rset = null;
 		try{
 			//1. 드라이버연동
-			Class.forName("com.mysql.cj.jdbc.Driver");
+			/*  Class.forName("com.mysql.cj.jdbc.Driver"); */
 			//2. db연동
-			conn = DriverManager.getConnection(
-					"jdbc:mysql://localhost:3306/mbasic","root","1234");
+			/* conn = DriverManager.getConnection(
+					"jdbc:mysql://localhost:3306/mbasic","root","1234"); */
+			conn = new DBManager().getConnection();
 			//3. PreparedStatement
 			pstmt = conn.prepareStatement("select * from milk");
 			rset  = pstmt.executeQuery();  // select   표
