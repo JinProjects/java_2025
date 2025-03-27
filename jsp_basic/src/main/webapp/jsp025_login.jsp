@@ -4,7 +4,7 @@
 	<div class="container card my-5">
 		<div class="my-5"> <%=session.getAttribute("userId") %></div>
 		
-		<form action="<%=request.getContextPath() %>/user_login" method="post" onsubmit="return checked()">
+		<form action="<%=request.getContextPath()%>/user_login" method="post" onsubmit="return checked()">
 		<%-- <%
 			String cookie = request.getHeader("Cookie");
 			String sessionId = (String)session.getAttribute("userId");
@@ -38,7 +38,7 @@
 			</div>
 			<!-- <button class="btn btn-danger">검색</button> -->
 			<input type="submit" title="login 하러가기" class="btn btn-danger" id="check" name="remember">
-			<input type="submit" title="login 하러가기" class="btn btn-danger" id="chkCookie" name="remember" value="쿠키삭제">
+			<!-- <input type="submit" title="login 하러가기" class="btn btn-danger" id="chkCookie" name="remember" value="쿠키삭제"> -->
 		</form>
 	<%-- 	<%} %> --%>
 	</div>

@@ -49,7 +49,7 @@ public class jsp025_login extends HttpServlet {
 		int result = -1;
 		DBManager db = new DBManager();
 		Connection conn = null; PreparedStatement pstmt = null; ResultSet rs = null;
-		String sql = "select count(*) cnt from member where name=?, pass=?";
+		String sql = "select count(*) cnt from member where name=? and pass=?";
 		try {
 			conn = db.getConnection();
 			pstmt = conn.prepareStatement(sql);
@@ -67,7 +67,7 @@ public class jsp025_login extends HttpServlet {
 				HttpSession session = request.getSession();
 				session.setAttribute("username", name);
 				//response.sendRedirect("jsp025_my.jsp");
-				out.println("<script>alert('정보를 확인해주세요.'); location.href='jsp025_my.jsp'</script>");
+				out.println("<script> location.href='jsp025_my.jsp'</script>"); 
 			}else {
 				out.println("<script>alert('정보를 확인해주세요.'); history.go(1);</script>");
 			}
