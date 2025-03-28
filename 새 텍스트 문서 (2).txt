@@ -126,6 +126,21 @@ index.jsp  ->  *.do   [FrontController]
        ㄴ  /delete.do     - C:해당번호 글삭제기능 BDelete(해당글삭제)      V: /list.do
 
 
+2. Service
+    [com.company.service]
+
+        <<interface>> BoardService   - exec(request, response)   
+   ↑             ↑            ↑            ↑            ↑           ↑  
+   BList   BWrite        BDetail     BEditView     BEdit       BDelete   
+
+>   BList     전체리스트   -  dao.list()
+>   BWrite    글삽입       -  dao.insert(dto)  / 알림창- 성공/실패
+>   BDetail   상세보기     -  dao.updateHit(dto) , dao.detail(dto)
+>   BEditView 글수정폼   -  dao.detail(dto)
+>   BEdit     글수정        -  dao.update(dto)  / 알림창- 성공/실패
+>   BDelete   해당글삭제-  dao.delete(dto)  / 알림창- 성공/실패
+
+
 셋팅 문제였음
 
 워크스페이스를 git파일에 두지 않고 따로 두고 사용해서 문제 발생

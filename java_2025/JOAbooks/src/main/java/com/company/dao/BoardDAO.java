@@ -50,9 +50,9 @@ public class BoardDAO {
 	
     //최신글읽기
 	public ArrayList<BoardVO> selectAll(){
+		//String sql = "select * from board order by bno desc";
 		String sql = "select * from board order by bno desc";
 		ArrayList<BoardVO> result = new ArrayList<>();
-		
 		
 		DBManager db = new DBManager();
 		Connection conn = null; 
@@ -76,7 +76,6 @@ public class BoardDAO {
 					));
 			}
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}finally {
 			try {
@@ -93,8 +92,6 @@ public class BoardDAO {
 				e.printStackTrace();
 			}
 		}
-
-		
 		return result;
 	}
 	//end
@@ -236,6 +233,20 @@ public class BoardDAO {
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setInt(1, bno);
 			result = pstmt.executeUpdate();
+			
+			sql = " update board  "
+				+ "    set bno = (bno-1)"
+				+ " where bno >= (select bno from (select b.bno"
+				+ "			   from board a right join"
+				+ "					(select bno"
+				+ "						from (select row_number() over(order by bno) as bno"
+				+ "										from board) board2 ) b"
+				+ "			on a.bno = b.bno"
+				+ "			where a.bno is null) as t"
+				+ "            limit 1)";
+			
+			pstmt = conn.prepareStatement(sql);
+			pstmt.executeUpdate();
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}finally {
