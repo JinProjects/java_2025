@@ -32,7 +32,7 @@
 		</div>
 	</div>
 	<div class="text-end">
-		<a href="edit_view.do?bno=${boardVO.bno}" class="btn btn-primary">수정</a> 
+		<a href="e dit_view.do?bno=${boardVO.bno}" class="btn btn-primary">수정</a> 
 		<a href="delete.do?bno=${boardVO.bno}" class="btn btn-outline-primary">삭제</a> 
 		<a href='list.do' class="btn btn-outline-primary">목록보기</a>
 	</div>

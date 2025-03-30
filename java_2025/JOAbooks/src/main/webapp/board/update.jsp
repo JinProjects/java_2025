@@ -23,9 +23,9 @@
 			<div class="d-grid gap-3">
 				<input type="button" class="btn btn-info btn-block text-white" id="btnUpdate" value="수정">
 				<input type="submit" class="btn btn-info btn-block text-white" id="btnInput" value="입력" style="display: none;">
-				<a href="delete.do?bno=${dto.bno}" class="btn btn-info btn-block text-white" id="btndelete">삭제</a>
+				<a href="board/delete.do?bno=${dto.bno}" class="btn btn-info btn-block text-white" id="btndelete">삭제</a>
 				<a href="javascript:history.go(-1)" class="btn btn-info btn-block text-white" id="btncancle" style="display:none;">취소</a>
-				<a href="list.do" class="btn btn-outline-secondary btn-block">목록보기</a>
+				<a href="board/list.do" class="btn btn-outline-secondary btn-block">목록보기</a>
 			</div>
 		</form>
 	</div>
