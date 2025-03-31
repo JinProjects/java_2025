@@ -20,7 +20,7 @@
 			<div class="d-grid gap-3">
 				<input type="submit" class="btn btn-info btn-block text-white">
 				<a href="javascript:history.go(-1)" class="btn btn-outline-secondary btn-block">취소</a>
-				<a href="list.do" class="btn btn-outline-secondary btn-block">목록보기</a>
+				<a href="board/list.do" class="btn btn-outline-secondary btn-block">목록보기</a>
 			</div>
 		</form>
 	</div>
