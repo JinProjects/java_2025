@@ -16,7 +16,7 @@ import com.company.service.board.BEdit;
 import com.company.service.board.BEditView;
 import com.company.service.board.BList;
 import com.company.service.board.BoardService;
-import com.company.util.NaverBook;
+import com.mysql.cj.x.protobuf.MysqlxDatatypes.Scalar.String;
 
 /**
  * Servlet implementation class FrontController
