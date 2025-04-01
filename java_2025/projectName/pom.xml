@@ -153,6 +153,14 @@
                     <mainClass>org.test.int1.Main</mainClass>
                 </configuration>
             </plugin>
+            <!-- https://velog.io/@pank0415/pom.xml%EC%97%90%EC%84%9C-Cannot-access-defaults-field-of-Properties-%EC%97%90%EB%9F%AC-%ED%95%B4%EA%B2%B0 -->
+            <!-- war로 패키징이 되는 maven 프로젝트를 생성했을 때 발생한 에러였다.
+					maven-war-plugin을 임포트시켜서 해결했다. -->
+            <plugin>
+			  <groupId>org.apache.maven.plugins</groupId>
+			  <artifactId>maven-war-plugin</artifactId>
+			  <version>3.3.2</version>
+			</plugin>
         </plugins>
     </build>
 </project>

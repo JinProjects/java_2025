@@ -237,8 +237,100 @@ public class AnimalFarm2 {
     2. configure  - [Convert to Maven Project]
     3. spring      - add Spring project Nature
     4. java se-11 / project facts, build path
-    5. build path - add Libraries - JUnit 4
-----
+    5. build path - add Libraries - JUnit 
     6.pom.xml셋팅 > junit, context, spring-test
 
 
+2025-04-01 복습문제
+
+Q1. 프레임워크?
+ - 소프트웨어개발의 뼈대 [ 디자인패턴 + 라이브러리 ]
+ 
+Q2. IOC?
+스프링 컨테이너가 객체의 생명주기(생성~소멸)를 관리 
+
+Q3. DI?
+ - 각 클래스의 의존관계를 [ 설정파일 ]을 통해서 컨테이너가 자동연결
+
+Q4. BEAN?
+ - 스프링이 관리하는 객체
+
+Q5. 스프링에서 다음에 해당하는 설정파일을 작성하시오
+
+<bean id="cat" class="test.Cat" />
+<bean id="dog" class="test.Dog" />
+
+<bean id="animalFarm" class="test.AnimalFarm" >
+  <property name="name" value="sally" />
+  <property name="ani" ref="cat" />
+</bean>
+
+Q6.
+
+<bean id="cat" class="test.Cat" />
+<bean id="dog" class="test.Dog" />
+
+<bean id="animalFarm" class="test.AnimalFarm" >
+	<constructor-arg index="0" value="alpha" />
+	<constructor-arg index="1" ref="dog" />
+</bean>
+
+Q7.
+7-1. @Component @Autowired @Repository(DB) @Service(비즈니스로직) @Controller(요청받아서 응답역할)  
+7-2.  <context:component-scan base-package="" />
+
+--------------------------------------
+#4. DB / MYBATIS
+--------------------------------------
+▶1. DataSource
+SimpleDriverDataSource 가장 단순버전
+- getConnection() 매번생성
+
+> mysql-connector-java / spring-jdbc
+
+▶2. Mybatis( sql )
+1. sql을 별도로 파일분리해서 관리
+2. ORM(Object relational mapping) 프레임워크
+3. mybatis 
+===================
+1. SqlSessionFactoryBean << 
+	↓
+2. SqlSessionFactory → <<SqlSession>> → mapper
+			(insert, update, delete, select ,,, )
+
+※ SqlSessionFactory SqlSession 생성관리
+※ SqlSession : sql실행, 트랜잭션
+===================
+4. 실습 
+mybatis
+mybatis-spring 
+
+  ## mapper 설정파일(1) - sql 구문작성 설정
+   [Preferences] - [Xml] - Templates - New - New XML
+   <?xml version="1.0" encoding="UTF-8" ?>
+   <!DOCTYPE mapper
+     PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+     "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+   <mapper namespace="org.mybatis.example.BlogMapper">
+   </mapper>
+   
+   ## mapper 설정파일(2)  - db 연동 설정
+   [Preferences] - [Xml] - Templates - New - New XML
+   <?xml version="1.0" encoding="UTF-8" ?>
+   <!DOCTYPE configuration
+     PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+     "https://mybatis.org/dtd/mybatis-3-config.dtd">
+   <configuration>
+   </configuration>
+
+
+7-2.  Dto (UserDto)
+  [com.company.dto] - UserDto
+   private int  no;
+   private String name;
+   private int  age;
+   
+   // 생성자, tostring, getters/setters
+  *[config] - mybatis-config.xml
+
+7-3.  Dao ( UserDao , UserDaoImpl ,  user-mapper.xml )
