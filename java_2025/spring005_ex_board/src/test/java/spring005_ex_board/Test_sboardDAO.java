@@ -1,6 +1,5 @@
 package spring005_ex_board;
 
-import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,7 +7,6 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import com.company.dao.SBoardDao;
-import com.company.dao.SBoardDaoImpl;
 import com.company.dto.SBoardDto;
 
 @RunWith(SpringJUnit4ClassRunner.class)
@@ -16,18 +14,18 @@ import com.company.dto.SBoardDto;
 public class Test_sboardDAO {
 	
 	@Autowired
-	SBoardDaoImpl sboard; 
+	SBoardDao sboard; 
 	
 	SBoardDto dto = new SBoardDto("홍길동", "1234", "제목4", "내용4", "127.0.0.1");
 	
-	//@Test
-	@Ignore
+	@Test
+	//@Ignore
 	public void insert() {
 		System.out.println(sboard.insert(dto));
 	}
 	
-	//@Test
-	@Ignore
+	@Test
+	//@Ignore
 	public void update() {
 		dto.setBno(2);
 		dto.setBtitle("제목수정1");
@@ -36,18 +34,18 @@ public class Test_sboardDAO {
 		System.out.println(sboard.selectAll());
 	}
 	@Test
-	@Ignore
+	//@Ignore
 	public void updateHit() {
 		System.out.println(sboard.updateHit(1));
 		System.out.println(sboard.selectOne(1));
 	}
-	//@Test
-	@Ignore
+	@Test
+	//@Ignore
 	public void delete() {
 		System.out.println(sboard.delete(1));
 	}
-	//@Test
-	@Ignore
+	@Test
+	//@Ignore
 	public void selectOne() {
 		System.out.println(sboard.selectOne(1));
 	}

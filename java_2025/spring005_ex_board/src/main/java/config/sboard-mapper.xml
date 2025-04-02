@@ -11,7 +11,7 @@
 		update sboard set btitle = #{btitle}, bcontent = #{bcontent} where bno = #{bno}
 	</update>
 	<update id="updateHit" parameterType="int">
-		update sboard set hit=hit+1 where bno = #{bno}
+		update sboard set bhit=#{bhit}+1 where bno = #{bno}
 	</update>
 	<delete id="delete" parameterType="int">
 		delete from sboard where bno = #{bno} and bpass = #{bpass}

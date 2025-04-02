@@ -23,7 +23,8 @@
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse" id="mynavbar">
+    </div>
+    <div class="collapse navbar-collapse justify-content-start" id="mynavbar">
       <ul class="navbar-nav me-auto">
         <li class="nav-item">
           <a class="nav-link" href="javascript:void(0)">Link</a>
@@ -35,10 +36,17 @@
           <a class="nav-link" href="javascript:void(0)">Link</a>
         </li>
       </ul>
-      <form class="d-flex">
-        <input class="form-control me-2" type="text" placeholder="Search">
-        <button class="btn btn-primary" type="button">Search</button>
-      </form>
+      <div class="container-fluid justify-content-end">
+	  	<ul class="navbar-nav">
+	    	<li class="nav-item">
+	        	<a class="nav-link" href="/member/login_view.do">로그인</a>
+	        </li>
+	        <li class="nav-item">
+	        	<a class="nav-link" href="/member/join_view.do">회원가입</a>
+	        </li>
+	    </ul>
+        <!-- <input class="form-control me-2" type="text" placeholder="Search"> -->
+        <!-- <button class="btn btn-primary" type="button">Search</button> -->
     </div>
   </div>
 </nav>

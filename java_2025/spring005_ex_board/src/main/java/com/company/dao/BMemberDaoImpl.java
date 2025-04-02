@@ -7,7 +7,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.company.dto.BMemberDto;
-@Repository("BMemberDao")
 public class BMemberDaoImpl implements BMemberDao {
 	@Autowired
 	SqlSession sqlSession;
