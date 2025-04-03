@@ -8,27 +8,28 @@ request.setCharacterEncoding("UTF-8");
 %>
 <div class="container"  style="margin-top:5%; min-height:500px"   >
 	<h3>MULTIBOARD - 글수정 </h3>
-		<form action="<%=request.getContextPath()%>/edit.do?bno=${b.bno}" method="post"  id="editForm" >
+		<form action="edit.do?bno=${dto.bno}" method="post"  id="editForm" >
 		   <fieldset>
 		   <legend>	UPDATE</legend>
 			<div class="form-group">
 			  <label for="bname"  >이름</label>
 			  <input type="text"   name="bname"   id="bname"   class="form-control"   
-			  		value="${b.bname}"  readonly> 
+			  		value="${dto.bname}"  readonly> 
 			</div>			
 			<div class="form-group">
 			  <label for="bpass"  >비밀번호</label>
-			  <input type="password"   name="bpass"   id="bpass"   class="form-control" > 
+			  <input type="password"   name="bpass"   id="bpass"   class="form-control" 
+			  			value="${dto.bpass}"> 
 			  <span>(*) 수정, 삭제시 필수</span>
 			</div>																
 			<div class="form-group">
 			  <label for="btitle"  >제목</label>
 			  <input type="text"   name="btitle"   id="btitle"   class="form-control"  
-			  		 value="${b.btitle}"> 
+			  		 value="${dto.btitle}"> 
 			</div>	
 			<div class="form-group">
 			  <label for="bcontent"  >내용</label>
-			  <textarea name="bcontent"  id="bcontent"  cols="60"  rows="10"   class="form-control" >${b.bcontent}</textarea>
+			  <textarea name="bcontent"  id="bcontent"  cols="60"  rows="10"   class="form-control" >${dto.bcontent}</textarea>
 			</div>				
 			<div class="form-group  text-right">
 				<input type="submit"   value="입력"   class="btn btn-danger"  >  

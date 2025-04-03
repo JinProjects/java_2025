@@ -456,27 +456,76 @@ FrontController - 공통 작업을 수행 → 세부컨트롤러에 처리
 ④ 요청결과와 View정보를 DispatcherServlet 줌 / View를 객체로 생성해서 응답
 
 1. 실습
-1) pom.xml spring-webmvc 등록
-2) web.xml ContextLoaderListener(spring구동) / DispatcherServlet(FrontController)
-	root-context.xml(dbt설정 / server-context.xml (view servlet 설정)
+1) pom.xml  spring-webmvc 등록
+2) web.xml  ContextLoaderListener(spring 구동) / DispatcherServlet (Frontcontroller)
+	   root-context.xml(db 설정) / servlet-context.xml(view servlet 설정)
+3) config/servlet-context.xml
 
-3) config/servet-context.xml
 
-
-2.실습
-
-1)pom.xml
-
- <dependency>
-	       <groupId>org.springframework</groupId>
-	       <artifactId>spring-webmvc</artifactId>
-	       <version>3.2.17.RELEASE</version>
-	   </dependency>
-2) 
+2. 실습
+1) spring010_mvc 프로젝트만들기
+2) pom.xml
+   <!-- https://mvnrepository.com/artifact/org.springframework/spring-webmvc -->
+   <dependency>
+       <groupId>org.springframework</groupId>
+       <artifactId>spring-webmvc</artifactId>
+       <version>3.2.17.RELEASE</version>
+   </dependency>
 
 3) web.xml
+	ContextLoaderListener(spring 구동) / DispatcherServlet (Frontcontroller)
+	root-context.xml(db 설정) / servlet-context.xml(view servlet 설정)
+4) servlet.xml
+   4-1. @Cotroller 위치
+	<context:component-scan base-package="com.company.controller" />
+   4-2. Model model ( 처리결과 )
+	<mvc:annotation-driven />
+   4-3. ViewResolver
+	<bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<property name="prefix" value="/" />
+		<property name="suffix" value=".jsp" />
+	</bean>
 
 
-1. spring009_ex_board 복사하기 spring011_ex_board
+1. spring009_ex_board 복사하기  spring001_ex_board
 2. web-mvc 셋팅
 3. 다음과 같이 controller 설정
+/board/list → board/list.jsp
+/board/create → board/write.jsp
+/board/detail → board/detail.jsp
+/board/edit → board/edit.jsp
+/board/delete → board/delete.jsp
+
+
+--------------------------------------
+#7. 유용한 기능들
+--------------------------------------
+1. jstl
+2. dto → lombok (JPA)
+3. aop(관점지향)
+4.HikariCP (dbcp / sql 과정 다 보이게)
+5.Tx (트랜잭션 : sql 여러개 실행될 때 중간에 실패하면 sql 다 처리 안되게)
+
+
+▶ jstl
+1.pom.xml
+ <!-- https://mvnrepository.com/artifact/javax.servlet/jstl -->
+	<dependency>    
+		<groupId>javax.servlet</groupId>    
+		<artifactId>jstl</artifactId>    
+		<version>1.2</version>
+	</dependency>
+
+2. Model
+- table
+- dto UserDto / mapper-config.xml
+- dao UserDao / user-mapper.xml / root-context.xml (등록)
+
+user-mapper.xml
+
+3. @Repository -  Dao ( sql 실행 )
+   @Service -  비즈니스 로직 = 처리하는 기능
+
+  상세보기: 조회수 올리는 sql / 해당번호 상세보기데이터
+  수정보기: 		 / 해당번호 상세보기데이터
+  글쓰기  : 이미지 올리기 기능 / 그 이미지이름 경로 및 데이터를 insert 시 저장

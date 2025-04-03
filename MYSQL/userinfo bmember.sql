@@ -12,7 +12,7 @@ create table sboard(
   bhit int not null default 0,
   bip varchar(50) not null
 );
-
+select * from sboard;
 create table bmember(
    mid varchar(100) not null primary key,
    mpass varchar(100) not null,
@@ -28,3 +28,5 @@ insert into bmember(mid, mpass, mnickname, memail, address1, address2, address3,
 values ('test','1111','test','test@test.com','인천광역시','서구','가정로','127.0.0.1');
 drop table bmember;
 select * from bmember;
+select now();
+select * from board;

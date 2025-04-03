@@ -8,28 +8,28 @@ request.setCharacterEncoding("UTF-8");
 	<h3>MULTIBOARD 상세보기</h3> 					
 	<div class="panel" >
 	  <div  class="panel-body"> 
-  		<span class="glyphicon glyphicon-plus">  조회수</span>    <p>${b.bhit}</p>
+  		<span class="glyphicon glyphicon-plus">  조회수</span>    <p>${dto.bhit}</p>
 	</div>	
 	</div>	
 	<div class="panel"  >
 	  <div  class="panel-body">
-	  		<span class="glyphicon glyphicon-plus">  이름</span> <p>${b.bname}</p>
+	  		<span class="glyphicon glyphicon-plus">  이름</span> <p>${dto.bname}</p>
 		</div>
 	</div>				
 	<div class="panel"  >
 	  <div  class="panel-body">
-	  	<span class="glyphicon glyphicon-plus">  제목</span> <p>${b.btitle}</p>
+	  	<span class="glyphicon glyphicon-plus">  제목</span> <p>${dto.btitle}</p>
 	  </div>	
 	</div>
 	<div class="panel"  >
 	  <div  class="panel-body">
-	  	<span class="glyphicon glyphicon-plus">  내용</span> <textarea  class="form-control">${b.bcontent}</textarea>
+	  	<span class="glyphicon glyphicon-plus">  내용</span> <textarea  class="form-control">${dto.bcontent}</textarea>
 	  </div> 
 	</div>	
 	<div class="text-right"    >
-		 <a href="<%=request.getContextPath()%>/board/edit_view.do?bno=${b.bno}"  class="btn btn-danger" >수정</a> 
-		 <a href="<%=request.getContextPath()%>/board/delete.do?bno=${b.bno}"  class="btn btn-danger" >삭제</a>    
-		 <a href="<%=request.getContextPath()%>/board/list.do"  class="btn btn-info" >목록보기</a> 
+		 <a href="edit_view.do?bno=${dto.bno}"  class="btn btn-danger" >수정</a> 
+		 <a href="delete.do?bno=${dto.bno}"  class="btn btn-danger" >삭제</a>    
+		 <a href="list.do"  class="btn btn-info" >목록보기</a> 
 	</div>						 
 </div>	
 <%@ include file="../inc/footer.jsp" %>

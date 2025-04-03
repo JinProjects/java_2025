@@ -39,8 +39,11 @@ public class BoardController {
 		model.addAttribute("b", sboardDTO);
 		return "board/detail";
 	}
-	@RequestMapping(value="/edit.do", method = RequestMethod.POST)
-	public String edit() {
+	@RequestMapping(value="/edit_view.do", method = RequestMethod.POST)
+	public String edit(Model model,HttpServletRequest request, HttpServletResponse response) {
+		int bno = Integer.parseInt(request.getParameter("bno"));
+		sboardDTO = sboardDAO.selectOne(bno);
+		model.addAttribute("b",sboardDTO);
 		return "board/edit";
 	}
 	@RequestMapping(value="/delete.do",method = RequestMethod.GET)
