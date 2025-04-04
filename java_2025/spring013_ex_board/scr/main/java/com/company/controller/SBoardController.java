@@ -8,6 +8,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.company.dao.SBoardDao;
 import com.company.dto.SBoardDto;
@@ -30,12 +31,15 @@ public class SBoardController {
 		return "board/write";
 	}
 	@RequestMapping(value = "/write.do", method = RequestMethod.POST)
-	public String write_post(SBoardDto dto) throws Exception {
+	public String write_post(SBoardDto dto,RedirectAttributes rttr) throws Exception {
 		String ip = InetAddress.getLocalHost().getHostAddress();
 		dto.setBip(ip);
-		if(dto != null) {
-			service.insert(dto);
+		String result = "fail";
+		if(dto != null && service.insert(dto) > 0 ) {
+			//service.insert(dto);
+			result = "success";
 		}
+		rttr.addFlashAttribute("result",result);
 		return "redirect:list.do";
 	}
 	
@@ -46,13 +50,20 @@ public class SBoardController {
 		return "board/detail";
 	}
 	@RequestMapping(value = "/insert.do", method = RequestMethod.GET)
-	public String create_post(SBoardDto dto) throws Exception {
+	public String create_post(SBoardDto dto, RedirectAttributes rttr) throws Exception {
 		String ip = InetAddress.getLocalHost().getHostAddress();
 		dto.setBip(ip);
-		if(dto != null) {
-			service.insert(dto);
+		String result = "fail";
+		if(dto != null && service.insert(dto) > 0 ) {
+			//service.insert(dto);
+			result = "success";
 		}
+		rttr.addFlashAttribute("result",result);
 		return "redirect:list.do";
+		// RedirectAttributes rttr
+		// : view페이지에 redirect한 결과를 넘겨주는 방법
+		// board/list.jsp 파일에서 result 한 결과를 알림창 한번 실행
+		//
 	}
 	@RequestMapping(value = "/edit_view.do", method = RequestMethod.GET)
 	public String edit(Model model, int bno) {

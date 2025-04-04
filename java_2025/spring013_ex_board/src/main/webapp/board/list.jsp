@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html;charset=UTF-8" pageEncoding="UTF-8"%>
 <%@page import="java.util.Iterator"%>
 <%@page import="java.util.ArrayList"%>
 
@@ -43,9 +43,23 @@
 				}//$(".result") 같은 뜻 document.querySelector(".result ")
 			});
 		})// jQuery 브라우저 로딩되면 동작 */
+		//window.onload = function(){}; 브라우저 로딩 작업 맨마지막 한번만
+		//window.addEventListener("load", function(){});//위 코드 보완
+		//jQuery(document).ready(); $(document).ready(); 같은코드
+		$(function(){ 
+			let result = '${result}';
+			console.log(result);
+			
+			if(result == 'fail'){
+				alert('비밀번호를 확인해주세요');
+				history.go(-1);
+			}else if(result.length != 0){
+				alert(result);
+			}
+		}); //최종 코드
+		
 		</script>
 	</div>
-	
 	<div class="container card my-5">
 		<h3 class="">MULTIBOARD</h3>
 		<table class="table table-striped">

@@ -501,10 +501,104 @@ FrontController - 공통 작업을 수행 → 세부컨트롤러에 처리
 #7. 유용한 기능들
 --------------------------------------
 1. jstl
+-----------------------------------------
+-----------------------------------------
 2. dto → lombok (JPA)
-3. aop(관점지향)
+
+0. https://mvnrepository.com/artifact/org.projectlombok/lombok
+    1. https://projectlombok.org/download
+    2. 다운로드
+    3. 더블클릭 /   cmd창     java  -jar    파일이름.jar
+        설치경로 설정
+    4. spring 다시 열기
+
+    ※ 만약 인식이 안되면....
+      1. C드라이브로 스프링zip. 옮기기 - 압축풀기
+      2. 경로 짧게
+
+-----------------------------------------
+-----------------------------------------
+
+
+-----------------------------------------
+-----------------------------------------
+3. aop(관점지향프로그래밍 : Aspect Oriented Programming)
+
+1) 핵심기능 vs 부가기능
+-핵심기능 : 비지니스로직
+-부가기능 : 비지니스로직을 도와주는 기능
+
+2) Aspect
+- AOP( Aspect Oriented Programming )
+- Aspect : 관점, 어떤행동, 시작, 완료, 반복 ...... 나타내는 형태
+- Advice(부가기능정의) + PointCut(적용부위) = Aspect
+
+3) 용어
+Target : 대상
+Advice : 부가기능정의
+PointCut : 적용타겟에 메서드로 대상을 선별하는 정규식
+Weaving : Target(대상)에 Advice(부가기능)를 처리(삽입)는 과정
+
+4) 특징
+- 프록시기반의 aop
+- 프록시(대리)
+- 프록시 Target (대상)에 Advice(부가기능)를 처리(삽입)는 과정에서 생성되는 객체
+
+호출 -> [ Proxy[ Target ]  ]
+
+-----------------------------------------
+-----------------------------------------
+
+-----------------------------------------
+-----------------------------------------
 4.HikariCP (dbcp / sql 과정 다 보이게)
+1) pom.xml
+2) db.properties / root-context.xml
+3) hikari properties 설정
+
+      <!-- HikariCP -->
+      <!-- HikariCP -->
+      <!-- https://mvnrepository.com/artifact/com.zaxxer/HikariCP -->
+      <dependency>
+          <groupId>com.zaxxer</groupId>
+          <artifactId>HikariCP</artifactId>
+          <version>2.7.4</version>
+      </dependency>
+         
+      <!-- https://mvnrepository.com/artifact/org.bgee.log4jdbc-log4j2/log4jdbc-log4j2-jdbc4 -->
+      <dependency>
+          <groupId>org.bgee.log4jdbc-log4j2</groupId>
+          <artifactId>log4jdbc-log4j2-jdbc4</artifactId>
+          <version>1.16</version>
+      </dependency>
+      <!-- HikariCP -->
+      <!-- HikariCP -->
+      <!-- HikariCP --> 
+
+-----------------------------------------
+-----------------------------------------
+
+
+-----------------------------------------
+-----------------------------------------
 5.Tx (트랜잭션 : sql 여러개 실행될 때 중간에 실패하면 sql 다 처리 안되게)
+- 트랜잭션
+- 여러단계의 처리를 하나의 처리처럼 다루는 기능
+- 반영(commit) / 되돌리기 (rollback)
+
+1) pom.xml 
+      <dependency>
+         <groupId>org.springframework</groupId>
+         <artifactId>spring-tx</artifactId>
+         <version>${org.springframework-version}</version>
+      </dependency>
+
+2) root-context.xml
+- DataSourceTransactionManager
+- <tx:annotation-driven />
+
+-----------------------------------------
+-----------------------------------------
 
 
 ▶ jstl
@@ -529,3 +623,4 @@ user-mapper.xml
   상세보기: 조회수 올리는 sql / 해당번호 상세보기데이터
   수정보기: 		 / 해당번호 상세보기데이터
   글쓰기  : 이미지 올리기 기능 / 그 이미지이름 경로 및 데이터를 insert 시 저장
+

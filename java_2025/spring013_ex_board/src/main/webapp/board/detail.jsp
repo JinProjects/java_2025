@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="UTF-8"%>%>
+<%@ page language="java" contentType="text/html;charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ include file="../inc/header.jsp" %>
 <%@page import="java.sql.*"%>
 <%
@@ -23,7 +23,7 @@ request.setCharacterEncoding("UTF-8");
 	</div>
 	<div class="panel"  >
 	  <div  class="panel-body">
-	  	<span class="glyphicon glyphicon-plus">  내용</span> <textarea  class="form-control">${dto.bcontent}</textarea>
+	  	<span class="glyphicon glyphicon-plus">  내용</span> <textarea  class="form-control" readonly>${dto.bcontent}</textarea>
 	  </div> 
 	</div>	
 	<div class="text-right"    >

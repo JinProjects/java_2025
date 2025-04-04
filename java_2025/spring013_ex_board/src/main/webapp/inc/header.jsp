@@ -1,5 +1,6 @@
-<%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html;charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<c:set var="contextPath" value="${pageContext.request.servletContext}"/>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -194,7 +195,7 @@
 </head>
 <body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
 
-<nav class="navbar navbar-default navbar-fixed-top">
+<nav class="navbar navbar-default navbar-fixed-top d-block">
   <div class="container">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
@@ -209,8 +210,14 @@
         <li><a href="#about">ABOUT</a></li>
         <li><a href="#services">SERVICES</a></li>
         <li><a href="#portfolio">PORTFOLIO</a></li>
-        <li><a href="#pricing">PRICING</a></li>
-        <li><a href="#contact">CONTACT</a></li>
+       <%--  <c:when test="">
+        	<li><a href="#">${b.bname}님</a></li>
+        	<li><a href="${contextPath }/member/logout.do">로그아웃</a></li>
+        </c:when>
+        <c:otherwise> --%>
+	        <li><a href="${contextPath }/member/login.do">로그인</a></li>
+	        <li><a href="${contextPath }/member/join.do">회원가입</a></li>
+        <%-- </c:otherwise> --%>
       </ul>
     </div>
   </div>
