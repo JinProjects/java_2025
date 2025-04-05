@@ -237,8 +237,390 @@ public class AnimalFarm2 {
     2. configure  - [Convert to Maven Project]
     3. spring      - add Spring project Nature
     4. java se-11 / project facts, build path
-    5. build path - add Libraries - JUnit 4
-----
+    5. build path - add Libraries - JUnit 
     6.pom.xml셋팅 > junit, context, spring-test
 
+
+2025-04-01 복습문제
+
+Q1. 프레임워크?
+ - 소프트웨어개발의 뼈대 [ 디자인패턴 + 라이브러리 ]
+ 
+Q2. IOC?
+스프링 컨테이너가 객체의 생명주기(생성~소멸)를 관리 
+
+Q3. DI?
+ - 각 클래스의 의존관계를 [ 설정파일 ]을 통해서 컨테이너가 자동연결
+
+Q4. BEAN?
+ - 스프링이 관리하는 객체
+
+Q5. 스프링에서 다음에 해당하는 설정파일을 작성하시오
+
+<bean id="cat" class="test.Cat" />
+<bean id="dog" class="test.Dog" />
+
+<bean id="animalFarm" class="test.AnimalFarm" >
+  <property name="name" value="sally" />
+  <property name="ani" ref="cat" />
+</bean>
+
+Q6.
+
+<bean id="cat" class="test.Cat" />
+<bean id="dog" class="test.Dog" />
+
+<bean id="animalFarm" class="test.AnimalFarm" >
+	<constructor-arg index="0" value="alpha" />
+	<constructor-arg index="1" ref="dog" />
+</bean>
+
+Q7.
+7-1. @Component @Autowired @Repository(DB) @Service(비즈니스로직) @Controller(요청받아서 응답역할)  
+7-2.  <context:component-scan base-package="" />
+
+--------------------------------------
+#4. DB / MYBATIS
+--------------------------------------
+▶1. DataSource
+SimpleDriverDataSource 가장 단순버전
+- getConnection() 매번생성
+
+> mysql-connector-java / spring-jdbc
+
+▶2. Mybatis( sql )
+1. sql을 별도로 파일분리해서 관리
+2. ORM(Object relational mapping) 프레임워크
+3. mybatis 
+===================
+1. SqlSessionFactoryBean << 
+	↓
+2. SqlSessionFactory → <<SqlSession>> → mapper
+			(insert, update, delete, select ,,, )
+
+※ SqlSessionFactory SqlSession 생성관리
+※ SqlSession : sql실행, 트랜잭션
+===================
+4. 실습 
+mybatis
+mybatis-spring 
+
+  ## mapper 설정파일(1) - sql 구문작성 설정
+   [Preferences] - [Xml] - Templates - New - New XML
+   <?xml version="1.0" encoding="UTF-8" ?>
+   <!DOCTYPE mapper
+     PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+     "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+   <mapper namespace="org.mybatis.example.BlogMapper">
+   </mapper>
+   
+   ## mapper 설정파일(2)  - db 연동 설정
+   [Preferences] - [Xml] - Templates - New - New XML
+   <?xml version="1.0" encoding="UTF-8" ?>
+   <!DOCTYPE configuration
+     PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+     "https://mybatis.org/dtd/mybatis-3-config.dtd">
+   <configuration>
+   </configuration>
+
+
+7-2.  Dto (UserDto)
+  [com.company.dto] - UserDto
+   private int  no;
+   private String name;
+   private int  age;
+   
+   // 생성자, tostring, getters/setters
+  *[config] - mybatis-config.xml
+
+7-3.  Dao ( UserDao , UserDaoImpl ,  user-mapper.xml )
+
+
+▶3.  Mybatis  ex
+    1. dynamic web project - spring005_ex_board
+    2. configure  - [Convert to Maven Project]
+    3. spring      - add Spring project Nature
+    4. java se-11 / project facts, build path
+    5. build path - add Libraries - JUnit 4       
+    6. pom.xml 셋팅   > junit, context, spring-test      ■[프로젝트만들기]
+
+Q1. spring project spring005_ex_board만들기
+Q2. Datasource를 셋팅하고 
+     db.properties를 이용하여   datasource를 연동하시오 > SimpleDriverDataSource
+Q3. Mybatis를 셋팅하고 
+     다음 테이블의 crud를 테스트하시오.
+ [com.company.dto]  - BoardDto                      mybatis-config.xml
+ [com.company.dao] - BoardDao  /  BoardDaoImpl /  board-mapper.xml 
+
+mysql> desc sboard;
++----------+---------------+------+-----+-------------------+-------------------+
+| Field    | Type          | Null | Key | Default           | Extra             |
++----------+---------------+------+-----+-------------------+-------------------+
+| bno      | int           | NO   | PRI | NULL              | auto_increment    |
+| bname    | varchar(100)  | NO   |     | NULL              |                   |
+| bpass    | varchar(50)   | NO   |     | NULL              |                   |
+| btitle   | varchar(1000) | NO   |     | NULL              |                   |
+| bcontent | text          | NO   |     | NULL              |                   |
+| bdate    | timestamp     | NO   |     | CURRENT_TIMESTAMP | DEFAULT_GENERATED |
+| bhit     | int           | NO   |     | 0                 |                   |
+| bip      | varchar(50)   | NO   |     | NULL              |                   |
++----------+---------------+------+-----+-------------------+-------------------+
+8 rows in set (0.00 sec)
+
+--------------------------------------
+#5. DB / MYBATIS(2)
+--------------------------------------
+
+▶1.  mybatis (1)
+- TestDao, Impl, mapper.xml 의 파일량줄이기
+-  SqlSession sqlSession , namespace="com.company.dao.TestDao" 코드안에 있어서 불편, 설정파일설정
+TestDao <<interface>>
+    ↑   
+TestDaoImpl <<class>>
+====================
+   @Repository
+   public class TestDaoImpl implements TestDao{
+      @Autowired  private SqlSession sqlSession;  //sql 실행
+      ivate static final String namespace="com.company.dao.TestDao";   ... 코드생략
+   }
+====================
+test-mapper.xml
+
+		↓↓↓↓↓↓    코드 분리
+
+▶2.  mybatis (2)
+-root-context.xml 설정파일
+- Impl구현클래스 삭제 하고 xml에 설정
+
+<!-- STEP3 mapperFactoryBean -->
+<bean id="sboardDAO" class="org.mybatis.spring.mapper.MapperFactoryBean">
+	<property name="sqlSessionTemplate" ref="sqlSession" />
+	<property name="mapperInterface"  value="com.company.dao.SBoardDAO" />
+</bean>
+
+
+1. 006_1 mybatis 프로젝트 복사
+2. 006_2 mybatis 프로젝트 복사 - Impl 구현클래스삭제  / root-context 수정
+
+▶3.  mybatis (3)
+- MapperFactoryBean 매번 설정이 힘듦. 모든 mapper에 설정하기 힘듦
+
+- 해결방안 : MapperScannerConfigurer
+1. MyDao
+  public @interface MyDao{} 
+
+2. mapper로 만들어주는 interface
+  @MyDao public interface TestDao{}
+  @MyDao public interface UserDao{}
+  @MyDao public interface BoardDao{}
+
+3. MyDao root-context.xml 등록
+	<bean id="" class="MapperScannerConfigurer" >
+	</bean>
+
+
+
+--------------------------------------
+#6. mvc project
+--------------------------------------
+▶1. mvc
+>> 서로 영향없이 쉽게 고칠 수 있는 애플리케이션을 만들자!
+Model	  - 정보 ( dto, dao, service )
+View	  - 화면 ( html, css, js/jQuery )
+Controller  - 처리 (요청을 받아서 처리 후 응답)
+
+
+▶2. mvc1 vs mvc2
+
+mvc1 - controller의 역할을 jsp 담당
+mvc2 - contorller의 열할을 servlet 담당
+FrontController - 공통 작업을 수행 → 세부컨트롤러에 처리
+
+▶3. spring MVC 
+[ 클라이언트 ](브라우저) 
+
+ ↓① list.do
+
+[ FrontController ]
+<<DispatcherServlet>>  → ② HandlerMapping - @Controller
+				↓
+			③세부Controller - db가 필요하면 db처리
+
+	↓↑ 
+
+        ④View
+
+① 클라이언트 ( 코요테 - web.xml - root-context.xml / servlet-context.xml / DispatcherServlet)
+② DispatcherServlet  - HandlerMapping - @Controller / 처리할 Controller 확인
+③ 세부Controller 클라이언트 요청처리 (service - 비지니스로직)
+④ 요청결과와 View정보를 DispatcherServlet 줌 / View를 객체로 생성해서 응답
+
+1. 실습
+1) pom.xml  spring-webmvc 등록
+2) web.xml  ContextLoaderListener(spring 구동) / DispatcherServlet (Frontcontroller)
+	   root-context.xml(db 설정) / servlet-context.xml(view servlet 설정)
+3) config/servlet-context.xml
+
+
+2. 실습
+1) spring010_mvc 프로젝트만들기
+2) pom.xml
+   <!-- https://mvnrepository.com/artifact/org.springframework/spring-webmvc -->
+   <dependency>
+       <groupId>org.springframework</groupId>
+       <artifactId>spring-webmvc</artifactId>
+       <version>3.2.17.RELEASE</version>
+   </dependency>
+
+3) web.xml
+	ContextLoaderListener(spring 구동) / DispatcherServlet (Frontcontroller)
+	root-context.xml(db 설정) / servlet-context.xml(view servlet 설정)
+4) servlet.xml
+   4-1. @Cotroller 위치
+	<context:component-scan base-package="com.company.controller" />
+   4-2. Model model ( 처리결과 )
+	<mvc:annotation-driven />
+   4-3. ViewResolver
+	<bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<property name="prefix" value="/" />
+		<property name="suffix" value=".jsp" />
+	</bean>
+
+
+1. spring009_ex_board 복사하기  spring001_ex_board
+2. web-mvc 셋팅
+3. 다음과 같이 controller 설정
+/board/list → board/list.jsp
+/board/create → board/write.jsp
+/board/detail → board/detail.jsp
+/board/edit → board/edit.jsp
+/board/delete → board/delete.jsp
+
+
+--------------------------------------
+#7. 유용한 기능들
+--------------------------------------
+1. jstl
+-----------------------------------------
+-----------------------------------------
+2. dto → lombok (JPA)
+
+0. https://mvnrepository.com/artifact/org.projectlombok/lombok
+    1. https://projectlombok.org/download
+    2. 다운로드
+    3. 더블클릭 /   cmd창     java  -jar    파일이름.jar
+        설치경로 설정
+    4. spring 다시 열기
+
+    ※ 만약 인식이 안되면....
+      1. C드라이브로 스프링zip. 옮기기 - 압축풀기
+      2. 경로 짧게
+
+-----------------------------------------
+-----------------------------------------
+
+
+-----------------------------------------
+-----------------------------------------
+3. aop(관점지향프로그래밍 : Aspect Oriented Programming)
+
+1) 핵심기능 vs 부가기능
+-핵심기능 : 비지니스로직
+-부가기능 : 비지니스로직을 도와주는 기능
+
+2) Aspect
+- AOP( Aspect Oriented Programming )
+- Aspect : 관점, 어떤행동, 시작, 완료, 반복 ...... 나타내는 형태
+- Advice(부가기능정의) + PointCut(적용부위) = Aspect
+
+3) 용어
+Target : 대상
+Advice : 부가기능정의
+PointCut : 적용타겟에 메서드로 대상을 선별하는 정규식
+Weaving : Target(대상)에 Advice(부가기능)를 처리(삽입)는 과정
+
+4) 특징
+- 프록시기반의 aop
+- 프록시(대리)
+- 프록시 Target (대상)에 Advice(부가기능)를 처리(삽입)는 과정에서 생성되는 객체
+
+호출 -> [ Proxy[ Target ]  ]
+
+-----------------------------------------
+-----------------------------------------
+
+-----------------------------------------
+-----------------------------------------
+4.HikariCP (dbcp / sql 과정 다 보이게)
+1) pom.xml
+2) db.properties / root-context.xml
+3) hikari properties 설정
+
+      <!-- HikariCP -->
+      <!-- HikariCP -->
+      <!-- https://mvnrepository.com/artifact/com.zaxxer/HikariCP -->
+      <dependency>
+          <groupId>com.zaxxer</groupId>
+          <artifactId>HikariCP</artifactId>
+          <version>2.7.4</version>
+      </dependency>
+         
+      <!-- https://mvnrepository.com/artifact/org.bgee.log4jdbc-log4j2/log4jdbc-log4j2-jdbc4 -->
+      <dependency>
+          <groupId>org.bgee.log4jdbc-log4j2</groupId>
+          <artifactId>log4jdbc-log4j2-jdbc4</artifactId>
+          <version>1.16</version>
+      </dependency>
+      <!-- HikariCP -->
+      <!-- HikariCP -->
+      <!-- HikariCP --> 
+
+-----------------------------------------
+-----------------------------------------
+
+
+-----------------------------------------
+-----------------------------------------
+5.Tx (트랜잭션 : sql 여러개 실행될 때 중간에 실패하면 sql 다 처리 안되게)
+- 트랜잭션
+- 여러단계의 처리를 하나의 처리처럼 다루는 기능
+- 반영(commit) / 되돌리기 (rollback)
+
+1) pom.xml 
+      <dependency>
+         <groupId>org.springframework</groupId>
+         <artifactId>spring-tx</artifactId>
+         <version>${org.springframework-version}</version>
+      </dependency>
+
+2) root-context.xml
+- DataSourceTransactionManager
+- <tx:annotation-driven />
+
+-----------------------------------------
+-----------------------------------------
+
+
+▶ jstl
+1.pom.xml
+ <!-- https://mvnrepository.com/artifact/javax.servlet/jstl -->
+	<dependency>    
+		<groupId>javax.servlet</groupId>    
+		<artifactId>jstl</artifactId>    
+		<version>1.2</version>
+	</dependency>
+
+2. Model
+- table
+- dto UserDto / mapper-config.xml
+- dao UserDao / user-mapper.xml / root-context.xml (등록)
+
+user-mapper.xml
+
+3. @Repository -  Dao ( sql 실행 )
+   @Service -  비즈니스 로직 = 처리하는 기능
+
+  상세보기: 조회수 올리는 sql / 해당번호 상세보기데이터
+  수정보기: 		 / 해당번호 상세보기데이터
+  글쓰기  : 이미지 올리기 기능 / 그 이미지이름 경로 및 데이터를 insert 시 저장
 

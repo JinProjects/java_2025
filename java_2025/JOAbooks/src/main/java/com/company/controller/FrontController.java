@@ -9,14 +9,13 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.company.service.BWrite;
+import com.company.service.board.BWrite;
 import com.company.service.board.BDelete;
 import com.company.service.board.BDetail;
 import com.company.service.board.BEdit;
 import com.company.service.board.BEditView;
 import com.company.service.board.BList;
 import com.company.service.board.BoardService;
-import com.mysql.cj.x.protobuf.MysqlxDatatypes.Scalar.String;
 
 /**
  * Servlet implementation class FrontController

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+     PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+     "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.company.dao.BMemberDao">
+<select id="selectAll" resultType="BMemberDto">
+	select * from bmember
+</select>
+<select resultType="BMemberDto" id="selectOne" parameterType="BMemberDto">
+	select * 
+	  from bmember
+	  where mid = #{mid}
+</select>
+<insert id="insert" >
+	insert into bmember (mid
+						,mpass
+						,mnickname
+						,memail
+						,address1
+						,address2
+						,address3
+						,mip
+						)values(
+						 #{mid}
+						 ,#{mpass}
+						 ,#{mnickname}
+						 ,#{memail}
+						 ,#{address1}
+						 ,#{address2}
+						 ,#{address3}
+						 ,#{mip}
+						) 
+</insert>
+<update id="update">
+	update bmember set mpass = #{mpass}
+					  ,mnickname = #{mnickname}
+					  ,memail = #{memail}
+					  ,address1 = #{address1}
+					  ,address2 = #{address2}
+					  ,address3 = #{address3}
+					  ,mip = #{mip}
+		 		where mid = #{mid} 
+</update>
+<delete id="delete">
+	delete from bmember where mid = #{mid} and mpass = #{mpass}
+</delete>
+</mapper>
