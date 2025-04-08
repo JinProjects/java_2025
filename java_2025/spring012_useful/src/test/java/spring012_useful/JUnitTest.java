@@ -15,7 +15,7 @@ public class JUnitTest {
 	SBoardDao dao;
 	@Test
 	public void test() {
-		System.out.println(dao.select());
+		System.out.println(dao);
 	}
 	
 }

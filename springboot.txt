@@ -1,0 +1,93 @@
+■ STEP1. project
+  - enc UTF-8
+  - springboot
+
+spring boot bevTools 프로젝트 수정된 내용 반영
+Lombok dto -  getter setter 생성자 자동으로 만들어줌 
+	      , @Entity - db셋팅 관련 자동으로 만들어줌
+jpa,h2,mysql - db 관련
+thymeleaf
+
+연습) boot002 project 만들기
+	1) application.properties 설정
+	  context.path = /boot2
+	포트번호 8282
+	application-type = web으로 설정
+	2) com.comapny.boot2 
+	  @Controller
+	  @ResponseBody 설정해서
+	localhost:8282/boot2/ex1 접속시 - springboot 출력
+	3)@Controller 설정해서
+	RequestMapping("/ex2") - model 설정 test, ex2
+	localhost:8282/boot2/ex2 접속시 - model에서 설정한 -ex2 출력
+
+
+■ STEP2. setting (properties)
+# WebApplication
+
+# Banner Setting
+# 
+spring.main.banner-mode=off
+
+
+# DataSource Setting
+spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
+spring.datasource.url=jdbc:mysql://localhost:3306/myboot
+spring.datasource.username=root
+spring.datasource.password=1234
+
+
+# Jpa Setting
+# sql crud make (option = create/update)
+spring.jpa.hibernate.ddl-auto=create - 기존 데이터 삭제 (신규 프로젝트 아니면 보통 update 사용)
+# 
+spring.jpa.generate-ddl=false
+spring.jpa.show-sql=true
+
+spring.jpa.database-platform=org.hibernate.dialect.MySQL8Dialect
+spring.jpa.properties.hibernate.format_sql = true
+spring.jpa.properties.hibernate.show-sql = true
+# Logging
+logging.level.org.hibernate=info
+
+# Thymeleaf
+spring.thymeleaf.cache=false
+
+
+■ STEP3. db연동
+	-jpa 
+	1) application.properties
+	2) @Entity - Dto / 테이블만들기 
+	3) @Repository - Dao 
+
+- ex) 
+	1) @Entity 이용해서 Member 테이블 만들기
+	2) @Repository 이용해서 MemberRepository
+
+■ STEP4. view
+
+1. pom.xml 셋팅확인
+<dependency>
+<groupId>org.springframework.boot</groupId>
+<artifactId>spring-boot-starter-thymeleaf</artifactId>
+</dependency>
+<!--  https://mvnrepository.com/artifact/nz.net.ultraq.thymeleaf/thymeleaf-layout-dialect  -->
+<!--  추가  -->
+<dependency>
+<groupId>nz.net.ultraq.thymeleaf</groupId>
+<artifactId>thymeleaf-layout-dialect</artifactId>
+</dependency>
+<!--  추가  -->
+
+2. application.properties 설정확인
+
+3. layout
+
+4. 화면설정
+
+
+■ STEP5. board
+■ STEP6. security
+
+7. @Service
+1) 패키지명
