@@ -41,6 +41,6 @@ public class Board {
 	//부모 외래키의 필드명을 자식테이블에 mappedBy = member 그대로 사용해야 한다.
 	//MEMBER_ID이 아닌 실제 필드명
 	@ManyToOne
-	@JoinColumn(name="MEMBER_ID")
+	@JoinColumn(name="memberId")
 	Member member;
 }

@@ -1,10 +1,10 @@
-<%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="UTF-8"%>utf-8"%>
+<%@ page language="java" contentType="text/html;charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ include  file="../inc/header.jsp" %>
 <!--  END HEADER -->
 <!--  END HEADER -->
 <div class="container"  style="margin-top:5%; min-height:500px">
 	<h3>MULTIBOARD - 글쓰기 </h3>
-		<form action="${pageContext.request.contextPath}/board/create" method="post"  id="writeForm" >
+		<form action="write.do" method="post"  id="writeForm" >
 		   <fieldset>
 		   <legend>WRITE(CREATE)</legend>
 			<div class="form-group">
@@ -27,11 +27,8 @@
 			<div class="form-group  text-right">
 				<input type="submit"   value="입력"  class="btn btn-default"  style="color:white; background-color:#f4511e"   >  
 				<input type="reset"    value="취소"  class="btn btn-default"    >  
-				<a href="${pageContext.request.contextPath}/board/list"   class="btn btn-default"   >목록보기</a>
-			</div>  <!-- 
-			 board/list		http://localhost:8081/spring013_ex_board/board/board/list 
-			/board/list     http://localhost:8081/board/list
-			-->
+				<a href="board/list.do"   class="btn btn-default"   >목록보기</a>
+			</div>
 		 </fieldset>		
 		</form> <!-- end form -->	
 </div>

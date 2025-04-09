@@ -484,4 +484,43 @@ from   emp
 where  sal >  any( select sal from emp  where deptno=30)
 order by sal  desc;
 
+create database myboot;
+use myboot;
+show tables;
+desc board;
+desc member;
+select * from board;
+select * from member;
+use myboot;
+drop table team cascade;
 
+ALTER TABLE member ADD foreign key (team_id) references team(id) on delete cascade; 
+use myboot;
+drop database myboot;
+create database myboot;
+delete from member;
+select * from member;
+select * from board;
+
+select *
+from board b inner join member m
+on b.member_id = m.id
+where b.btitle like ''
+or m.name like '%f%';
+
+select * from Board b where b.btitle like '%제목%' 
+						and b.writer like '%%'
+                        order by b.id desc;
+
+select
+        * 
+    from
+        Board b 
+    left join
+        Member m 
+            on b.member_id = m.id 
+    where
+        b.btitle like CONCAT('%','제목','%') 
+        or m.name like CONCAT('%','제목','%') 
+    order by
+        b.id desc 

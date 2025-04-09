@@ -1,12 +1,14 @@
-<%@page import="com.company.dto.BoardDto"%>
-<%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ include  file="../inc/header.jsp" %>
 <!--  END HEADER -->
-<!--  END HEADER -->  
-
+<!--  END HEADER --> 
+<%@page import="java.sql.*"%>
+<%
+request.setCharacterEncoding("UTF-8");
+%>
 <div class="container"  style="margin-top:5%; min-height:500px"   >
 	<h3>MULTIBOARD - 글수정 </h3>
-		<form action="${pageContext.request.contextPath}/board/edit?bno=${dto.bno}" method="post"  id="editForm" >
+		<form action="edit.do?bno=${dto.bno}" method="post"  id="editForm" >
 		   <fieldset>
 		   <legend>	UPDATE</legend>
 			<div class="form-group">
@@ -16,7 +18,8 @@
 			</div>			
 			<div class="form-group">
 			  <label for="bpass"  >비밀번호</label>
-			  <input type="password"   name="bpass"   id="bpass"   class="form-control" > 
+			  <input type="password"   name="bpass"   id="bpass"   class="form-control" 
+			  			value="${dto.bpass}"> 
 			  <span>(*) 수정, 삭제시 필수</span>
 			</div>																
 			<div class="form-group">
@@ -26,13 +29,12 @@
 			</div>	
 			<div class="form-group">
 			  <label for="bcontent"  >내용</label>
-			  <textarea name="bcontent"  id="bcontent"  cols="60"  rows="10"  
-			   class="form-control">${dto.bcontent}</textarea>
+			  <textarea name="bcontent"  id="bcontent"  cols="60"  rows="10"   class="form-control" >${dto.bcontent}</textarea>
 			</div>				
 			<div class="form-group  text-right">
 				<input type="submit"   value="입력"   class="btn btn-danger"  >  
 				<input type="reset"    value="취소"  class="btn btn-default"    >  
-				<a href="${pageContext.request.contextPath}/board/list"   class="btn btn-default"   >목록보기</a>
+				<a href=""   class="btn btn-default"   >목록보기</a>
 			</div>
 		 </fieldset>		
 		</form> <!-- end form -->	

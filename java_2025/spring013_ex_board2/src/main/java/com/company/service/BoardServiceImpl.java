@@ -1,29 +1,45 @@
 package com.company.service;
 
-import java.net.InetAddress;
-import java.net.UnknownHostException;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.company.dao.BoardDao;
-import com.company.dto.BoardDto;
+import com.company.dao.SBoardDao;
+import com.company.dto.SBoardDto;
 
-
-@Service  // component-scan
-public class BoardServiceImpl implements BoardService {
-	@Autowired  BoardDao dao;   // ctrl + shift + o
-	@Override public int insert(BoardDto dto) { 
-		try { dto.setBip(InetAddress.getLocalHost().getHostAddress()); }
-		catch (UnknownHostException e) { e.printStackTrace(); }
-		
-		return dao.insert(dto); 
-	}
-	@Override public int update(BoardDto dto) { return dao.update(dto); }
-	@Override public BoardDto updateForm(int bno)  { return dao.select(bno); }
-	@Override public int delete(BoardDto dto) {  return dao.delete(dto); }
+@Service
+public class BoardServiceImpl implements BoardService{
+	@Autowired
+	SBoardDao dao;
 	
-	@Override public BoardDto detail(int bno) { dao.updateHit(bno); return dao.select(bno); }
-	@Override public List<BoardDto> selectAll() { return dao.selectAll(); }
+	@Override
+	public List<SBoardDto> selectAll() {
+		return dao.selectAll();
+	}
+
+	@Override
+	public int insert(SBoardDto dto) {
+		return dao.insert(dto); //글쓰기 기능
+	}
+
+	@Override
+	public int update(SBoardDto dto) {
+		return dao.update(dto); //수정기능
+	}
+	@Override
+	public SBoardDto updateForm(int bno) {
+		return dao.select(bno); //수정기능
+	}
+
+	@Override
+	public int delete(SBoardDto dto) {
+		return dao.delete(dto);
+	}
+	@Override
+	public SBoardDto detail(int bno) {
+		dao.updateHit(bno);
+		return dao.select(bno);
+	}
+
 }

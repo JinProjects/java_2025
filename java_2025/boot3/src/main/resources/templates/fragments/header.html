@@ -27,13 +27,23 @@
 						<li class="nav-item"><a class="nav-link"
 							href="javascript:void(0)">Link</a></li>
 					</ul>
-					<form class="d-flex">
-						<input class="form-control me-2" type="text" placeholder="Search">
-						<button class="btn btn-primary" type="button">Search</button>
+					<form th:action="@{/board/findBoard}" method="post" class="d-flex">
+						<input class="form-control me-2" type="text" name="bword" placeholder="Search">
+						<button class="btn btn-primary" type="submit">Search</button>
 					</form>
 				</div>
 			</div>
 		</nav>
+		<script>
+		//[[...]] thymeleaf방식 데이터 바인딩 - 서버에서 js로 코드전달시
+			let msg = "[[${msg}]]";
+		console.log(msg);
+		if(msg == 'fali'){
+			history.go(-1); alert('정보를 확인해주세요.');	
+		}else if(msg.length != 0){
+			alert(msg);
+		}
+		</script>
 	</th:block>
 </body>
 </html>

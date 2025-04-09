@@ -1,0 +1,10 @@
+#1 반복 : <div th:each="dto , state : ${list}" > ${dto.id} </div>
+#2 동적문자열 : <h3 th:text="${dto.name}"></h3> , <input th:value="${dto.name}">
+#3 링크 : <a th:href="@{/board/list}"></a>
+	<a th:href="@{|/board/detail/${dto.id}|}"></a>
+	<form th:action="@{/board/insert}">
+Q1. springboot thymeleaf를 이용하여 서버로부터 list를 넘겨받아 게시판의 반복문을 작성하려고 한다.
+
+<tr th:each="dto , state : ${list}">
+  <td><a th:href="" th:text="${dto.btitle}"></a></td>
+  <td th:text="${dto.member.name}"></td> 
