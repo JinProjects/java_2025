@@ -33,7 +33,8 @@ public class BoardService  {
 
 	public void insert(Board board) {
 		board.setMember(
-					memberRepository.findByUsername(board.getMember().getUsername()).get()
+//					memberRepository.findByUsername(board.getMember().getUsername()).get()
+					memberRepository.findByMemberId(board.getMember().getMemberId()).get()
 				);
 		boardRepository.save(board);
 	}

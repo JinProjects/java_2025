@@ -38,7 +38,7 @@ public class Board {
 	private LocalDateTime createDate = LocalDateTime.now();
 	
 	@ManyToOne   
-	@JoinColumn(name="MEMBER_ID"  )
+	@JoinColumn(name="MEMBER_ID")
 	private  Member member;
 }
 

@@ -9,7 +9,7 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.transaction.annotation.Transactional;
 
 public interface MemberRepository extends JpaRepository<Member, Long>{
-	Optional<Member> findByUsername(String username);
+	Optional<Member> findByMemberId(String username);
 	
 	@Query("select m from Member m Order by m.id desc")
 	List<Member> findAllByOrderByDesc();
@@ -25,7 +25,7 @@ public interface MemberRepository extends JpaRepository<Member, Long>{
 			+ "		, m.username = :username "
 			+ "		, m.email = :email "
 			+ "where m.id = :id ")
-	int updateById(String password, String username, String email, Long id);
+	int updateByMemberId(String password, String username, String email, Long id);
 	@Modifying
 	@Transactional
 	@Query("update Member m "

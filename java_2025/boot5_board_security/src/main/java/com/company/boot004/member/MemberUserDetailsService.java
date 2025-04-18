@@ -22,7 +22,7 @@ public class MemberUserDetailsService implements UserDetailsService{
 	
 	@Override
 	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-		Optional<Member> find = memberRepository.findByUsername(username);
+		Optional<Member> find = memberRepository.findByMemberId(username);
 		if(find.isEmpty()) {
 			throw new UsernameNotFoundException("사용자를 확인해주세요.");
 		}
@@ -34,7 +34,7 @@ public class MemberUserDetailsService implements UserDetailsService{
 		}else {
 			authorities.add(new SimpleGrantedAuthority(MemberRole.ADMIN.getValue()));
 		}
-		return new User( member.getUsername(), member.getPassword(), authorities);
+		return new User( member.getMemberId(), member.getPassword(), authorities);
 	}
 	
 }

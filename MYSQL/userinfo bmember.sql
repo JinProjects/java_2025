@@ -29,4 +29,8 @@ values ('test','1111','test','test@test.com','인천광역시','서구','가정�
 drop table bmember;
 select * from bmember;
 select now();
-select * from board;
+select * from sboard;
+select * from userinfo;
+delete from userinfo where no = 14;
+desc sboard;
+use mbasic;

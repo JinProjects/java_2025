@@ -41,7 +41,7 @@ public class MemberController {
 		}
 		try {
 			Member member = new Member();
-			member.setUsername( memberForm.getUsername() );
+			member.setMemberId( memberForm.getUsername() );
 			member.setEmail( memberForm.getEmail() );
 			member.setPassword( memberForm.getPassword() );
 			service.insertMember(member);

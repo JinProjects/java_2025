@@ -45,7 +45,6 @@ public class BoardController {
 	@PostMapping("/board/insert")
 	public String insert_post(Board board , Member member) {
 		board.setMember(member);  
-		System.out.println(board.toString());
 		service.insert(board);
 		
 		return "redirect:/board/list";

@@ -501,7 +501,8 @@ create database myboot;
 delete from member;
 select * from member;
 select * from board;
-
+delete from board;
+desc member;
 select *
 from board b inner join member m
 on b.member_id = m.id
@@ -523,4 +524,11 @@ select
         b.btitle like CONCAT('%','제목','%') 
         or m.name like CONCAT('%','제목','%') 
     order by
-        b.id desc 
+        b.id desc ;
+        
+        
+        create database myboot1;
+        use myboot1;
+        show tables;
+        
+        

@@ -15,7 +15,8 @@ import com.company.dto.BMemberDto;
 public class BMemeberTest {
 	@Autowired
 	BMemberDao dao;
-	BMemberDto dto =new BMemberDto("test4","1111","홍길동","test@test.com","인천광역시","서구","가정로","127.0.0.1");
+	@Autowired
+	BMemberDto dto;
 	//@Test
 	@Ignore
 	public void selectAll() {

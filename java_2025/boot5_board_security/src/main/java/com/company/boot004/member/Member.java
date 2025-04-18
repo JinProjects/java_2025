@@ -26,7 +26,7 @@ public class Member {
 	@GeneratedValue(strategy = GenerationType.IDENTITY )
 	private Long id;
 	@Column(unique=true) //유일한값 설정
-	private String username;
+	private String memberId;
 	private String password;
 	@Column(unique=true)
 	private String email;
